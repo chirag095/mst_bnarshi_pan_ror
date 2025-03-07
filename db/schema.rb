@@ -53,12 +53,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_07_171120) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "events", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "image"
     t.string "title"
@@ -122,13 +116,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_07_171120) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.index ["slug"], name: "index_states_on_slug", unique: true
-  end
-
-  create_table "titles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "image"
-    t.text "discription"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
