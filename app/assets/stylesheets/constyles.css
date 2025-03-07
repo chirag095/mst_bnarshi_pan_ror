@@ -1,0 +1,72 @@
+html{padding:0vw; margin:0vw;}
+body{padding:0vw; margin:0vw;}
+#mainbox{display:none; flex-direction:row; position:relative; border:.0vh solid red; height:8vw; background:#0a0b10; width:0%;}
+#mainbox .mainboxcol1{height:5vw; border:.1vh solid black; top:1vw; left:5vw; position:absolute; width:15vw; border-radius:10vw; justify-content:center; background-color:#000; display:flex; flex-direction:column; justify-items:center;}
+#mainbox .mainboxcol2{height:5vw; border:.1vh solid black;  top:1vw; right:5vw; position:absolute; width:17vw ; border-radius:10vw; justify-content:center; background-color:#000;
+    background-position:100%;
+    background-size:contain;
+}
+#mainbox .mainboxcol3{height:5vw; border:.1vh solid #0a0b10; top:0vw; right:33vw; position:absolute; width:35vw ; border-radius:10vw; justify-content:center; background-color:#0a0b10;}
+.mainboxcol3text{font-family: FuturaMediumBT; text-align: center; padding: 0vw 1vw; font-size: 5vw; text-transform: uppercase; color: #ff9500; -webkit-text-stroke-width: 0.2vw; -webkit-text-stroke-color: white;}
+.mainboxfn{font-size:1.5vw; color:#ffb014; text-align:center;}
+.mainboxpn a{display:block;font-size:1.6vw; color:white; font-weight:900;text-align:center; text-decoration:none; }
+.mainboxpn a:hover{display:block;font-size:2vw; color:#ffb014; font-weight:900;text-align:center; text-decoration:none; }
+
+#mainbox .galmainboxcol3{height:5vw; border:.0vh solid black; top:0vw; right:25vw; position:absolute; width:50vw ; border-radius:10vw; justify-content:center; background-color:transparent;}
+.glmainboxcol3text{font-family: FuturaMediumBT; text-align: center; padding: 0vw 1vw; font-size: 5vw; text-transform: uppercase; color: #ff9500; -webkit-text-stroke-width: 0.2vw; -webkit-text-stroke-color: white;}
+
+#mainbox .galmainboxcol4{height:5vw; border:.0vh solid black; top:0vw; right:22vw; position:absolute; width:55vw ; border-radius:10vw; justify-content:center; background-color:transparent;}
+.glmainboxcol4text{font-family: FuturaMediumBT; text-align: center; padding: 0vw 1vw; font-size: 4vw; text-transform: uppercase; color: #ff9500; -webkit-text-stroke-width: 0.2vw; -webkit-text-stroke-color: white;}
+
+@media only screen and (max-width: 600px) {
+	
+#mainbox{display:flex; flex-direction:row; top:0vw!important; position:fixed; border:.0vh solid red; height:17vw!important; background:#2c4d00; z-index:2; width:100%;}
+#mainbox .mainboxcol1{height:10vw; border:.1vh solid black; top:4vw!important; left:7vw; position:absolute; width:36vw; border-radius:10vw; justify-content:center; background-color:#000; display:flex; flex-direction:column; justify-items:center;}
+#mainbox .mainboxcol2{height:10vw; border:.1vh solid black;  top:4vw!important;  left:56vw; position:absolute; width:36vw; border-radius:10vw; justify-content:center; background-color:#000;
+    background-position:100%;
+    background-size:contain;
+}
+
+#mainbox .mainboxcol3{height:5vw; display:none;border:.1vh solid black; top:1vw; right:41vw; position:absolute; width:0vw ; border-radius:10vw; justify-content:center; background-color:#000;}
+.mainboxcol3text{font-family: FuturaMediumBT; text-align: center; padding: 0vw 1vw; font-size: 0vw; text-transform: uppercase; color: #ff9500; -webkit-text-stroke-width: 0.2vw; -webkit-text-stroke-color: white;}
+#mainbox .galmainboxcol4{width:0vw;}
+.glmainboxcol4text{font-size:0vw;}
+#mainbox .galmainboxcol3{height:5vw; display:none;border:.1vh solid black; top:1vw; right:41vw; position:absolute; width:0vw ; border-radius:10vw; justify-content:center; background-color:#000;}
+.glmainboxcol3text{font-family: FuturaMediumBT; text-align: center; padding: 0vw 1vw; font-size: 0vw; text-transform: uppercase; color: #ff9500; -webkit-text-stroke-width: 0.2vw; -webkit-text-stroke-color: white;}
+
+
+.mainboxfn{font-size:3vw; color:#ffb014; text-align:center;}
+.mainboxpn a{display:block;font-size:3.5vw; color:white; font-weight:900;text-align:center; text-decoration:none; }
+	
+}
+/* food-franchise-in-jharkhand css jk */
+.new_content_area {
+    padding: 0px 65px;
+    margin-bottom: 50px;
+    height: 400px;
+    overflow-y: scroll;
+    box-shadow: 0px 0px 8px 2px #ffffff85;
+/*    background: #ffb014;*/
+    margin-top: 30px;
+}
+.new_content_area h2{ font-family: library-3; color: #8c0000;; font-size: 22px;}
+.new_content_area h3 { font-family: library-3; color: #fff; font-size: 18px; padding-left: 15px;}
+
+.new_content_area p {padding-left: 15px;}
+.h_data{padding-left: 0px !important;}
+
+
+
+
+@media screen and (min-device-width: 200px) and (max-device-width: 768px) { 
+   
+  .new_content_area {padding: 0px 10px;} 
+   
+}
+
+
+
+
+
+
+

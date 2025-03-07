@@ -1,0 +1,163 @@
+
+body{margin:0px; padding:0px;   overflow-x: hidden;}
+
+#newnavcontainer{ width:100%; position:fixed; top:2vw; z-index:10;  color:white; transition: ease 0s;}
+#newnavcontainerMenu{ padding:0vw;  background:black; color:white; width:100%; display:flex; flex-direction:row; height:4vw; transition: ease 2s;}
+#newnavcontainerMenu a{text-decoration:none; color:white; font-size:1vw; padding:1vw; font-family: 'Patua One', cursive; text-transform:;}
+#newnavcontainerMenu a:hover{text-decoration:none; color:orange; font-size:1vw; padding:1vw; font-family: 'Patua One', cursive; text-transform:;}
+#newnavcontainerMenu .leftMenu{position:relative; left:3vw; width:49vw;   justify-content: center;  border:.0vh solid white;  display:flex; flex-direction:row;}
+#newnavcontainerMenu .centerMenu{position:relative; left:0px; width:07vw;   justify-content: center;  border:.0vh solid white;  display:flex; flex-direction:row;}
+#newnavcontainerMenu .leftMenu .leftmenuBox{width:auto; border:.0vh solid white;  line-height:2; text-align:center; margin:0px auto;}
+#newnavcontainerMenu .rightMenu{right:0px; position:relative; width:38vw;  border:.0vh solid white; display:flex; flex-direction:row;}
+#newnavcontainerMenu .rightMenu .rightmenuBox{width:auto; border:.0vh solid white;  line-height:2; text-align:center; margin:0px auto;}
+#effects a{text-decoration:none; color:orange; font-size:1vw; padding:1vw; font-family: 'Patua One', cursive; text-transform:;}
+#effects a:hover{text-decoration:none; color:white; font-size:1vw; padding:1vw; font-family: 'Patua One', cursive; text-transform:;}
+
+.active{color:orange; }
+.active:hover{color:white; }
+
+#newnavcontainerContact{ padding:0vw;  background:; color:black; width:100%; height:6vw; position:relative; transition: ease 2s;}
+#newnavcontainerContact .leftcontainerContact{position:absolute; display:flex; justify-content:center; flex-direction:column; left:14vw; top:1vw; width:14vw; background:#0a0c10; border-radius:5vw; /*box-shadow:0vw .1vw .5vw black;*/ padding:.6vw; }
+
+#newnavcontainerContact .rightcontainerContact{width:18vw; display:flex; justify-content:space-between; flex-direction:row;  background:#fff; border-radius:5vw;  position:absolute; right:15vw; top:1vw;  padding:1.5vw; /*box-shadow:0vw .1vw .5vw black;*/ }
+#newnavcontainerContact .rightcontainerContact a{font-size:1vw;text-decoration:none; text-align:center;  transition: ease 1s; display:inline-block;}
+#newnavcontainerContact .rightcontainerContact a:hover{font-size:1vw; text-align:center;  text-decoration:none;  display:inline-block;}
+
+/* #newnavcontainerContact1{padding:0vw;  background:white; color:black; width:100%; height:9vw; position:relative; transition: ease 1s;} */
+
+
+
+
+
+#newnavcontainerItems{ padding:0vw;  background:#fccc4c; border-radius:1vw; color:white; width:92%; margin:0px auto; height:4vw; display:flex; flex-direction:row;  justify-content: center;}
+#newnavcontainerItems:before, #newnavcontainerItems:after{position:absolute; content:''; bottom:-2vw; left:5vw; top:12vw; border:.0vh solid black; width:30%; background:#fccc4c; z-index:-1; box-shadow:0px .5vw 2vw black; transform:rotate(-2.5deg); height:1vw; }
+#newnavcontainerItems:after{transform:rotate(1.8deg); right:5vw; left:auto; top:12vw;}
+#newnavcontainerItems .newnavcontainerItemsBox{ line-height:0vw;}
+#newnavcontainerItems  a{ text-decoration:none; color: rgba(0, 0, 0, 0.3); font-size:.9vw; text-transform:uppercase;   padding:.0vw .0vw .0vw .0vw; margin:1.5vw; transition: ease 1s;}
+#newnavcontainerItems  a:hover{color: rgba(0, 0, 0, 1); transition: ease 1s;}
+.navsilder{     background-image: url(bg.html); background-repeat: no-repeat; width:100vw; height:200vh; }
+#obwhatsapp{width:10vw; height:auto; background-color: rgba(0, 0, 0, 0.3); z-index:12; border:.0vh solid black;  border-radius:10vw; text-align:center; position:fixed; top:50%; left:-2%;}
+#obwhatsapp:hover{left:-0%; transition: ease 1s; box-shadow:0vw .1vw .5vw black;}
+#obwhatsapp a{font-size:4vw; }
+#obwhatsapp a:hover{}
+#obcontactPhone{width:10vw; height:auto; border:.0vh solid black;  background-color: rgba(0, 0, 0, 0.3); z-index:12; border-radius:10vw; text-align:center;position:fixed; top:50%; right:-2%;}
+#obcontactPhone:hover{right:-0%; transition: ease 1s; box-shadow:0vw .1vw .5vw black;}
+#obcontactPhone a{font-size:3vw;}
+#obcontactPhone a:hover{}
+
+ #navlogoBox{
+	 width:13vw; position:fixed; top:1vw; left:43%; 
+	 z-index:11;
+	 /*  background:#fccc4c; */
+	 text-align:center;
+	 padding:1vw;
+	 border:.0vh solid black;
+	 transition: ease 0s;
+	 
+ }
+ .Obreponsive{
+	 width:100%;
+	 height:auto;
+	 
+ }
+ #navlogoBox2{
+	 width:10%; height:10vw; text-align:center; position:fixed; top:1vw; left:45%;  	background:#fccc4c;
+	 z-index:2; overflow:hidden;
+ }
+ #navlogoBox2 .navlogoItems{position:absolute;height:auto;text-align:center; overflow:hidden; padding:2vw; z-index:2;}
+ /* .navlogoItems:before{ */
+	  /* content:""; */
+	/* border-left:.5vw solid transparent; */
+	/* border-right:.5vw solid white; */
+	/* border-top:.5vw solid transparent; */
+	/* border-bottom:.5vw solid white; */
+	/* position:absolute; */
+	/* top:-.0vw; */
+	/* left:-1vw; */
+/* } */
+ 
+ /* .navlogoItems:after{ */
+	/* content:""; */
+	/* border-left:6.0vw solid transparent; */
+	/* border-right:6.0vw solid transparent; */
+	/* border-top:6.0vw solid #fccc4c; */
+	/* border-bottom:6.0vw solid transparent; */
+	/* position:absolute; */
+	/* bottom:-12vw; */
+	/* left:-0vw; */
+	 
+ /* } */
+ 
+ 
+ 
+ 
+ 
+ .navlogoBoxrp2{ width:7vw; height:auto;} 
+ .navlogoBoxrp{ width:0vw; display:blcok; position:absolute; top:3vh; left:2vw; z-index:12;	}
+.iconListBox{font-size:2.5vw; position:relative; top:-.7vw; border:.vh solid black; font-weight:100; margin:0vw .5vw .5vw 0vw;}
+  span{margin:0px; padding:0px;}
+  .iconListBoxText{ text-decoration:none; color:#000000; position:relative; top:-1.2vw;  text-transform:uppercase;  font-weight:500;  font-family: 'Patua One', cursive;}
+  
+  
+  
+.navsilderbox{margin:0px auto; z-index:1; border-top:.0vh solid white;  width:89%; height:20vw; position:relative; top:20vw; display:flex; flex-direction:row; }  
+.leftnavsilderbox{width:44vw;  margin:0px auto; padding:1vw;}
+.leftnavsilderbox1{font-size:4vw; color:#4d2c21; text-align:center; text-transform:uppercase; font-family: 'Rubik', sans-serif; line-height:4vw;}
+.leftnavsilderbox2{font-size:5vw; color:white; text-align:center; text-transform:uppercase ; font-family: 'Rubik', sans-serif; line-height:5vw;}
+.leftnavsilderbox3{font-size:1vw; color:#4d2c21; text-align:center; font-family: 'Rubik', sans-serif;line-height:6vw;}
+.leftnavsilderbox4{}
+
+.leftnavsilderbox4Btn{ margin:0px auto;  width:15vw; border-radius:20vw; text-transform:uppercase;  padding:1vw 2vw;}
+.leftnavsilderbox a{font-size:1vw; display:block; width:15vw; color:white; text-decoration:none;  text-align:center; font-family: 'Rubik', sans-serif; background:#e4584b; }
+.leftnavsilderbox a:hover{color:white; background:black;}
+
+.boxText a{font-size:1vw; display:block; color:white; text-decoration:none;  text-align:center; font-family: 'Rubik', sans-serif; background:#e4584b; }
+.boxText a:hover{color:white; background:black;}
+
+.rightnavsilderbox{width:44vw; margin:0px auto; text-align:center;}
+.burgerRight{width:100%; }
+.leftSpace{padding:2vw;}
+
+  
+  
+  .franchiseText{font-size:1vw; text-align:center; color:orange;}
+  .callNowText{font-size:1.1vw;font-weight:1000; text-align:center; color:white;}
+  .callNowText a{font-size:1vw;  font-weight:700; text-decoration:none; color:white; text-align:center;  transition: ease .5s;}
+  .callNowText a:hover{font-size:1.1vw; font-weight:900;text-decoration:none; color:white; text-align:center;  top:0vw;}
+
+  /* Socila Media Icons  */
+  .fbbg{background:; color:#3b5998; }
+  .fbbg:hover{background:; color:#3b5998; }
+  .ldbg{background:; color:#0077B5; }
+  .ptbg{background:; color:#c8232c; }
+  .inbg{background:; color:#3f729b; }
+  .ybbg{background:; color:#c4302b; }
+  .tbbg{color:#34526f;}
+  
+.callbg{background:transparent; color:#fff	; padding:1vw; }
+.whtspabg{background:transparent;  color:#25D366;  padding:1vw; }  
+
+.owl-next{position:absolute; right:2vw; top:9vw; font-size:20vw; border:.1vh solid black; background-color: rgba(0, 0, 0, 0.3);}
+.owl-prev{position:absolute; left:2vw; top:9vw; font-size:20vw; border:.1vh solid black;  background-color: rgba(0, 0, 0, 0.3); }
+.owl-carousel .owl-dot, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev{}
+.owl-carousel {font-size:5vw; color:#fff;}
+.owl-item{font-size:5vw; color:;}
+
+@import url('https://fonts.googleapis.com/css?family=Questrial&amp;display=swap');
+.bannerStyle{position:relative;}
+.bannerTextStyle{position:absolute;  font-size:2.5vw; Color:#4d2c21; font-weight:700; top: 56%; text-transform:; left: 21%; transform: translate(-50%, -50%);  font-family: 'Questrial', sans-serif;}
+.bannerTextStyleBtn{position:absolute; font-size:1.5vw; Color:white; font-weight:700; top: 74%; text-transform:uppercase; left: 20%; transform: translate(-50%, -50%);  font-family: 'Questrial', sans-serif;}
+
+ /* https://lafka.althemist.com/fastfood/ */
+ 
+ .numberjulybox{position:absolute; width:15%; top:9.5vw; padding:.2vw;border-top-left-radius: 5vw; border-top-right-radius: 5vw;
+    border-bottom-right-radius: 5vw;
+    border-bottom-left-radius: 5vw; left:12vw; background:black; border:.0vh solid red;}
+ .silderjulybox{position:absolute; width:15%; top:9.5vw; padding:.2vw;  right:12vw; background:white; border-top-left-radius: 5vw;
+    border-top-right-radius: 5vw;
+    border-bottom-right-radius: 5vw;
+    border-bottom-left-radius: 5vw; border:.0vh solid ;}
+ .numberjulyboxone{color:orange; font-weight:100; text-align:center;font-size:1vw;}
+ .numberjulyboxtwo{color:white; font-weight:900; text-align:center; font-size:1.4vw;}
+ .whatjulyboxleft{position:fixed; bottom:0; left:0; padding:2vw; background:transparent; border:.0vh solid red; z-index:1;}
+ .whatjulyboxright{position:fixed; bottom:0; right:0; padding:2vw; background:transparent; border:.0vh solid red;z-index:1;}

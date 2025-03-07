@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Mst Bnarshi Pan Ror" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="canonical" href="index.html" />
+    <link rel="icon" href="/assets/cropped-favicon-MBP-16x16.png" type="image/gif" sizes="16x16" />
+
+    <link href="/assets/octstyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/constyles.css">
+    <link rel="stylesheet" href="/assets/cssvideo.css">
+    <link href="/assets/ftcss.css" rel="stylesheet">
+    <link href="/assets/newnav2.css" rel="stylesheet">
+    
+    <link href="/assets/common.css" rel="stylesheet">
+    <link href="/assets/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="/assets/cssfootersectionstyle.css" rel="stylesheet">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

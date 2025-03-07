@@ -1,0 +1,12 @@
+@font-face {
+   font-family:library-3;
+   src: url('/assets/Library3am-5V3Z.otf')  format('truetype');
+   }
+@font-face {
+   font-family:Roboto-Bold;
+   src: url("/assets/Roboto-Bold.ttf") format('truetype');
+   }
+   @font-face {
+   font-family:Roboto-Thin;
+   src: url("/assets/Roboto-Thin.ttf") format('truetype');
+   }   

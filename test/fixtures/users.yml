@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  email: MyString
+  description: MyText
+  contact: MyString
+  pan_outlate: one
+  state: one
+
+two:
+  full_name: MyString
+  email: MyString
+  description: MyText
+  contact: MyString
+  pan_outlate: two
+  state: two
