@@ -260,7 +260,7 @@ html {
                     <a href="<%=product_detail_path(id: pro.id)%>"><%= image_tag pro.image, loading: "lazy", class: "img-fluid" %></a>
                  <%end%> 
                </div>
-               <a href="<%=product_detail(id: pro.id)%>"style="color:#ffffff;">
+               <a href="<%=product_detail_path(id: pro.id)%>"style="color:#ffffff;">
                   <h4><%=pro.title%></h4>
                </a>
                <p style="color:#ffffff;">
