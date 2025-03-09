@@ -1,0 +1,505 @@
+<style>
+#mainbox .mainboxcol2 {
+    background-image: url(/assets/300.webp);
+}
+@media screen and (max-width:600px){
+#toponebite{
+	display:none;
+}
+}
+
+
+#toponebite{
+  background-image: url("/assets/Untitled-design-59-1-1.png");
+  background-color: #cccccc;
+   background-repeat: no-repeat;
+   background-size: 100%;
+width:100%;
+height:5vw;
+position:relative;
+top:0px; left:0px;
+}
+#toponebitelogo{ 
+position:absolute;
+top:-1vw; left:0vw;
+width:100%;
+height:7vw;  
+background-color: #000000;
+}
+
+#toponebitelogoul{
+position:relative;
+top:-.6vw; left:0px;
+}
+
+#onebitesmenuleft{
+position:absolute;
+display:flex; flex-direction;
+align-items: center; justify-content: center;
+top:2vw; left:6vw;
+width:40%;
+height:4vw;
+}
+#onebitesmenuleft a{display:block; text-decoration:none; color:white; font-size:1vw; font-family:Roboto-Bold; padding:1vw 1vw;}
+
+#onebitesmenuleft a:hover{display:block; text-decoration:none; color:black; font-size:1vw; font-family:Roboto-Bold; padding:1vw 1vw; background:yellow; border-radius:1vw;}
+
+#onebitesmenulright{
+position:absolute;
+top:2vw; left:56vw;
+width:40%;
+height:4vw;
+display:flex; flex-direction;
+align-items: center; justify-content: center;
+}
+#onebitesmenulright a{display:block; text-decoration:none; color:white; font-size:1vw; font-family:Roboto-Bold; padding:1vw 1vw;}
+
+#onebitesmenulright a:hover{display:block; text-decoration:none; color:black; font-size:1vw; font-family:Roboto-Bold; padding:1vw 1vw; background:yellow; border-radius:1vw;}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #292929;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Menu containers */
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.menu-left,
+.menu-right {
+    display: flex;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nav-menu a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Centering the logo */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Contact section (aligned right) */
+.contact {
+    margin-left: auto;
+    position: relative;
+}
+
+/* 3D Effect for Phone Number */
+.phone-3d {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: linear-gradient(145deg, #1e1e1e, #2e2e2e);
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5), 
+                -3px -3px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.phone-3d:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5),
+                -5px -5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .menu-container {
+        display: none;
+        flex-direction: column;
+        background: #292929;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu-container.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-left, .menu-right {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        position: relative;
+        left: auto;
+        transform: none;
+        text-align: center;
+        flex: 1;
+    }
+
+    .contact {
+        display: block;
+        text-align: center;
+        padding-right: 15px;
+        margin-top: 10px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+   /* Breadcrumb Area */
+.breadcrumb-area {
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.breadcrumb-area h1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+}
+.breadcrumb li {
+    display: inline;
+    margin: 0 5px;
+}
+.breadcrumb li a {
+    color: #fff;
+    text-decoration: none;
+}
+.breadcrumb li.active {
+    color: #ffcc00;
+}
+
+/* Contact Form */
+.contact-us-area {
+    padding: 80px 0;
+    background: #f9f9f9;
+}
+.contact-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.form-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-content h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+button#submit {
+    background: #1298d5;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+button#submit:hover {
+    background: #0f7abf;
+}
+
+/* Contact Info */
+.info {
+    padding: 95px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.info h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.address-items .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.address-items .icon {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #1298d5;
+}
+</style>
+
+<script>
+  // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'Franchise_Enquire_Contact', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
+</script>
+<div id="toponebite">
+   <%= render HeaderComponent.new() %>
+   <div id="toponebitelogobox">
+      <img src="/assets/slider2.webp" style="width:170px; height:60px;">
+   </div>
+   <div id="toponebitegif">
+      <div class="toponebitegifleft">
+         <span class="calltext">Franchise Enquiry</span>
+         <span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">8800893218</a></span>
+      </div>
+      <div class="toponebitegifrigt"></div>
+   </div>
+</div>
+<div id="silderonebite">
+   <img src="/assets/Untitled-design-2-1-1.png" style="width:100%">
+</div>
+<div class="contact-us-area default-padding">
+    <div class="container">
+        <div class="row">
+            <div class="contact-box">
+                
+                <div class="row">
+                    <!-- Start Form -->
+                    <div class="col-md-5 form-box">
+                        <div class="form-content">
+                            <div class="heading">
+                                <h3>Get in Touch</h3>
+                            </div>
+                           <form action="mail.php" method="POST" class="contact-form">
+    <div class="form-group">
+        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+    </div>
+    <div class="form-group">
+        <input class="form-control" id="email" name="email" placeholder="Email*" type="email" required>
+        <span class="alert-error"></span>
+    </div>
+    <div class="form-group">
+        <input class="form-control" id="phone" name="phone" placeholder="Phone" type="text">
+        <span class="alert-error"></span>
+    </div>
+    
+    <!-- Franchise Model Selection -->
+    <div class="form-group">
+        <select class="form-control" id="franchise_model" name="franchise_model" required>
+            <option value="">Select Franchise Model</option>
+            <option value="Takeaway">Takeaway Model</option>
+            <option value="Standalone">Standalone Model</option>
+            <option value="Dine_in">Dine-in Model</option>
+        </select>
+    </div>
+
+    <!-- State Selection -->
+    <div class="form-group">
+        <select class="form-control" id="state" name="state" required>
+            <option value="">Select State</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+        </select>
+    </div>
+
+    <div class="form-group comments">
+        <textarea class="form-control" id="comments" name="comments" placeholder="Tell Us About Your Project *" required></textarea>
+    </div>
+    
+    <button type="submit" name="submit" id="submit" class="btn btn-primary">
+        Send Message <i class="fa fa-paper-plane"></i>
+    </button>
+
+    <!-- Alert Message -->
+    <div class="alert-notification">
+        <div id="message" class="alert-msg"></div>
+    </div>
+</form>
+
+                        </div>
+                    </div>
+                    <!-- End Form -->
+
+                    <!-- Contact Information -->
+                    <div class="col-md-6 col-md-offset-1 info">
+                        <h2>Contact Us</h2>
+                        <p align="justify">
+                            <b>We're here to help, listen, and collaborate. Whether you have questions, feedback, or ideas, reaching out to us is easy. Our dedicated team is committed to providing you with the assistance you need.</b>
+                        </p>
+                        <div class="address-items">
+                            <div class="row">
+                                <!-- Address -->
+                                <div class="col-md-6 col-sm-6 equal-height">
+                                    <div class="item">
+                                        <div class="icon"><i class="fas fa-map-marked-alt"></i></div> 
+                                        <span>Sec-I In front of Best Mart, Madiyaon Road, Near Prabhat Chauraha, Jankipuram, Lucknow, Uttar Pradesh - 226021</span>
+                                    </div>
+                                </div>
+                                <!-- Phone -->
+                                <div class="col-md-6 col-sm-6 equal-height">
+                                    <div class="item">
+                                        <div class="icon"><i class="fas fa-phone"></i></div> 
+                                        <span>+91-xxxxxxxx</span>
+                                    </div>
+                                </div>
+                                <!-- Email -->
+                                <div class="col-md-6 col-sm-6 equal-height">
+                                    <div class="item">
+                                        <div class="icon"><i class="fas fa-envelope-open"></i></div>
+                                        <span>banarasipaanfranchise@gmail.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Contact Information -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28459.053340915852!2d80.93248792379384!3d26.92311229875533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399957b75d9721a9%3A0x7b287d1599f1af94!2sJankipuram%2C%20Lucknow%2C%20Uttar%20Pradesh%20226021!5e0!3m2!1sen!2sin!4v1691999087261!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<%= render FooterComponent.new() %>   
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
+<script type="text/javascript">
+	    document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll(".single-cat-item .thumb");
+
+        function autoZoom(image) {
+            setInterval(() => {
+                image.classList.add("clicked");
+
+                // Reset zoom after animation
+                setTimeout(() => {
+                    image.classList.remove("clicked");
+                }, 300); // Matches CSS transition time
+            }, 2000); // Zooms every 2 seconds (Adjust time if needed)
+        }
+
+        images.forEach(image => {
+            autoZoom(image);
+        });
+    });
+    
+    document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.querySelector(".nav-menu");
+    const hamburger = document.querySelector(".hamburger");
+
+    hamburger.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+});
+function toggleMenu() {
+    document.querySelector(".menu-left").classList.toggle("active");
+    document.querySelector(".menu-right").classList.toggle("active");
+}
+function toggleMenu() {
+    document.querySelector(".menu-container").classList.toggle("active");
+}
+
+function sendToWhatsapp(){
+	let number ="9109871486921";
+	let name = document.getElementById('fullname').value;
+	let email = document.getElementById('emailid').value;
+	let phone = document.getElementById('phone').value;
+	let message = document.getElementById('message').value;
+	
+	var url = "https://wa.me/" + number + "?text=" + "name: " +name+ "%0a" + "email: " +email+ "%0a"+ "phone: " +phone+ "%0a" + "message: " +message+ "%0a%0a";
+	window.open(url,'_blank').focus();
+}
+</script>
+

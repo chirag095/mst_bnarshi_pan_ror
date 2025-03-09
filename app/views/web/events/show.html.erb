@@ -1,12 +1,15 @@
 <style>
 #mainbox .mainboxcol2 {
     background-image: url(/assets/300.webp);
-}
+}	
 @media screen and (max-width:600px){
 #toponebite{
 	display:none;
 }
 }
+
+html{margin:0px; padding:0px;}
+body{margin:0px; padding:0px;}
 #toponebite{
   background-image: url("/assets/Untitled-design-59-1-1.png");
   background-color: #cccccc;
@@ -111,6 +114,7 @@ font-weight:900;
 font-family:Roboto-Bold; line-height:1vw;}
 
 #toponebitemenu a:hover{color:#fff; background:#a32300; padding:.5vw; border-radius:1vw;}
+
 element.style {
 }
 *, *::before, *::after {
@@ -185,6 +189,63 @@ html {
 .single-cat-item .thumb.clicked {
     transform: scale(1.2); /* Zoom effect */
 }
+.blog-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+.blog-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.read-more:hover {
+    text-decoration: underline;
+}
+.blog-post {
+    display: none; /* Hide all posts initially */
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background: #1298d5;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    background: #0e7ab5;
+}
+
+.pagination span {
+    font-size: 18px;
+    margin: 0 10px;
+}
+.detail_blog {
+  width: 100%;
+  height: 500px;
+  object-fit: cover; /* This ensures the image scales properly */
+}
 
 bodynew {
     font-family: Arial, sans-serif;
@@ -192,7 +253,6 @@ bodynew {
     padding: 0;
     background: #f8f8f8;
 }
-
 .container {
     width: 90%;
     max-width: 1200px;
@@ -200,7 +260,6 @@ bodynew {
     padding: 20px;
     text-align: center;
 }
-
 h2 {
     font-size: 32px;
     color: #1298d5;
@@ -264,8 +323,8 @@ h2 {
   height: 500px;
   object-fit: cover; /* This ensures the image scales properly */
 }
-</style>
- <div id="toponebite">
+</style>  
+<div id="toponebite">
 	<%= render HeaderComponent.new() %>
 	<div id="toponebitelogobox">
 		<img src="/assets/slider2.webp" style="width:170px; height:60px;">
@@ -277,9 +336,10 @@ h2 {
 		</div>
 		<div class="toponebitegifrigt"></div>
 	</div>
+	
 </div>
 <div id="storebox">
-<img src="/assets/Image1.webp" class="storeboxbs event_page">
+<%= image_tag @event.image, loading: "lazy", class: "storeboxbs detail_blog" %>
 </div>
 <div id="storeboxm">
 <img src="/assets/onebite-map.png" class="storeboxbsm">
@@ -291,75 +351,26 @@ h2 {
 	</div>
 	<div class="mainboxcol2"></div>
 </div>
-<style>
-
-.franchiseprodboxhedingthree {
-    display: flex;
-    justify-content: center; /* Centers text */
-    align-items: center;
-    text-align: center;
-    padding: 10px 20px;
-    background: black;
-    border: 3px solid #ef0000;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    white-space: nowrap; /* Prevents text from wrapping */
-    max-width: 100%; /* Prevents overflow */
-}
-
-/* 3D Effect for Red Text */
-.franchiseprodboxhedingthree span:first-child {
-    font-size: 2vw; /* Responsive font size */
-    font-weight: bold;
-    color: #ef0000;
-}
-
-/* 3D Effect for White Text */
-.franchiseprodboxhedingthree span:last-child {
-    font-size: 1.8vw;
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 2px 2px 0px gray, 4px 4px 0px darkgray, 6px 6px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* 🔹 Responsive Adjustments */
-@media (max-width: 768px) {
-    .franchiseprodboxhedingthree {
-        padding: 8px 15px; /* Reduce padding */
-    }
-
-    .franchiseprodboxhedingthree span:first-child {
-        font-size: 4vw; /* Scale text dynamically */
-    }
-
-    .franchiseprodboxhedingthree span:last-child {
-        font-size: 3.5vw;
-    }
-}
-
-@media (max-width: 480px) {
-    .franchiseprodboxhedingthree {
-        flex-direction: column; /* Stack text vertically */
-        padding: 6px 10px;
-    }
-
-    .franchiseprodboxhedingthree span:first-child,
-    .franchiseprodboxhedingthree span:last-child {
-        font-size: 5vw; /* Larger text for small screens */
-    }
-}
-
-
-
-
-</style>
-<br>
-<br>
-<center>
-<div class="franchiseprodboxhedingthree">
-   <span>MAST BANARASI PAAN</span> <span>EVENT</span>
+<div class="franchiseprodboxhedingone">
+<span style="color:#8b0000;">Event</span> <span style="color:#ffff;"><%=@event.title%></span>
 </div>
-</center>
-
+<div class="container-fluid">
+     <div class="new_content_area"> 
+     
+       <h2><%=@event.heading1%></h2>
+        
+        <p class="h_data"><%=@event.content1%></p>
+       
+       <h2><%=@event.heading2%></h2>
+        <p class="h_data"><%=@event.content2%></p>
+      
+       <h2><%=@event.heading3%></h2>
+        <p class="h_data"><%@event.content3%></p> 
+       </div> 
+    </div>
+<div class="franchiseprodboxhedingone">
+<span style="color:#8b0000;">MAST BANARASI PAAN </span> <span style="color:#ffff;">EVENT</span>
+</div>
 <bodynew>
     <section id="events">
         <div class="container">
@@ -378,58 +389,39 @@ h2 {
         </div>
     </section>
 </bodynew>
-
-<center>
-<div class="franchiseprodboxhedingthree">
-   <span>MAST BANARASI PAAN</span> <span>Food Franchise in India</span>
-</div>
-</center>
-<br>
-<br>
-<div id="franchisemodelbox">
-	<%@pan_outlates.each do |outlate|%>
-   <div class="franchisemodelboxcolone">
-      <div class="franchisemodelboxcolhd"><%=outlate.title%> </div>
-      <% if outlate.image.attached? %>
-        <a href="<%=detail_path(id:outlate.id )%>"> <%= image_tag outlate.image, loading: "lazy", class: "franchisemodelboxcolrs" %></a>
-      <%end%>  
-      <span class="sizebox">Space Required</span> 
-      <div class="franchisemodelboxcolhdp"><%= outlate.space%></div>
-   </div>
-   <%end%>	
-</div>
 <div id="franchiescontactform">
-   <div class="franchiescontactformcon">
-      <div class="obhdbox-3" style=""><span style="color:#8b0000;">Scan QR code </span> <span style="color:#cd5906;">to Connect </span></div>
-      <div class="frobqrcodebutton"><img src="/assets/qr-codenewbestnew.png" class="scantocnntersp"></div>
-   </div>
-   <div class="franchiescontactformcon">
-      <div class="obhdbox-4" style=""><span style="color:#8b0000;">Fill up your Details to </span> <span style="color:#cd5906;"> Connect with us..!</span></div>
-      <%= form_with url: franchies_contact_path, method: :post, id: "franchiesformcontact" do %>
-      <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol" %>
-      <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol" %>
-      <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol" %>
-      <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), class: "inputcol" %>
-      <%= select_tag :state, options_from_collection_for_select(@states, :id, :title, prompt: "Select State"), class: "inputcol" %>
-      <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;" %>
-      <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()" %>
-      <% end %>
-   </div>
+	<div class="franchiescontactformcon">
+	<div class="obhdbox-3" style=""><span style="color:#1298d5;">Scan QR code </span> <span style="color:#cd5906;">to Connect </span></div>
+		<div class="frobqrcodebutton"><img src="/assets/qr-codenewbestnew.png" class="scantocnntersp"></div>
+	</div>
+	<div class="franchiescontactformcon">
+		<div class="obhdbox-4" style=""><span style="color:#1298d5;">Fill up your Details to </span> <span style="color:#cd5906;"> Connect with us..!</span></div>
+		<%= form_with url: franchies_contact_path, method: :post, id: "franchiesformcontact" do %>
+	      <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol" %>
+	      <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol" %>
+	      <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol" %>
+	      <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), class: "inputcol" %>
+	      <%= select_tag :state, options_from_collection_for_select(@states, :id, :title, prompt: "Select State"), class: "inputcol" %>
+	      <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;" %>
+	      <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()" %>
+	      <% end %>
+	</div>	
 </div>
 <%= render FooterComponent.new() %>
-<script src="jquery-3.4.1.js" type="text/javascript"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<script>
-document.querySelectorAll(".register-btn").forEach(button => {
-    button.addEventListener("click", function() {
-        alert("Thank you for your interest! Event registration will be available soon.");
-    });
-});
-</script>
-</body>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
 <script type="text/javascript">
-  // Helper function to delay opening a URL until a gtag event is sent.
+	function sendToWhatsapp(){
+	let number ="918076631024";
+	let name = document.getElementById('fullname').value;
+	let email = document.getElementById('emailid').value;
+	let phone = document.getElementById('phone').value;
+	let message = document.getElementById('message').value;
+	
+	var url = "https://wa.me/" + number + "?text=" + "name: " +name+ "%0a" + "email: " +email+ "%0a"+ "phone: " +phone+ "%0a" + "message: " +message+ "%0a%0a";
+	window.open(url,'_blank').focus();
+   }
+
+     // Helper function to delay opening a URL until a gtag event is sent.
   // Call it in response to an action that should navigate to a URL.
   function gtagSendEvent(url) {
     var callback = function () {
@@ -444,15 +436,4 @@ document.querySelectorAll(".register-btn").forEach(button => {
     });
     return false;
   }
-
-  function sendToWhatsapp(){
-	let number ="918076631024";
-	let name = document.getElementById('fullname').value;
-	let email = document.getElementById('emailid').value;
-	let phone = document.getElementById('phone').value;
-	let message = document.getElementById('message').value;
-	
-	var url = "https://wa.me/" + number + "?text=" + "name: " +name+ "%0a" + "email: " +email+ "%0a"+ "phone: " +phone+ "%0a" + "message: " +message+ "%0a%0a";
-	window.open(url,'_blank').focus();
-}
 </script>

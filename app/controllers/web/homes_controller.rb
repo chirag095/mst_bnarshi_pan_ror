@@ -25,7 +25,15 @@ class Web::HomesController < ApplicationController
 	# 	p params[:slug]
     #    @state = State.friendly.find(params[:slug])
     # end 
-
+        def contact_us
+	end 
+        
+        def product_detail
+		@states = State.all
+		@products = Product.all
+		@pan_outlates = PanOutlate.all
+		@product = Product.find_by_id(params[:id])
+	end
 	def create
 	    @user = User.new(user_params)
 
