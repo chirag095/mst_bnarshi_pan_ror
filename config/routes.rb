@@ -14,12 +14,14 @@ Rails.application.routes.draw do
   root "web/homes#index"
   get "/about" => "web/homes#about"
   post "/franchies_contact", to: "web/homes#create", as: "franchies_contact"
-  get "/:slug", to: "web/homes#state_detail", as: "state"
+  get "/states/:slug", to: "web/homes#state_detail", as: "state"
   get "/gallery", to: "web/galleries#index", as: "gallery"
   get "/blogs", to: "web/blogs#index", as: "blogs"
   get "/events", to: "web/events#index", as: "events"
   get "/detail", to: "web/homes#outlate_detail", as: "detail"
   get "/blog/detail", to: "web/blogs#detail", as: "blog/detail"
+  get "/award", to: "web/awards#index", as: "award"
+
   # namespace :web do
   #   namespace :homes do
       # resources :states, only: [:show], param: :slug

@@ -32,3 +32,18 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+google:
+  service: GCS
+  credentials:
+    type: "service_account"
+    project_id: "mastpaan"
+    private_key_id: <%= Rails.application.credentials.dig(:gcs, :private_key_id) %>
+    private_key: <%= Rails.application.credentials.dig(:gcs, :private_key).dump %>
+    client_email: "mastpaan@mastpaan.iam.gserviceaccount.com"
+    client_id: "113230153126309885238"
+    auth_uri: "https://accounts.google.com/o/oauth2/auth"
+    token_uri: "https://oauth2.googleapis.com/token"
+    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+    client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/mastpaan%40mastpaan.iam.gserviceaccount.com"
+  project: "mastpaan"
+  bucket: <%= ENV["GCS_BUCKET_NAME"] %>   
