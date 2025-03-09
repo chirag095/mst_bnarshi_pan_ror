@@ -244,10 +244,78 @@
 <div class="franchiseprodboxhedingfour">
    <span class="Presence">Our Presence</span>
 </div>
+<style>
+/* Container Styling */
+#ourperson {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default: 3 buttons per row */
+    gap: 10px; /* Space between buttons */
+    padding: 10px;
+    justify-content: center;
+}
+
+/* Button Styling */
+.statelist a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(180deg, #ff5733, #c70039); /* Gradient for 3D effect */
+    border: 2px solid #900c3f;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Creates the 3D effect */
+    transition: all 0.3s ease-in-out;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* Hover Effect */
+.statelist a:hover {
+    background: linear-gradient(180deg, #c70039, #ff5733);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: translateY(2px); /* Moves the button slightly down */
+}
+
+/* Active (Click) Effect */
+.statelist a:active {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    transform: translateY(4px); /* Makes it look pressed */
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    #ourperson {
+        grid-template-columns: repeat(2, 1fr); /* 2 buttons per row on tablets */
+    }
+
+    .statelist a {
+        padding: 10px 15px; /* Reduce padding */
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #ourperson {
+        grid-template-columns: repeat(3, 1fr); /* 3 buttons per row on mobile */
+    }
+
+    .statelist a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+
+</style>
+
 <div id="ourperson">
-<% @states.each do |state| %>
+  <% @states.each do |state| %>
     <span class="statelist">
-      <a href="<%= state_path(state) %>" style="color: white;"><%= state.title %></a>
+      <a href="<%= state_path(state) %>"><%= state.title %></a>
     </span>
   <% end %> 
 </div>
@@ -282,9 +350,73 @@
       </div>
    </div>
 </section>
-<div class="franchiseprodboxhedingtwo">
-   <a href="#"><span class="one" style="color:#ef0000;">MAST BANARASI PAAN </span><span class="bite"> Bite </span> <span class="franchise">Franchise</span></a> <span class="franchise">Model</span>
+<style>
+
+.franchiseprodboxhedingthree {
+    display: flex;
+    justify-content: center; /* Centers text */
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    background: black;
+    border: 3px solid #ef0000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* Prevents text from wrapping */
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* 3D Effect for Red Text */
+.franchiseprodboxhedingthree span:first-child {
+    font-size: 2vw; /* Responsive font size */
+    font-weight: bold;
+    color: #ef0000;
+}
+
+/* 3D Effect for White Text */
+.franchiseprodboxhedingthree span:last-child {
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 0px gray, 4px 4px 0px darkgray, 6px 6px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    .franchiseprodboxhedingthree {
+        padding: 8px 15px; /* Reduce padding */
+    }
+
+    .franchiseprodboxhedingthree span:first-child {
+        font-size: 4vw; /* Scale text dynamically */
+    }
+
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .franchiseprodboxhedingthree {
+        flex-direction: column; /* Stack text vertically */
+        padding: 6px 10px;
+    }
+
+    .franchiseprodboxhedingthree span:first-child,
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 5vw; /* Larger text for small screens */
+    }
+}
+
+
+
+
+</style>
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>MAST BANARASI PAAN</span> <span>Franchise Model</span>
 </div>
+</center>
+<br>
 <div id="franchisemodelbox">
    <%@pan_outlates.each do |outlate|%>
    <div class="franchisemodelboxcolone">
@@ -297,9 +429,14 @@
    </div>
    <%end%>   
 </div>
+
+<center>
 <div class="franchiseprodboxhedingthree">
-   <span style="color:#ef0000;">MAST BANARASI PAAN </span> <span style="color:#ffff;">Franchise Benefits</span>
+   <span>MAST BANARASI PAAN</span> <span>Franchise Benefits</span>
 </div>
+</center>
+
+
 <div id="franchisefeaturebox">
    <%@franchise_benefits.each do |franchise|%>
    <div class="franchisefeatureboxcol">
@@ -338,6 +475,10 @@
 </div>
 <!-----------------------------------------new Footer------------------------->
 <div class="galler_box_columnheading" style="font-family:library-3; border:.5vw solid #8b0000; font-size: 3vw; padding: 2vw; text-align: center; margin: 2vw;"><span style="color:#ef0000;">MAST BANARASI PAAN Blog </span> <span style="color:#ffff;">and News Centre</span></div>
+
+
+
+
 <div id="">
    <div id="newsectionsilderbox-silder">
       <div id="newsectionsilder-track">
@@ -352,9 +493,14 @@
    </div>
 </div>
 <bodynew>
-   <div class="franchiseprodboxhedingtwo">
-<a href="#"><span class="one" style="color:#ef0000;">FAQ’s of Food </span><span class="bite"> </span> <span class="franchise">Franchise in India</span></a> <span class="franchise">Model</span>
+
+
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>FAQ’s of Food</span> <span>Franchise in India Model</span>
 </div>
+</center>
+
    <div class="franchiseprodboxhedingtwo">
        <%@faqs.each do |faq|%>
            <div class="faq-item">
@@ -436,3 +582,4 @@
        });
    });
 </script>
+<!-- JavaScript for Mobile Menu -->
