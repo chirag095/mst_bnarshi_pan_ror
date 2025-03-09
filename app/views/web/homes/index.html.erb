@@ -335,11 +335,11 @@
             <div class="single-cat-item">
                <div class="thumb">
                   <% if pro.image.attached? %>
-                    <%= image_tag pro.image, loading: "lazy", class: "img-fluid" %>
+                    <a href="<%=product_detail_path(id: pro.id)%>"><%= image_tag pro.image, loading: "lazy", class: "img-fluid" %></a>
                  <%end%> 
                </div>
-               <a href="#"style="color:#ffffff;">
-                  <h4><%=pro.title%></h4>
+               <a href="<%= product_detail_path(id: pro.id)%>"style="color:#ffffff;">
+                 <h4><%=pro.title%></h4>
                </a>
                <p style="color:#ffffff;">
                   Mouth-watering paans with delicious fillings and exotic toppings. Have a bite of the once favourite paans of the royals.
