@@ -191,6 +191,73 @@ html {
 .single-cat-item .thumb.clicked {
     transform: scale(1.2); /* Zoom effect */
 }
+
+/* Container Styling */
+#ourperson {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default: 3 buttons per row */
+    gap: 10px; /* Space between buttons */
+    padding: 10px;
+    justify-content: center;
+}
+
+/* Button Styling */
+.statelist a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(180deg, #ff5733, #c70039); /* Gradient for 3D effect */
+    border: 2px solid #900c3f;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Creates the 3D effect */
+    transition: all 0.3s ease-in-out;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* Hover Effect */
+.statelist a:hover {
+    background: linear-gradient(180deg, #c70039, #ff5733);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: translateY(2px); /* Moves the button slightly down */
+}
+
+/* Active (Click) Effect */
+.statelist a:active {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    transform: translateY(4px); /* Makes it look pressed */
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    #ourperson {
+        grid-template-columns: repeat(2, 1fr); /* 2 buttons per row on tablets */
+    }
+
+    .statelist a {
+        padding: 10px 15px; /* Reduce padding */
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #ourperson {
+        grid-template-columns: repeat(3, 1fr); /* 3 buttons per row on mobile */
+    }
+
+    .statelist a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+
+
 </style>  
 <div id="toponebite">
 	<%= render HeaderComponent.new() %>
