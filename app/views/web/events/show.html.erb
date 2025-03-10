@@ -351,9 +351,15 @@ h2 {
 	</div>
 	<div class="mainboxcol2"></div>
 </div>
-<div class="franchiseprodboxhedingone">
+<%# <div class="franchiseprodboxhedingone">
 <span style="color:#8b0000;">Event</span> <span style="color:#ffff;"><%=@event.title%></span>
+</div> %>
+                 <center>
+<div class="franchiseprodboxhedingthree">
+   <span><%=@event.title%></span> <span>EVENT</span>
 </div>
+</center>
+
 <div class="container-fluid">
      <div class="new_content_area"> 
      
@@ -368,9 +374,16 @@ h2 {
         <p class="h_data"><%@event.content3%></p> 
        </div> 
     </div>
-<div class="franchiseprodboxhedingone">
+<%# <div class="franchiseprodboxhedingone">
 <span style="color:#8b0000;">MAST BANARASI PAAN </span> <span style="color:#ffff;">EVENT</span>
+</div> %>
+                 <center>
+<div class="franchiseprodboxhedingthree">
+   <span>MAST BANARASI PAAN </span> <span>EVENT</span>
 </div>
+</center>
+<br>
+
 <bodynew>
     <section id="events">
         <div class="container">
@@ -437,3 +450,65 @@ h2 {
     return false;
   }
 </script>
+
+<style>
+
+.franchiseprodboxhedingthree {
+    display: flex;
+    justify-content: center; /* Centers text */
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    background: black;
+    border: 3px solid #ef0000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* Prevents text from wrapping */
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* 3D Effect for Red Text */
+.franchiseprodboxhedingthree span:first-child {
+    font-size: 2vw; /* Responsive font size */
+    font-weight: bold;
+    color: #ef0000;
+}
+
+/* 3D Effect for White Text */
+.franchiseprodboxhedingthree span:last-child {
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 0px gray, 4px 4px 0px darkgray, 6px 6px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    .franchiseprodboxhedingthree {
+        padding: 8px 15px; /* Reduce padding */
+    }
+
+    .franchiseprodboxhedingthree span:first-child {
+        font-size: 4vw; /* Scale text dynamically */
+    }
+
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .franchiseprodboxhedingthree {
+        flex-direction: column; /* Stack text vertically */
+        padding: 6px 10px;
+    }
+
+    .franchiseprodboxhedingthree span:first-child,
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 5vw; /* Larger text for small screens */
+    }
+}
+
+
+
+
+</style>
