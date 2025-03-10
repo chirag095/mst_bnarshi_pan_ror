@@ -299,9 +299,77 @@ html {
     </span>
   <% end %> 
 </div>
-<div class="franchiseprodboxhedingone">
+<%# <div class="franchiseprodboxhedingone">
 <span style="color:#8b0000;">MAST BANARASI PAAN IN STATE </span> <span style="color:#ffff;"><%=@state.title%></span>
+</div> 
+<br>
+<br>
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>MAST BANARASI PAAN</span> <span><%=@state.title%></span>
 </div>
+</center>
+<style>
+
+.franchiseprodboxhedingthree {
+    display: flex;
+    justify-content: center; /* Centers text */
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    background: black;
+    border: 3px solid #ef0000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* Prevents text from wrapping */
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* 3D Effect for Red Text */
+.franchiseprodboxhedingthree span:first-child {
+    font-size: 2vw; /* Responsive font size */
+    font-weight: bold;
+    color: #ef0000;
+}
+
+/* 3D Effect for White Text */
+.franchiseprodboxhedingthree span:last-child {
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 0px gray, 4px 4px 0px darkgray, 6px 6px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    .franchiseprodboxhedingthree {
+        padding: 8px 15px; /* Reduce padding */
+    }
+
+    .franchiseprodboxhedingthree span:first-child {
+        font-size: 4vw; /* Scale text dynamically */
+    }
+
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .franchiseprodboxhedingthree {
+        flex-direction: column; /* Stack text vertically */
+        padding: 6px 10px;
+    }
+
+    .franchiseprodboxhedingthree span:first-child,
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 5vw; /* Larger text for small screens */
+    }
+}
+
+
+
+
+</style>
 
 <div class="container-fluid">
      <div class="new_content_area"> 
@@ -414,9 +482,17 @@ html {
              <p>Both franchises and franchisees are responsible for handling the marketing and Advertising for franchises to maintain consistent customer satisfaction.</p>
        </div> 
     </div>
-<div class="franchiseprodboxhedingtwo">
+<%# <div class="franchiseprodboxhedingtwo">
 <h1 style="color:#8b0000;">MAST BANARASI PAAN</span><span style="color:#ffff;"></span> <span style="color:#ffff;"> Food Franchise in India</h1>
+</div> %>
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>MAST BANARASI PAAN</span> <span>Food Franchise in India</span>
 </div>
+</center>
+<br>
+
+
 <div id="franchisemodelbox">
    <%@pan_outlates.each do |outlate|%>
    <div class="franchisemodelboxcolone">

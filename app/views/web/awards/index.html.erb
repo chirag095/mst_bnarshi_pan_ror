@@ -245,8 +245,15 @@
                <div class="padding-top-para"></div>
                <div class="padding-top-para"></div>
                <div class="rowgallery">
-                  <div class="galler_box_columnheading" style="font-family:library-3;  border:.5vw solid #1298d5; padding:.1vw 2vw; font-size:151%;"><span style="color:#1298d5;">Delicious Varieties Served </span><span style="color:#cd5906;">Banarasi Pan</span></div>
-               </div>
+               
+<br>
+
+               <center>
+<div class="franchiseprodboxhedingthree">
+   <span>Delicious Varieties Served</span> <span>MAST BANARASI PAAN AWORDS</span>
+</div>
+</center>
+<br>
                <div class="gallery_container">
 				  <% @awards.each do |award| %>
 				    <div class="galler_box_columnitem">
@@ -289,3 +296,64 @@
    }
 </script>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
+<style>
+
+.franchiseprodboxhedingthree {
+    display: flex;
+    justify-content: center; /* Centers text */
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    background: black;
+    border: 3px solid #ef0000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* Prevents text from wrapping */
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* 3D Effect for Red Text */
+.franchiseprodboxhedingthree span:first-child {
+    font-size: 2vw; /* Responsive font size */
+    font-weight: bold;
+    color: #ef0000;
+}
+
+/* 3D Effect for White Text */
+.franchiseprodboxhedingthree span:last-child {
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 0px gray, 4px 4px 0px darkgray, 6px 6px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    .franchiseprodboxhedingthree {
+        padding: 8px 15px; /* Reduce padding */
+    }
+
+    .franchiseprodboxhedingthree span:first-child {
+        font-size: 4vw; /* Scale text dynamically */
+    }
+
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .franchiseprodboxhedingthree {
+        flex-direction: column; /* Stack text vertically */
+        padding: 6px 10px;
+    }
+
+    .franchiseprodboxhedingthree span:first-child,
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 5vw; /* Larger text for small screens */
+    }
+}
+
+
+
+
+</style>

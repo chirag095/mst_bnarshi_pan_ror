@@ -70,7 +70,7 @@
    html{margin:0px; padding:0px;}
    body{margin:0px; padding:0px;}
    #toponebite{
-   background-color: #1e1c1c;
+   background-color: #294800;
    background-repeat: no-repeat;
    background-size: 100%;
    width:100%;
@@ -172,7 +172,7 @@
       <div id="toponebitegif">
          <div class="toponebitegifleft">
             <span class="calltext">Franchise Enquiry</span>
-            <span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">8800893218</a></span>
+            <span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">xxxxxxxx</a></span>
          </div>
          <div class="toponebitegifrigt"></div>
       </div> 
@@ -193,8 +193,75 @@
                <div class="flex-box-8">
                   <div class="flex padding-top-para"></div>
                   <p class="para">
-                     <b class="para-b" style="font-family:library-3; color:#8b0000">How We work </b><br />
+                    
                      <br />
+
+                     <center>
+<div class="franchiseprodboxhedingthree">
+   <span>MAST BANARASI PAAN</span> <span>How We work </span>
+</div>
+</center>
+<style>
+
+.franchiseprodboxhedingthree {
+    display: flex;
+    justify-content: center; /* Centers text */
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    background: black;
+    border: 3px solid #ef0000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* Prevents text from wrapping */
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* 3D Effect for Red Text */
+.franchiseprodboxhedingthree span:first-child {
+    font-size: 2vw; /* Responsive font size */
+    font-weight: bold;
+    color: #ef0000;
+}
+
+/* 3D Effect for White Text */
+.franchiseprodboxhedingthree span:last-child {
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 0px gray, 4px 4px 0px darkgray, 6px 6px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    .franchiseprodboxhedingthree {
+        padding: 8px 15px; /* Reduce padding */
+    }
+
+    .franchiseprodboxhedingthree span:first-child {
+        font-size: 4vw; /* Scale text dynamically */
+    }
+
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .franchiseprodboxhedingthree {
+        flex-direction: column; /* Stack text vertically */
+        padding: 6px 10px;
+    }
+
+    .franchiseprodboxhedingthree span:first-child,
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 5vw; /* Larger text for small screens */
+    }
+}
+
+
+
+
+</style>
                   <div class="flex">
                      <div class="about-image"><img src="/assets/onebite-about-us-work.png" loading="lazy" alt="one-bite-india-about-us" /></div>
                   </div>
@@ -206,9 +273,10 @@
                   <p class="para">
                   </p>
                   <p class="para">
-                     <b class="para-b"style="font-family:library-3; color:#8b0000">VISION:</b><br />
-                     Great things in business are never done by one person, they're done by a team of people. Our Franchisees for us is the same team of people who is supporting us and counting on us in <a href="">MAST BANARASI PAAN expansion for PAN INDIA</a>.
-                  </p>
+        <b class="para-b">VISION:</b><br />
+        Great things in business are never done by one person; they're done by a team of people. Our franchisees are the same team of people who support us and count on us in 
+        <a href="#">MAST BANARASI PAAN expansion for PAN INDIA</a>.
+    </p>
                   <div class="flex padding-top-para"></div>
                   <p class="para">
                      <b class="para-b"style="font-family:library-3; color:#8b0000">MISSION:</b><br />
@@ -222,4 +290,37 @@
          </div>
       </div>
    </div>
+    <style>
+        /* 3D Heading Effect */
+        .para-b {
+            font-family: library-3;
+            color: #8b0000;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 0px #444, 
+                         6px 6px 0px #222, 
+                         9px 9px 0px #000;
+        }
+
+        /* Content Styling */
+        .para {
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.5;
+            max-width: 600px;
+        }
+
+        /* Link Styling */
+        .para a {
+            color: #0073e6;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .para a:hover {
+            text-decoration: underline;
+        }
+    </style>
    <%= render FooterComponent.new() %>
