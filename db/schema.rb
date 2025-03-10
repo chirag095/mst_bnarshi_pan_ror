@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_09_175648) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_09_185230) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -57,6 +57,12 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_09_175648) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "heading1"
+    t.text "heading2"
+    t.text "heading3"
+    t.text "content1"
+    t.text "content2"
+    t.text "content3"
   end
 
   create_table "cities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -71,6 +77,12 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_09_175648) do
     t.text "discription"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "heading1"
+    t.text "heading2"
+    t.text "heading3"
+    t.text "content1"
+    t.text "content2"
+    t.text "content3"
   end
 
   create_table "faqs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -112,6 +124,12 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_09_175648) do
     t.datetime "updated_at", null: false
     t.string "space"
     t.string "title"
+    t.text "heading1"
+    t.text "heading2"
+    t.text "heading3"
+    t.text "content1"
+    t.text "content2"
+    t.text "content3"
   end
 
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -120,6 +138,12 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_09_175648) do
     t.text "discription"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "heading1"
+    t.text "heading2"
+    t.text "heading3"
+    t.text "content1"
+    t.text "content2"
+    t.text "content3"
   end
 
   create_table "states", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -127,6 +151,12 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_09_175648) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.text "heading1"
+    t.text "heading2"
+    t.text "heading3"
+    t.text "content1"
+    t.text "content2"
+    t.text "content3"
     t.index ["slug"], name: "index_states_on_slug", unique: true
   end
 
