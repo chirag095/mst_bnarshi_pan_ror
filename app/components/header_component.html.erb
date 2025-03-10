@@ -1,17 +1,68 @@
+<style type="text/css">
+   #onebitesmenuleft a {
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000000;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/* Dropdown menu items */
+.dropdown-menu a {
+    display: block;
+    padding: 8px 12px;
+    white-space: nowrap;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Styling for hover effect */
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+</style>
 <div id="toponebitelogo">
-      <div id="toponebitelogoul">
-         <div id="onebitesmenuleft">
-            <a href="<%= root_path%>">Home</a>
-            <a href="<%= about_path%>">About us</a>
-            <a href="<%=events_path%>">Events</a>
-            <a href="<%=gallery_path %>">Gallery</a>
-            <a href="#">Franchise Model</a>
+   <div id="toponebitelogoul">
+      <div id="onebitesmenuleft">
+         <a href="<%= root_path%>">Home</a>
+         <a href="<%= about_path%>">About us</a>
+         <div class="dropdown">
+            <a href="<%= events_path %>">Events</a>
+            <div class="dropdown-menu">
+               <% @events.each do |event|%>
+               <a href="<%=show_path(event)%>"><%=event.title%></a>
+               <%end%>
+            </div>
          </div>
-         <div id="onebitesmenulright">
-            <a href="<%= award_path%>">Franchise Awards</a>
-            <a href="<%=contact_us_path%>">Contact Us</a>      
-            <a href="#">Franchise Enquiry</a>
-            <a href="<%= blogs_path%>">News / Blogs</a>
-         </div>
+         <a href="<%=gallery_path %>">Gallery</a>
+         <a href="#">Franchise Model</a>
+      </div>
+      <div id="onebitesmenulright">
+         <a href="<%= award_path%>">Franchise Awards</a>
+         <a href="<%=contact_us_path%>">Contact Us</a>       
+         <a href="#">Franchise Enquiry</a>
+         <a href="<%= blogs_path%>">News / Blogs</a>
       </div>
    </div>
+</div>

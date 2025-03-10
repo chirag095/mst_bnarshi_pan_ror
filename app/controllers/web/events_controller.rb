@@ -8,6 +8,6 @@ class Web::EventsController < ApplicationController
 		@events = Event.all
         @states = State.all
 		@pan_outlates = PanOutlate.all
-		@event = Event.find_by_id(params[:id])
+		@event = Event.friendly.find(params[:slug])
 	end
 end

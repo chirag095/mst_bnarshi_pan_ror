@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_09_185230) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_10_161546) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -83,6 +83,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_09_185230) do
     t.text "content1"
     t.text "content2"
     t.text "content3"
+    t.string "slug"
+    t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
   create_table "faqs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -130,6 +132,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_09_185230) do
     t.text "content1"
     t.text "content2"
     t.text "content3"
+    t.string "slug"
+    t.index ["slug"], name: "index_pan_outlates_on_slug", unique: true
   end
 
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -144,6 +148,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_09_185230) do
     t.text "content1"
     t.text "content2"
     t.text "content3"
+    t.string "slug"
+    t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
   create_table "states", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

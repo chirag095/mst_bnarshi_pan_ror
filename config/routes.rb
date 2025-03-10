@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get "/detail", to: "web/homes#outlate_detail", as: "detail"
   get "/blog/detail", to: "web/blogs#detail", as: "blog/detail"
   get "/award", to: "web/awards#index", as: "award"
- get "/show", to: "web/events#show", as: "show"
+ get "/show/:slug", to: "web/events#show", as: "show"
  get "/contact_us", to: "web/homes#contact_us", as: "contact_us"
  get "/product/detail", to: "web/homes#product_detail", as: "product_detail"
   # namespace :web do
