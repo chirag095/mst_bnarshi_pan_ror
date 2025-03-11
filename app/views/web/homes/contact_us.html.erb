@@ -314,9 +314,7 @@ button#submit:hover {
 </script>
 <div id="toponebite">
    <%= render HeaderComponent.new() %>
-   <div id="toponebitelogobox">
-      <img src="/assets/slider2.webp" style="width:170px; height:60px;">
-   </div>
+   
    <div id="toponebitegif">
       <div class="toponebitegifleft">
          <span class="calltext">Franchise Enquiry</span>
@@ -340,74 +338,30 @@ button#submit:hover {
                             <div class="heading">
                                 <h3>Get in Touch</h3>
                             </div>
-                           <form action="mail.php" method="POST" class="contact-form">
-    <div class="form-group">
-        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-    </div>
-    <div class="form-group">
-        <input class="form-control" id="email" name="email" placeholder="Email*" type="email" required>
-        <span class="alert-error"></span>
-    </div>
-    <div class="form-group">
-        <input class="form-control" id="phone" name="phone" placeholder="Phone" type="text">
-        <span class="alert-error"></span>
-    </div>
-    
-    <!-- Franchise Model Selection -->
-    <div class="form-group">
-        <select class="form-control" id="franchise_model" name="franchise_model" required>
-            <option value="">Select Franchise Model</option>
-            <option value="Takeaway">Takeaway Model</option>
-            <option value="Standalone">Standalone Model</option>
-            <option value="Dine_in">Dine-in Model</option>
-        </select>
-    </div>
+                           <%= form_with url: franchies_contact_path(action_form: "contact_us"), method: :post, class: "contact-form" do %>
+                      <div class="form-group">
+                        <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "form-control", required: true %>
+                      </div>
+                      <div class="form-group">
+                        <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "form-control", required: true %>
+                      </div>  
+                      <div class="form-group">
+                        <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "form-control", required: true %>
+                      </div>
+                      <div class="form-group">  
+                        <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), class: "form-control" %>
+                      </div>
+                      <div class="form-group">  
+                        <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), { prompt: "Select State", class: "form-control" } %>
 
-    <!-- State Selection -->
-    <div class="form-group">
-        <select class="form-control" id="state" name="state" required>
-            <option value="">Select State</option>
-            <option value="Andhra Pradesh">Andhra Pradesh</option>
-            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-            <option value="Assam">Assam</option>
-            <option value="Bihar">Bihar</option>
-            <option value="Chhattisgarh">Chhattisgarh</option>
-            <option value="Goa">Goa</option>
-            <option value="Gujarat">Gujarat</option>
-            <option value="Haryana">Haryana</option>
-            <option value="Himachal Pradesh">Himachal Pradesh</option>
-            <option value="Jharkhand">Jharkhand</option>
-            <option value="Karnataka">Karnataka</option>
-            <option value="Madhya Pradesh">Madhya Pradesh</option>
-            <option value="Maharashtra">Maharashtra</option>
-            <option value="Manipur">Manipur</option>
-            <option value="Mizoram">Mizoram</option>
-            <option value="Nagaland">Nagaland</option>
-            <option value="Odisha">Odisha</option>
-            <option value="Punjab">Punjab</option>
-            <option value="Rajasthan">Rajasthan</option>
-            <option value="Sikkim">Sikkim</option>
-            <option value="Telangana">Telangana</option>
-            <option value="Tripura">Tripura</option>
-            <option value="Uttar Pradesh">Uttar Pradesh</option>
-            <option value="Uttarakhand">Uttarakhand</option>
-            <option value="West Bengal">West Bengal</option>
-        </select>
-    </div>
-
-    <div class="form-group comments">
-        <textarea class="form-control" id="comments" name="comments" placeholder="Tell Us About Your Project *" required></textarea>
-    </div>
-    
-    <button type="submit" name="submit" id="submit" class="btn btn-primary">
-        Send Message <i class="fa fa-paper-plane"></i>
-    </button>
-
-    <!-- Alert Message -->
-    <div class="alert-notification">
-        <div id="message" class="alert-msg"></div>
-    </div>
-</form>
+                      </div> 
+                      <div class="form-group comments">
+                        <%= text_area_tag :description, nil, placeholder: "Write something..", class: "form-control", required: true %>
+                      </div>
+                      <div>
+                        <%= submit_tag 'Send Message', class: 'btn btn-primary' %>
+                      </div>
+                        <% end %>
 
                         </div>
                     </div>

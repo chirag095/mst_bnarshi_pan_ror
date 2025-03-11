@@ -202,12 +202,103 @@ html {
   height: 500px;
   object-fit: cover; /* This ensures the image scales properly */
 }
+ bodynew {
+      font-family: Arial, sans-serif;
+  }
+  h2 {
+      text-align: center;
+  }
+  .faq-container {
+      max-width: 700px;
+      margin: auto;
+  }
+  .faq-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+  }
+  .faq-question {
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .faq-answer {
+      display: none;
+      padding: 10px;
+      font-size: 16px;
+      color: #fff;
+  }
+  .faq-question::after {
+      content: '+';
+      font-size: 20px;
+  }
+  .faq-question.active::after {
+      content: '-';
+  }
+  .franchiseprodboxhedingthree {
+    display: flex;
+    justify-content: center; /* Centers text */
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    background: black;
+    border: 3px solid #ef0000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* Prevents text from wrapping */
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* 3D Effect for Red Text */
+.franchiseprodboxhedingthree span:first-child {
+    font-size: 2vw; /* Responsive font size */
+    font-weight: bold;
+    color: #ef0000;
+}
+
+/* 3D Effect for White Text */
+.franchiseprodboxhedingthree span:last-child {
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 0px gray, 4px 4px 0px darkgray, 6px 6px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    .franchiseprodboxhedingthree {
+        padding: 8px 15px; /* Reduce padding */
+    }
+
+    .franchiseprodboxhedingthree span:first-child {
+        font-size: 4vw; /* Scale text dynamically */
+    }
+
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .franchiseprodboxhedingthree {
+        flex-direction: column; /* Stack text vertically */
+        padding: 6px 10px;
+    }
+
+    .franchiseprodboxhedingthree span:first-child,
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 5vw; /* Larger text for small screens */
+    }
+}
+
+
+
+
 </style>
  <div id="toponebite">
 	<%= render HeaderComponent.new() %>
-	<div id="toponebitelogobox">
-		<img src="/assets/slider2.webp" style="width:170px; height:60px;">
-	</div>
+	
 	<div id="toponebitegif">
 		<div class="toponebitegifleft">
 			<span class="calltext">Franchise Enquiry</span>
@@ -217,11 +308,15 @@ html {
 	</div>
 </div>
 <div id="storebox">
+    <% if @outlate.image.attached? %>
 <%= image_tag @outlate.image, loading: "lazy", class: "storeboxbs detail_outlate" %>
+<%end%>
 <%# <img src="/assets/takway.jpeg" class="storeboxbs"> %>
 </div>
 <div id="storeboxm">
-<img src="/assets/onebite-map.png" class="storeboxbsm">
+    <% if @outlate.image.attached? %>
+<%= image_tag @outlate.image, loading: "lazy", class: "storeboxbsm" %>
+<%end%>
 </div>
 <div id="mainbox">
 	<div class="mainboxcol1">
@@ -230,36 +325,43 @@ html {
 	</div>
 	<div class="mainboxcol2"></div>
 </div>
-<div class="franchiseprodboxhedingone">
+<%# <div class="franchiseprodboxhedingone">
 <span style="color:#8b0000;"><%=@outlate&.title%> </span> <span style="color:#ffff;">MODEL</span>
+</div> %>
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span><%=@outlate&.title%> </span> <span>  &nbsp;&nbsp;&nbsp; MODEL</span>
 </div>
-
+</center>
 <div class="container-fluid">
      <div class="new_content_area"> 
      
-       <h2>Best Food Franchise in India</h2>
+       <h2><%=@outlate.heading1%></h2>
         
-        <p class="h_data">Several Food Franchises in India are proliferating and achieving business growth and financial goals. India offers a greater scope of expansion, profitability and market growth for the food franchise businesses. In addition to thi, such franchise businesses are becoming more popular in India due to their financial and proven business model along with the support from India’s reforming digital structure.</p>
+        <p class="h_data"><%=@outlate.content1%></p>
        
-       <h2>Overview of One Bite Food Franchise</h2>
-        <p class="h_data">One Bite is one of the fastest growing food restaurant chains in India with more than 300 active outlets within 26 states covering 280 cities and towns. The brand has great customer recognition due to its diverse menu, high-quality food and dedicated customer service. Getting the One Bite Food Franchise is a great business option for individuals looking for a profitable venture in India. With One Bite Food Franchise, franchisees will get the benefits of low investments with strong brand recognition and secure business operations. One Bite Food Franchises are easy to set up as they require fewer investments and ensure financial stability with generous profits.</p>
+       <h2><%=@outlate.heading2%></h2>
+        <p class="h_data"><%=@outlate.content2%></p>
       
-       <h2>Types of Food Franchises</h2>
-        <p class="h_data"></p>
-        
-        <h3>Fast Food Franchises</h3>
-        <p>A Fast Food Franchise operates on the brand identity of an established food chain selling different types of food types. A Fast Food Franchise uses the branding methods and business model of an established brand and enjoys the profits of regular customers. Fast Food Franchises are more efficient and operate smoothly with standard procedures.</p> 
+       <h2><%=@outlate.heading3%></h2>
+        <p class="h_data"><%@outlate.content3%></p> 
        </div> 
     </div>
-<div class="franchiseprodboxhedingtwo">
+<%# <div class="franchiseprodboxhedingtwo">
 <h1 style="color:#8b0000;">MAST BANARASI PAAN</span><span style="color:#ffff;"></span> <span style="color:#ffff;"> Food Franchise in India</h1>
+</div> %>
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>MAST BANARASI PAAN</span> <span>  &nbsp;&nbsp;&nbsp; Food Franchise in India</span>
 </div>
+</center>
+
 <div id="franchisemodelbox">
    <%@pan_outlates.each do |outlate|%>
    <div class="franchisemodelboxcolone">
       <div class="franchisemodelboxcolhd"><%=outlate.title%> </div>
       <% if outlate.image.attached? %>
-        <a href="<%=detail_path(id:outlate.id )%>"> <%= image_tag outlate.image, loading: "lazy", class: "franchisemodelboxcolrs" %></a>
+        <a href="<%=model_path(outlate )%>"> <%= image_tag outlate.image, loading: "lazy", class: "franchisemodelboxcolrs" %></a>
       <%end%>  
       <span class="sizebox">Space Required</span> 
       <div class="franchisemodelboxcolhdp"><%= outlate.space%></div>
@@ -273,7 +375,7 @@ html {
 	</div>
 	<div class="franchiescontactformcon">
 		<div class="obhdbox-4" style=""><span style="color:#1298d5;">Fill up your Details to </span> <span style="color:#cd5906;"> Connect with us..!</span></div>
-		<%= form_with url: franchies_contact_path, method: :post, id: "franchiesformcontact" do %>
+		<%= form_with url: franchies_contact_path(action_form: "outlate", outlate_id: @outlate ), method: :post, id: "franchiesformcontact" do %>
 	      <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol" %>
 	      <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol" %>
 	      <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol" %>
@@ -284,6 +386,24 @@ html {
 	      <% end %>
 	</div>	
 </div>
+<bodynew>
+
+
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>FAQ’s of Food</span> <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Franchise in India Model</span>
+</div>
+</center>
+
+   <div class="franchiseprodboxhedingtwo">
+       <%@faqs.each do |faq|%>
+           <div class="faq-item">
+               <div class="faq-question"><%=faq.question%></div>
+               <div class="faq-answer"><%=faq.answer%></div>
+           </div>
+      <%end%>  
+    </div>
+</bodynew>
 <%= render FooterComponent.new() %>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
 <script type="text/javascript">
@@ -312,4 +432,15 @@ html {
 	var url = "https://wa.me/" + number + "?text=" + "name: " +name+ "%0a" + "email: " +email+ "%0a"+ "phone: " +phone+ "%0a" + "message: " +message+ "%0a%0a";
 	window.open(url,'_blank').focus();
 }
+document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+          item.classList.toggle('active');
+          let answer = item.nextElementSibling;
+          if (answer.style.display === "block") {
+              answer.style.display = "none";
+          } else {
+              answer.style.display = "block";
+          }
+      });
+  });
 </script>

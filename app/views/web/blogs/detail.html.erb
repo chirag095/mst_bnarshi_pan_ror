@@ -249,9 +249,7 @@ html {
 </style>  
 <div id="toponebite">
 	<%= render HeaderComponent.new() %>
-	<div id="toponebitelogobox">
-		<img src="/assets/slider2.webp" style="width:170px; height:60px;">
-	</div>
+	
 	<div id="toponebitegif">
 		<div class="toponebitegifleft">
 			<span class="calltext">Franchise Enquiry</span>
@@ -265,7 +263,7 @@ html {
 <%= image_tag @blog.image, loading: "lazy", class: "storeboxbs detail_blog" %>
 </div>
 <div id="storeboxm">
-<img src="/assets/onebite-map.png" class="storeboxbsm">
+<%= image_tag @blog.image, loading: "lazy", class: "storeboxbsm" %>
 </div>
 <div id="mainbox">
 	<div class="mainboxcol1">
@@ -286,18 +284,15 @@ html {
 <div class="container-fluid">
      <div class="new_content_area"> 
      
-       <h2>Best Food Franchise in India</h2>
+        <h2><%=@blog.heading1%></h2>
         
-        <p class="h_data">Several Food Franchises in India are proliferating and achieving business growth and financial goals. India offers a greater scope of expansion, profitability and market growth for the food franchise businesses. In addition to thi, such franchise businesses are becoming more popular in India due to their financial and proven business model along with the support from India’s reforming digital structure.</p>
+        <p class="h_data"><%=@blog.content1%></p>
        
-       <h2>Overview of One Bite Food Franchise</h2>
-        <p class="h_data">One Bite is one of the fastest growing food restaurant chains in India with more than 300 active outlets within 26 states covering 280 cities and towns. The brand has great customer recognition due to its diverse menu, high-quality food and dedicated customer service. Getting the One Bite Food Franchise is a great business option for individuals looking for a profitable venture in India. With One Bite Food Franchise, franchisees will get the benefits of low investments with strong brand recognition and secure business operations. One Bite Food Franchises are easy to set up as they require fewer investments and ensure financial stability with generous profits.</p>
+       <h2><%=@blog.heading2%></h2>
+        <p class="h_data"><%=@blog.content2%></p>
       
-       <h2>Types of Food Franchises</h2>
-        <p class="h_data"></p>
-        
-        <h3>Fast Food Franchises</h3>
-        <p>A Fast Food Franchise operates on the brand identity of an established food chain selling different types of food types. A Fast Food Franchise uses the branding methods and business model of an established brand and enjoys the profits of regular customers. Fast Food Franchises are more efficient and operate smoothly with standard procedures.</p>  
+       <h2><%=@blog.heading3%></h2>
+        <p class="h_data"><%@blog.content3%></p> 
        </div> 
     </div>
 <%# <div class="franchiseprodboxhedingone">
@@ -329,7 +324,7 @@ html {
                         <%= image_tag blog.image, loading: "lazy",alt: "Blog Image 1", class: "img-fluid" %>
                         <h5><%=blog.title%></h5>
                         <p><%=blog.description%></p>
-                        <a href="<%=blog_detail_path(id: blog.id)%>" class="read-more">Read More</a>
+                        <a href="<%=blog_path(blog)%>" class="read-more">Read More</a>
                     </div>
                 </div>
             <%end%>
@@ -350,7 +345,7 @@ html {
 	</div>
 	<div class="franchiescontactformcon">
 		<div class="obhdbox-4" style=""><span style="color:#1298d5;">Fill up your Details to </span> <span style="color:#cd5906;"> Connect with us..!</span></div>
-		<%= form_with url: franchies_contact_path, method: :post, id: "franchiesformcontact" do %>
+		<%= form_with url: franchies_contact_path(action_form: "blog_detail"), method: :post, id: "franchiesformcontact" do %>
 	      <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol" %>
 	      <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol" %>
 	      <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol" %>

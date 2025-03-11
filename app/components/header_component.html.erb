@@ -41,6 +41,14 @@
 .dropdown-menu a:hover {
     background-color: #f0f0f0;
 }
+#toponebitelogobox {
+    display: flex;
+    justify-content: center;  /* Centers logo horizontally */
+    align-items: center;  /* Centers logo vertically */
+    height: 80px;  /* Adjust based on header height */
+    background: black; /* Optional: Background color */
+    padding: 10px;
+}
 </style>
 <div id="toponebitelogo">
    <div id="toponebitelogoul">
@@ -51,13 +59,25 @@
             <a href="<%= events_path %>">Events</a>
             <div class="dropdown-menu">
                <% @events.each do |event|%>
-               <a href="<%=show_path(event)%>"><%=event.title%></a>
+               <a href="<%=event_path(event)%>"><%=event.title%></a>
                <%end%>
             </div>
          </div>
          <a href="<%=gallery_path %>">Gallery</a>
-         <a href="#">Franchise Model</a>
+        
+         
+         <div class="dropdown">
+            <a href="#">Franchise Model</a>
+            <div class="dropdown-menu">
+               <% @pan_outlates.each do |outlate|%>
+               <a href="<%=model_path(outlate)%>"><%=outlate.title%></a>
+               <%end%>
+            </div>
+         </div>
       </div>
+       <div id="toponebitelogobox">
+      <img src="/assets/slider2.webp " style="width:170px; height:60px;">
+   </div>
       <div id="onebitesmenulright">
          <a href="<%= award_path%>">Franchise Awards</a>
          <a href="<%=contact_us_path%>">Contact Us</a>       

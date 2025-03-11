@@ -12,6 +12,7 @@ class Web::HomesController < ApplicationController
 	end
 
 	def state_detail
+		@faqs = Faq.all
 		@states = State.all
 		@pan_outlates = PanOutlate.all
 		# @state = State.find_by_id(params[:id])
@@ -26,20 +27,43 @@ class Web::HomesController < ApplicationController
     #    @state = State.friendly.find(params[:slug])
     # end 
         def contact_us
+        	@states = State.all
+		@pan_outlates = PanOutlate.all
 	end 
         
         def product_detail
+        @faqs = Faq.all
 		@states = State.all
 		@products = Product.all
 		@pan_outlates = PanOutlate.all
-		@product = Product.find_by_id(params[:id])
+		@product = Product.friendly.find(params[:slug])
 	end
 	def create
 	    @user = User.new(user_params)
 
 	    if @user.save
 	      flash[:notice] = "Your request has been submitted successfully!"
-	      redirect_to root_path # Change to the desired path
+	      if params[:action_form] == "home"
+	         redirect_to root_path 
+	      elsif params[:action_form] == "contact_us"
+	      	redirect_to contact_us_path
+	      elsif params[:action_form] == "outlate"
+            redirect_to model_path(params[:outlate_id] )
+	      elsif params[:action_form] == "product"
+            redirect_to product_detail_path(params[:product_id])
+	      elsif params[:action_form] == "state"	
+           redirect_to states_path
+	      elsif params[:action_form] == "event_show"
+           redirect_to events_path
+	      elsif params[:action_form] == "event"	
+           redirect_to events_path
+	      elsif params[:action_form] == "blog"
+           redirect_to blogs_path
+	      elsif params[:action_form] == "blog_detail"
+           redirect_to blogs_path
+	      else
+	      	redirect_to root_path
+	      end   	   
 	    else
 	      flash[:alert] = "There was an error submitting the form."
 	      render :new
@@ -47,9 +71,10 @@ class Web::HomesController < ApplicationController
 	end
 
 	def outlate_detail
+		 @faqs = Faq.all
 		@states = State.all
 		@pan_outlates = PanOutlate.all
-		@outlate = PanOutlate.find_by_id(params[:id])
+		@outlate = PanOutlate.friendly.find(params[:slug])
 	end
 
 	private

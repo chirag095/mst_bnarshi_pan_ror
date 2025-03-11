@@ -18,12 +18,12 @@ Rails.application.routes.draw do
   get "/gallery", to: "web/galleries#index", as: "gallery"
   get "/blogs", to: "web/blogs#index", as: "blogs"
   get "/events", to: "web/events#index", as: "events"
-  get "/detail", to: "web/homes#outlate_detail", as: "detail"
-  get "/blog/detail", to: "web/blogs#detail", as: "blog/detail"
+  get "/model/:slug", to: "web/homes#outlate_detail", as: "model"
+  get "/blog/:slug", to: "web/blogs#detail", as: "blog"
   get "/award", to: "web/awards#index", as: "award"
- get "/show/:slug", to: "web/events#show", as: "show"
+ get "/event/:slug", to: "web/events#show", as: "event"
  get "/contact_us", to: "web/homes#contact_us", as: "contact_us"
- get "/product/detail", to: "web/homes#product_detail", as: "product_detail"
+ get "/product/:slug", to: "web/homes#product_detail", as: "product"
   # namespace :web do
   #   namespace :homes do
       # resources :states, only: [:show], param: :slug

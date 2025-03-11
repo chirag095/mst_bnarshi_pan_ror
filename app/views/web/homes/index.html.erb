@@ -213,13 +213,12 @@
   .faq-question.active::after {
       content: '-';
   }
-
 </style>
 <div id="toponebite">
    <%= render HeaderComponent.new() %>
-   <div id="toponebitelogobox">
-      <img src="/assets/slider2.webp" style="width:170px; height:60px;">
-   </div>
+   
+   
+
    <div id="toponebitegif">
       <div class="toponebitegifleft">
          <span class="calltext">Franchise Enquiry</span>
@@ -335,10 +334,10 @@
             <div class="single-cat-item">
                <div class="thumb">
                   <% if pro.image.attached? %>
-                    <a href="<%=product_detail_path(id: pro.id)%>"><%= image_tag pro.image, loading: "lazy", class: "img-fluid" %></a>
+                    <a href="<%=product_path(pro)%>"><%= image_tag pro.image, loading: "lazy", class: "img-fluid" %></a>
                  <%end%> 
                </div>
-               <a href="<%= product_detail_path(id: pro.id)%>"style="color:#ffffff;">
+               <a href="<%= product_path(pro)%>"style="color:#ffffff;">
                  <h2><%=pro.title%></h2>
                </a>
                <p style="color:#ffffff;">
@@ -422,7 +421,7 @@
    <div class="franchisemodelboxcolone">
       <div class="franchisemodelboxcolhd"><%=outlate.title%></div>
       <% if outlate.image.attached? %>
-       <a href="<%=detail_path(id:outlate.id )%>"> <%= image_tag outlate.image, loading: "lazy", class: "franchisemodelboxcolrs" %></a>
+       <a href="<%=model_path(outlate )%>"> <%= image_tag outlate.image, loading: "lazy", class: "franchisemodelboxcolrs" %></a>
       <%end%>  
       <span class="sizebox">Space Required</span> 
       <div class="franchisemodelboxcolhdp"><%= outlate.space%></div>
@@ -474,6 +473,10 @@
    </div>
 </div>
 <!-----------------------------------------new Footer------------------------->
+
+
+
+
 <div class="galler_box_columnheading" style="font-family:library-3; border:.5vw solid #8b0000; font-size: 3vw; padding: 2vw; text-align: center; margin: 2vw;"><span style="color:#ef0000;">MAST BANARASI PAAN Blog </span> <span style="color:#ffff;">and News Centre</span></div>
 
 
@@ -581,5 +584,7 @@
            autoZoom(image);
        });
    });
+
 </script>
 <!-- JavaScript for Mobile Menu -->
+   

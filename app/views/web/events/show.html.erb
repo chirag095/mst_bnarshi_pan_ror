@@ -326,9 +326,7 @@ h2 {
 </style>  
 <div id="toponebite">
 	<%= render HeaderComponent.new() %>
-	<div id="toponebitelogobox">
-		<img src="/assets/slider2.webp" style="width:170px; height:60px;">
-	</div>
+	
 	<div id="toponebitegif">
 		<div class="toponebitegifleft">
 			<span class="calltext">Franchise Enquiry</span>
@@ -344,7 +342,9 @@ h2 {
 <%end%>
 </div>
 <div id="storeboxm">
-<img src="/assets/onebite-map.png" class="storeboxbsm">
+    <% if @event.image.attached? %>
+<%= image_tag @event.image, loading: "lazy", class: "storeboxbsm" %>
+<%end%>
 </div>
 <div id="mainbox">
 	<div class="mainboxcol1">
@@ -398,7 +398,7 @@ h2 {
                     <div class="event-info">
                         <h3><%=event.title%></h3>
                         <p><%= event.discription%></p>
-                        <a href="<%=show_path(event)%>"><button class="register-btn">Register Now</button></a>
+                        <a href="<%=event_path(event)%>"><button class="register-btn">Register Now</button></a>
                     </div>  
                 </div>
                 <%end%>  
@@ -413,7 +413,7 @@ h2 {
 	</div>
 	<div class="franchiescontactformcon">
 		<div class="obhdbox-4" style=""><span style="color:#1298d5;">Fill up your Details to </span> <span style="color:#cd5906;"> Connect with us..!</span></div>
-		<%= form_with url: franchies_contact_path, method: :post, id: "franchiesformcontact" do %>
+		<%= form_with url: franchies_contact_path(action_form: "event_show"), method: :post, id: "franchiesformcontact" do %>
 	      <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol" %>
 	      <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol" %>
 	      <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol" %>
@@ -424,6 +424,24 @@ h2 {
 	      <% end %>
 	</div>	
 </div>
+<bodynew>
+
+
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>FAQ’s of Food</span> <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Franchise in India Model</span>
+</div>
+</center>
+
+   <div class="franchiseprodboxhedingtwo">
+       <%@faqs.each do |faq|%>
+           <div class="faq-item">
+               <div class="faq-question"><%=faq.question%></div>
+               <div class="faq-answer"><%=faq.answer%></div>
+           </div>
+      <%end%>  
+    </div>
+</bodynew>
 <%= render FooterComponent.new() %>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
 <script type="text/javascript">
@@ -453,6 +471,17 @@ h2 {
     });
     return false;
   }
+  document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+          item.classList.toggle('active');
+          let answer = item.nextElementSibling;
+          if (answer.style.display === "block") {
+              answer.style.display = "none";
+          } else {
+              answer.style.display = "block";
+          }
+      });
+  });
 </script>
 
 <style>
@@ -512,7 +541,41 @@ h2 {
     }
 }
 
-
+ bodynew {
+      font-family: Arial, sans-serif;
+  }
+  h2 {
+      text-align: center;
+  }
+  .faq-container {
+      max-width: 700px;
+      margin: auto;
+  }
+  .faq-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+  }
+  .faq-question {
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .faq-answer {
+      display: none;
+      padding: 10px;
+      font-size: 16px;
+      color: #fff;
+  }
+  .faq-question::after {
+      content: '+';
+      font-size: 20px;
+  }
+  .faq-question.active::after {
+      content: '-';
+  }
 
 
 </style>
