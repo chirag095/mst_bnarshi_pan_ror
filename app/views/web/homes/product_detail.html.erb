@@ -293,6 +293,9 @@ html {
 }
 
 </style>
+<% title @product.title || @product.seo_title%>
+<% description @product.seo_description %>
+<% keywords @product.seo_keywords %>
  <div id="toponebite">
 	<%= render HeaderComponent.new() %>
 	
@@ -326,7 +329,7 @@ html {
 
 <br>
 
-               <center>
+<center>
 <div class="franchiseprodboxhedingthree">
    <span><%=@product&.title%></span> <span>MODEL</span>
 </div>
@@ -351,7 +354,7 @@ html {
 
 <br>
 
-               <center>
+<center>
 <div class="franchiseprodboxhedingthree">
    <span>MAST BANARASI PAAN</span> <span>Food Franchise in India</span>
 </div>
@@ -414,6 +417,7 @@ html {
     </div>
 </bodynew>
 <%= render FooterComponent.new() %>
+<%= render MobHeaderComponent.new() %>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
 <script type="text/javascript">
   // Helper function to delay opening a URL until a gtag event is sent.

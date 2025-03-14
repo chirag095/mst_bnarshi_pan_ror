@@ -1,9 +1,7 @@
 <style>
-   #mainbox .mainboxcol2 {
+    #mainbox .mainboxcol2 {
    background-image: url('/assets/300.webp');
    }
-</style>
-<style>
    @media screen and (max-width:600px){
    #toponebite{
    display:none;
@@ -213,37 +211,19 @@
   .faq-question.active::after {
       content: '-';
   }
-</style>
-<div id="toponebite">
-   <%= render HeaderComponent.new() %>
-   
-   
-
-   <div id="toponebitegif">
-      <div class="toponebitegifleft">
-         <span class="calltext">Franchise Enquiry</span>
-         <span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">8800893218</a></span>
-      </div>
-      <div class="toponebitegifrigt"></div>
-   </div>
-</div>
-<div id="silderonebite">
-   <img src="/assets/Untitled-design-2-1-1.png" style="width:100%">
-</div>
-<div id="mainbox">
-   <div class="mainboxcol1">
-      <div class="mainboxfn">Franchise Enquiry</div>
-      <div class="mainboxpn"><a onclick="return gtag_report_conversion('tel:9311771842');" href="tel:9311771842"> 9311771842</a></div>
-   </div>
-   <div class="mainboxcol2"></div>
-</div>
-<div id="silderbox">
-   <img src="/assets/Untitled-design-2-1-1.png" class="silderboxbs">
-</div>
-<div class="franchiseprodboxhedingfour">
-   <span class="Presence">Our Presence</span>
-</div>
-<style>
+  @media only screen and (max-width: 600px) {
+    #mainbox {
+        display: flex;
+        flex-direction: row;
+        top: 0vw !important;
+        position: fixed;
+        border: .0vh solid red;
+        height: 17vw !important;
+        background: black;
+        z-index: 2;
+        width: 100%;
+    }
+}
 /* Container Styling */
 #ourperson {
     display: grid;
@@ -309,48 +289,6 @@
 }
 
 
-</style>
-
-<div id="ourperson">
-  <% @states.each do |state| %>
-    <span class="statelist">
-      <a href="<%= state_path(state) %>"><%= state.title %></a>
-    </span>
-  <% end %> 
-</div>
-<div class="franchiseprodboxhedingone">
-   <span style="color:#ffffff;">Having More Than </span> <span style="color:#ffffff;">100 Scrumptious Varieties</span>
-</div>
-<section class="item-category-area section-gap" id="menu">
-   <div class="container">
-      <div class="row d-flex justify-content-center">
-         <div class="col-md-12 pb-80 header-text text-center">
-            </br>
-         </div>
-      </div>
-      <div class="row">
-         <%@prodicts.each do |pro|%>
-         <div class="col-lg-3 col-md-6">
-            <div class="single-cat-item">
-               <div class="thumb">
-                  <% if pro.image.attached? %>
-                    <a href="<%=product_path(pro)%>"><%= image_tag pro.image, loading: "lazy", class: "img-fluid" %></a>
-                 <%end%> 
-               </div>
-               <a href="<%= product_path(pro)%>"style="color:#ffffff;">
-                 <h2><%=pro.title%></h2>
-               </a>
-               <p style="color:#ffffff;">
-                  Mouth-watering paans with delicious fillings and exotic toppings. Have a bite of the once favourite paans of the royals.
-               </p>
-            </div>
-         </div>
-         <%end%>
-      </div>
-   </div>
-</section>
-<style>
-
 .franchiseprodboxhedingthree {
     display: flex;
     justify-content: center; /* Centers text */
@@ -406,10 +344,82 @@
     }
 }
 
-
-
-
+}
 </style>
+<div id="toponebite">
+   <%= render HeaderComponent.new() %>
+   
+   <!-- Franchise Enquiry Section (Only for Mobile) -->
+<div class="toponebitegifleft">
+    <span class="calltext">Franchise Enquiry</span>
+    <span class="calltextphone">
+        <a href="tel:9311771842" class="phone-link">8800893218</a>
+    </span>
+</div>
+<div id="toponebitegif">
+      <div class="toponebitegifleft">
+         <span class="calltext">Franchise Enquiry</span>
+         <span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">8800893218</a></span>
+      </div>
+      <div class="toponebitegifrigt"></div>
+   </div>
+</div>
+<div id="silderonebite">
+   <img src="/assets/Untitled-design-2-1-1.png" style="width:100%">
+</div>
+<div id="mainbox" class="mobimage">
+   <div class="mainboxcol1">
+      <div class="mainboxfn">Franchise Enquiry</div>
+      <div class="mainboxpn"><a onclick="return gtag_report_conversion('tel:9311771842');" href="tel:9311771842"> 9311771842</a></div>
+   </div>
+   <div class="mainboxcol2"></div>
+</div>
+<div id="silderbox">
+   <img src="/assets/Untitled-design-2-1-1.png" class="silderboxbs">
+</div>
+<div class="franchiseprodboxhedingfour">
+   <span class="Presence">Our Presence</span>
+</div>
+
+<div id="ourperson">
+  <% @states.each do |state| %>
+    <span class="statelist">
+      <a href="<%= state_path(state) %>"><%= state.title %></a>
+    </span>
+  <% end %> 
+</div>
+<div class="franchiseprodboxhedingone">
+   <span style="color:#ffffff;">Having More Than </span> <span style="color:#ffffff;">100 Scrumptious Varieties</span>
+</div>
+<section class="item-category-area section-gap" id="menu">
+   <div class="container">
+      <div class="row d-flex justify-content-center">
+         <div class="col-md-12 pb-80 header-text text-center">
+            </br>
+         </div>
+      </div>
+      <div class="row">
+         <%@prodicts.each do |pro|%>
+         <div class="col-lg-3 col-md-6">
+            <div class="single-cat-item">
+               <div class="thumb">
+                  <% if pro.image.attached? %>
+                    <a href="<%=product_path(pro)%>"><%= image_tag pro.image, loading: "lazy", class: "img-fluid" %></a>
+                 <%end%> 
+               </div>
+               <a href="<%= product_path(pro)%>"style="color:#ffffff;">
+                 <h2><%=pro.title%></h2>
+               </a>
+               <p style="color:#ffffff;">
+                  Mouth-watering paans with delicious fillings and exotic toppings. Have a bite of the once favourite paans of the royals.
+               </p>
+            </div>
+         </div>
+         <%end%>
+      </div>
+   </div>
+</section>
+
 <center>
 <div class="franchiseprodboxhedingthree">
    <span>MAST BANARASI PAAN</span> <span>  &nbsp;&nbsp;&nbsp; Franchise Model</span>
@@ -472,15 +482,8 @@
       <% end %>
    </div>
 </div>
-<!-----------------------------------------new Footer------------------------->
-
-
-
 
 <div class="galler_box_columnheading" style="font-family:library-3; border:.5vw solid #8b0000; font-size: 3vw; padding: 2vw; text-align: center; margin: 2vw;"><span style="color:#ef0000;">MAST BANARASI PAAN Blog </span> <span style="color:#ffff;">and News Centre</span></div>
-
-
-
 
 <div id="">
    <div id="newsectionsilderbox-silder">
@@ -516,6 +519,8 @@
 <!----------------------------------->
 <%= render FooterComponent.new() %>
 <!--------------------------Footer Section End------------------------->
+<%= render MobHeaderComponent.new() %>
+
 <div class="whatjulyboxleft"><a href="https://api.whatsapp.com/send?phone=919311771842"><i class="julywhatleft fab fa-whatsapp"></i></a></div>
 <div class="whatjulyboxright"><a onclick="return gtag_report_conversion('https://api.whatsapp.com/send?phone=919311771842')" href="https://api.whatsapp.com/send?phone=919311771842"><i class="julywhatright fab fa-whatsapp"></i></a></div>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>

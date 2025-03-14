@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_11_171430) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_14_121008) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -64,6 +64,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_11_171430) do
     t.text "content2"
     t.text "content3"
     t.string "slug"
+    t.text "seo_description"
+    t.text "seo_keywords"
+    t.text "seo_title"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
   end
 
@@ -86,6 +89,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_11_171430) do
     t.text "content2"
     t.text "content3"
     t.string "slug"
+    t.text "seo_description"
+    t.text "seo_keywords"
+    t.text "seo_title"
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
@@ -94,6 +100,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_11_171430) do
     t.text "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "faq_type"
   end
 
   create_table "franchise_benefits", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -135,6 +142,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_11_171430) do
     t.text "content2"
     t.text "content3"
     t.string "slug"
+    t.text "seo_description"
+    t.text "seo_keywords"
+    t.text "seo_title"
     t.index ["slug"], name: "index_pan_outlates_on_slug", unique: true
   end
 
@@ -151,6 +161,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_11_171430) do
     t.text "content2"
     t.text "content3"
     t.string "slug"
+    t.text "seo_description"
+    t.text "seo_keywords"
+    t.text "seo_title"
     t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
@@ -165,6 +178,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_11_171430) do
     t.text "content1"
     t.text "content2"
     t.text "content3"
+    t.text "seo_description"
+    t.text "seo_keywords"
+    t.text "seo_title"
     t.index ["slug"], name: "index_states_on_slug", unique: true
   end
 

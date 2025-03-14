@@ -1,0 +1,125 @@
+<style>
+   /* Default: Hide mobile menu on larger screens */
+   #obdpmenuseven, #obdpmenusix {
+   display: none;
+   }
+   /* Responsive: Mobile-friendly menu (Max width: 768px) */
+   @media screen and (max-width: 768px) {
+   /* Show menu button */
+   #obdpmenuseven {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: black;
+   padding: 10px 15px;
+   position: fixed;
+   top: 48px;
+   left: 0;
+   width: 100%;
+   z-index: 1000;
+   }
+   /* Menu items container */
+   #obdpmenusix {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   background: rgba(0, 0, 0, 0.95);
+   text-align: center;
+   padding-top: 60px;
+   z-index: 999;
+   }
+   /* Menu Links */
+   #obdpmenusix a {
+   display: block;
+   padding: 15px;
+   color: white;
+   font-size: 18px;
+   font-weight: bold;
+   text-decoration: none;
+   transition: background 0.3s ease-in-out;
+   }
+   #obdpmenusix a:hover {
+   background: #ff6600;
+   }
+   /* Menu Icons */
+   .obdpmenutfour, .obdpmenutfive {
+   font-size: 26px;
+   cursor: pointer;
+   color: white;
+   }
+   /* Close button hidden by default */
+   #closebutton {
+   display: none;
+   }
+   /* Logo styling */
+   .obdpmenutseven img {
+   max-height: 50px;
+   display: block;
+   margin: auto;
+   }
+   }
+</style>
+<!------------Phone Version-------->
+<div id="obdpmenuseven">
+   <div class="obdpmenutfour" id="menubutton" onclick="showBtn()"><i class="fa-solid fa-bars"></i></div>
+   <div class="obdpmenutfive" id="closebutton" onclick="closeBtn()"><i class="fa-solid fa-xmark"></i></div>
+   <br>
+   <br>
+   <br>
+   <div class="obdpmenutseven"><a href="index.html"><img src="/assets/slider2.webp " class="sevenmenutwors"></a></div>
+</div>
+<div id="obdpmenusix" class="menusix">
+   <div class="obdpmenusix">
+      <div class="menusixglnavbar">
+         <a href="<%= root_path%>">Home</a>
+         <a href="<%= about_path%>">About us</a>
+         <div class="dropdown">
+            <a href="<%= events_path %>">Events</a>
+            <div class="dropdown-menu">
+               <% @events.each do |event|%>
+               <a href="<%=event_path(event)%>"><%=event.title%></a>
+               <%end%>
+            </div>
+         </div>
+         <a href="<%=gallery_path %>">Gallery</a>
+         <div class="dropdown">
+            <a href="#">Franchise Model</a>
+            <div class="dropdown-menu">
+               <% @pan_outlates.each do |outlate|%>
+               <a href="<%=model_path(outlate)%>"><%=outlate.title%></a>
+               <%end%>
+            </div>
+         </div>
+            <a href="<%= award_path%>">Franchise Awards</a>
+            <a href="<%=contact_us_path%>">Contact Us</a>       
+            <a href="#">Franchise Enquiry</a>
+            <a href="<%= blogs_path%>">News / Blogs</a>
+      </div>
+   </div>
+</div>
+<script type="text/javascript">
+   function isMobile() {
+    return window.innerWidth <= 768; // Check if the screen width is for mobile
+   }
+   
+   function showBtn() {
+    if (isMobile()) {
+        document.getElementById("obdpmenusix").style.display = "block"; 
+        document.getElementById("menubutton").style.display = "none";  
+        document.getElementById("closebutton").style.display = "block";  
+    }
+   }
+   
+   function closeBtn() {
+    if (isMobile()) {
+        document.getElementById("obdpmenusix").style.display = "none"; 
+        document.getElementById("menubutton").style.display = "block";  
+        document.getElementById("closebutton").style.display = "none";  
+    }
+   }
+   
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">

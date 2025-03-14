@@ -305,7 +305,9 @@ html {
             <%@blogs.each do |blog|%>
                 <div class="col-md-4 blog-post">
                     <div class="blog-card">
+                        <% if blog.image.attached? %>
                         <%= image_tag blog.image, loading: "lazy",alt: "Blog Image 1", class: "img-fluid" %>
+                        <%end%>
                         <h5><%=blog.title%></h5>
                         <p><%=blog.description%></p>
                         <a href="<%=blog_path(blog)%>" class="read-more">Read More</a>
@@ -341,6 +343,7 @@ html {
    </div>
 </div>
 <%= render FooterComponent.new() %>
+<%= render MobHeaderComponent.new() %>
 <script src="jquery-3.4.1.js" type="text/javascript"></script>
 <script src="js/ftcss.js"></script>
 <script src="js/customejs.js"></script>

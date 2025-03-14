@@ -323,168 +323,6 @@ h2 {
   height: 500px;
   object-fit: cover; /* This ensures the image scales properly */
 }
-</style>  
-<div id="toponebite">
-	<%= render HeaderComponent.new() %>
-	
-	<div id="toponebitegif">
-		<div class="toponebitegifleft">
-			<span class="calltext">Franchise Enquiry</span>
-			<span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">xxxxxxxx</a></span>
-		</div>
-		<div class="toponebitegifrigt"></div>
-	</div>
-	
-</div>
-<div id="storebox">
-<% if @event.image.attached? %>
-  <%= image_tag @event.image, loading: "lazy", class: "storeboxbs detail_blog" %>
-<%end%>
-</div>
-<div id="storeboxm">
-    <% if @event.image.attached? %>
-<%= image_tag @event.image, loading: "lazy", class: "storeboxbsm" %>
-<%end%>
-</div>
-<div id="mainbox">
-	<div class="mainboxcol1">
-		<div class="mainboxfn">Franchise Enquiry</div>
-		<div class="mainboxpn"><a onclick="return gtag_report_conversion('tel:9311771842');" href="tel:9311771842"> 9311771842</a></div>
-	</div>
-	<div class="mainboxcol2"></div>
-</div>
-<%# <div class="franchiseprodboxhedingone">
-<span style="color:#8b0000;">Event</span> <span style="color:#ffff;"><%=@event.title%></span>
-</div> %>
-                 <center>
-<div class="franchiseprodboxhedingthree">
-   <span><%=@event.title%></span> <span>EVENT</span>
-</div>
-</center>
-
-<div class="container-fluid">
-     <div class="new_content_area"> 
-     
-       <h2><%=@event.heading1%></h2>
-        
-        <p class="h_data"><%=@event.content1%></p>
-       
-       <h2><%=@event.heading2%></h2>
-        <p class="h_data"><%=@event.content2%></p>
-      
-       <h2><%=@event.heading3%></h2>
-        <p class="h_data"><%@event.content3%></p> 
-       </div> 
-    </div>
-<%# <div class="franchiseprodboxhedingone">
-<span style="color:#8b0000;">MAST BANARASI PAAN </span> <span style="color:#ffff;">EVENT</span>
-</div> %>
-                 <center>
-<div class="franchiseprodboxhedingthree">
-   <span>MAST BANARASI PAAN </span> <span>EVENT</span>
-</div>
-</center>
-<br>
-
-<bodynew>
-    <section id="events">
-        <div class="container">
-           <div class="event-list">
-             <%@events.each do |event|%>
-               <div class="event-card">
-                 <% if event.image.attached? %>
-                   <%= image_tag event.image, loading: "lazy", alt: "Paan Festival", class: "galler_box_columnitemrps" %>
-                 <%end%>
-                    <div class="event-info">
-                        <h3><%=event.title%></h3>
-                        <p><%= event.discription%></p>
-                        <a href="<%=event_path(event)%>"><button class="register-btn">Register Now</button></a>
-                    </div>  
-                </div>
-                <%end%>  
-            </div>
-        </div>
-    </section>
-</bodynew>
-<div id="franchiescontactform">
-	<div class="franchiescontactformcon">
-	<div class="obhdbox-3" style=""><span style="color:#1298d5;">Scan QR code </span> <span style="color:#cd5906;">to Connect </span></div>
-		<div class="frobqrcodebutton"><img src="/assets/qr-codenewbestnew.png" class="scantocnntersp"></div>
-	</div>
-	<div class="franchiescontactformcon">
-		<div class="obhdbox-4" style=""><span style="color:#1298d5;">Fill up your Details to </span> <span style="color:#cd5906;"> Connect with us..!</span></div>
-		<%= form_with url: franchies_contact_path(action_form: "event_show"), method: :post, id: "franchiesformcontact" do %>
-	      <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol" %>
-	      <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol" %>
-	      <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol" %>
-	      <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), class: "inputcol" %>
-	      <%= select_tag :state, options_from_collection_for_select(@states, :id, :title, prompt: "Select State"), class: "inputcol" %>
-	      <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;" %>
-	      <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()" %>
-	      <% end %>
-	</div>	
-</div>
-<bodynew>
-
-
-<center>
-<div class="franchiseprodboxhedingthree">
-   <span>FAQ’s of Food</span> <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Franchise in India Model</span>
-</div>
-</center>
-
-   <div class="franchiseprodboxhedingtwo">
-       <%@faqs.each do |faq|%>
-           <div class="faq-item">
-               <div class="faq-question"><%=faq.question%></div>
-               <div class="faq-answer"><%=faq.answer%></div>
-           </div>
-      <%end%>  
-    </div>
-</bodynew>
-<%= render FooterComponent.new() %>
-<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
-<script type="text/javascript">
-	function sendToWhatsapp(){
-	let number ="918076631024";
-	let name = document.getElementById('fullname').value;
-	let email = document.getElementById('emailid').value;
-	let phone = document.getElementById('phone').value;
-	let message = document.getElementById('message').value;
-	
-	var url = "https://wa.me/" + number + "?text=" + "name: " +name+ "%0a" + "email: " +email+ "%0a"+ "phone: " +phone+ "%0a" + "message: " +message+ "%0a%0a";
-	window.open(url,'_blank').focus();
-   }
-
-     // Helper function to delay opening a URL until a gtag event is sent.
-  // Call it in response to an action that should navigate to a URL.
-  function gtagSendEvent(url) {
-    var callback = function () {
-      if (typeof url === 'string') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'Franchise_Enquire_Contact', {
-      'event_callback': callback,
-      'event_timeout': 2000,
-      // <event_parameters>
-    });
-    return false;
-  }
-  document.querySelectorAll('.faq-question').forEach(item => {
-      item.addEventListener('click', () => {
-          item.classList.toggle('active');
-          let answer = item.nextElementSibling;
-          if (answer.style.display === "block") {
-              answer.style.display = "none";
-          } else {
-              answer.style.display = "block";
-          }
-      });
-  });
-</script>
-
-<style>
 
 .franchiseprodboxhedingthree {
     display: flex;
@@ -577,5 +415,161 @@ h2 {
       content: '-';
   }
 
+</style> 
+<% title @event.title || @event.seo_title%>
+<% description @event.seo_description %>
+<% keywords @event.seo_keywords %> 
+<div id="toponebite">
+	<%= render HeaderComponent.new() %>
+	
+	<div id="toponebitegif">
+		<div class="toponebitegifleft">
+			<span class="calltext">Franchise Enquiry</span>
+			<span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">xxxxxxxx</a></span>
+		</div>
+		<div class="toponebitegifrigt"></div>
+	</div>
+	
+</div>
+<div id="storebox">
+<% if @event.image.attached? %>
+  <%= image_tag @event.image, loading: "lazy", class: "storeboxbs detail_blog" %>
+<%end%>
+</div>
+<div id="storeboxm">
+<% if @event.image.attached? %>
+<%= image_tag @event.image, loading: "lazy", class: "storeboxbsm" %>
+<%end%>
+</div>
+<div id="mainbox">
+	<div class="mainboxcol1">
+		<div class="mainboxfn">Franchise Enquiry</div>
+		<div class="mainboxpn"><a onclick="return gtag_report_conversion('tel:9311771842');" href="tel:9311771842"> 9311771842</a></div>
+	</div>
+	<div class="mainboxcol2"></div>
+</div>
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span><%=@event.title%></span> <span>EVENT</span>
+</div>
+</center>
 
-</style>
+<div class="container-fluid">
+     <div class="new_content_area"> 
+     
+       <h2><%=@event.heading1%></h2>
+        
+        <p class="h_data"><%=@event.content1%></p>
+       
+       <h2><%=@event.heading2%></h2>
+        <p class="h_data"><%=@event.content2%></p>
+      
+       <h2><%=@event.heading3%></h2>
+        <p class="h_data"><%=@event.content3%></p> 
+       </div> 
+    </div>
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>MAST BANARASI PAAN </span> <span>EVENT</span>
+</div>
+</center>
+<br>
+
+<bodynew>
+    <section id="events">
+        <div class="container">
+           <div class="event-list">
+             <%@events.each do |event|%>
+               <div class="event-card">
+                 <% if event.image.attached? %>
+                   <%= image_tag event.image, loading: "lazy", alt: "Paan Festival", class: "galler_box_columnitemrps" %>
+                 <%end%>
+                    <div class="event-info">
+                        <h3><%=event.title%></h3>
+                        <p><%= event.discription%></p>
+                        <a href="<%=event_path(event)%>"><button class="register-btn">Register Now</button></a>
+                    </div>  
+                </div>
+                <%end%>  
+            </div>
+        </div>
+    </section>
+</bodynew>
+<div id="franchiescontactform">
+	<div class="franchiescontactformcon">
+	<div class="obhdbox-3" style=""><span style="color:#1298d5;">Scan QR code </span> <span style="color:#cd5906;">to Connect </span></div>
+		<div class="frobqrcodebutton"><img src="/assets/qr-codenewbestnew.png" class="scantocnntersp"></div>
+	</div>
+	<div class="franchiescontactformcon">
+		<div class="obhdbox-4" style=""><span style="color:#1298d5;">Fill up your Details to </span> <span style="color:#cd5906;"> Connect with us..!</span></div>
+		<%= form_with url: franchies_contact_path(action_form: "event_show"), method: :post, id: "franchiesformcontact" do %>
+	      <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol" %>
+	      <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol" %>
+	      <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol" %>
+	      <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), class: "inputcol" %>
+	      <%= select_tag :state, options_from_collection_for_select(@states, :id, :title, prompt: "Select State"), class: "inputcol" %>
+	      <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;" %>
+	      <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()" %>
+	      <% end %>
+	</div>	
+</div>
+<bodynew>
+
+
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>FAQ’s of Food</span> <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Franchise in India Model</span>
+</div>
+</center>
+
+   <div class="franchiseprodboxhedingtwo">
+       <%@faqs.each do |faq|%>
+           <div class="faq-item">
+               <div class="faq-question"><%=faq.question%></div>
+               <div class="faq-answer"><%=faq.answer%></div>
+           </div>
+      <%end%>  
+    </div>
+</bodynew>
+<%= render FooterComponent.new() %>
+<%= render MobHeaderComponent.new() %>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
+<script type="text/javascript">
+	function sendToWhatsapp(){
+	let number ="918076631024";
+	let name = document.getElementById('fullname').value;
+	let email = document.getElementById('emailid').value;
+	let phone = document.getElementById('phone').value;
+	let message = document.getElementById('message').value;
+	
+	var url = "https://wa.me/" + number + "?text=" + "name: " +name+ "%0a" + "email: " +email+ "%0a"+ "phone: " +phone+ "%0a" + "message: " +message+ "%0a%0a";
+	window.open(url,'_blank').focus();
+   }
+
+     // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'Franchise_Enquire_Contact', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
+  document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+          item.classList.toggle('active');
+          let answer = item.nextElementSibling;
+          if (answer.style.display === "block") {
+              answer.style.display = "none";
+          } else {
+              answer.style.display = "block";
+          }
+      });
+  });
+</script>

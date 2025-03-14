@@ -4,8 +4,9 @@ class Web::EventsController < ApplicationController
 		@states = State.all
 		@pan_outlates = PanOutlate.all
 	end
-        def show
-        @faqs = Faq.all
+	
+    def show
+        @faqs = Faq.where(faq_type: :event)
 		@events = Event.all
         @states = State.all
 		@pan_outlates = PanOutlate.all

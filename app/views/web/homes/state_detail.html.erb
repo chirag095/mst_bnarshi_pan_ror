@@ -257,58 +257,6 @@ html {
 }
 
 
-
-</style>  
-<div id="toponebite">
-	<%= render HeaderComponent.new() %>
-	
-	<div id="toponebitegif">
-		<div class="toponebitegifleft">
-			<span class="calltext">Franchise Enquiry</span>
-			<span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">xxxxxxxx</a></span>
-		</div>
-		<div class="toponebitegifrigt"></div>
-	</div>
-
-</div>
-<div id="storebox">
-<div class="storeboxbshd" style=""><span style="color:#f9ff0d;">300+ Restaurant</span> <span style="color:#8b0000;">Pan India</span></div>
-<img src="/assets/mp_desktop.png" class="storeboxbs">
-</div>
-<div id="storeboxm">
-<img src="/assets/onebite-map.png" class="storeboxbsm">
-</div>
-<div id="mainbox">
-	<div class="mainboxcol1">
-		<div class="mainboxfn">Franchise Enquiry</div>
-		<div class="mainboxpn"><a onclick="return gtag_report_conversion('tel:9311771842');" href="tel:9311771842"> 9311771842</a></div>
-	</div>
-	<div class="mainboxcol2"></div>
-</div>
-
-<div class="franchiseprodboxhedingfour">
-<span class="Presence">OUR STATES FRANCHISE</span>
-</div>
-
-<div id="ourperson">
-<% @states.each do |state| %>
-    <span class="statelist">
-      <a href="<%= state_path(state) %>" style="color: white;"><%= state.title %></a>
-    </span>
-  <% end %> 
-</div>
-<%# <div class="franchiseprodboxhedingone">
-<span style="color:#8b0000;">MAST BANARASI PAAN IN STATE </span> <span style="color:#ffff;"><%=@state.title%></span>
-</div> 
-<br>
-<br>
-<center>
-<div class="franchiseprodboxhedingthree">
-   <span>MAST BANARASI PAAN</span> <span><%=@state.title%></span>
-</div>
-</center>
-<style>
-
 .franchiseprodboxhedingthree {
     display: flex;
     justify-content: center; /* Centers text */
@@ -400,8 +348,57 @@ html {
       content: '-';
   }
 
+</style>  
+<% title @state.title || @state.seo_title%>
+<% description @state.seo_description %>
+<% keywords @state.seo_keywords %>
+<div id="toponebite">
+	<%= render HeaderComponent.new() %>
+	
+	<div id="toponebitegif">
+		<div class="toponebitegifleft">
+			<span class="calltext">Franchise Enquiry</span>
+			<span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">xxxxxxxx</a></span>
+		</div>
+		<div class="toponebitegifrigt"></div>
+	</div>
 
-</style>
+</div>
+<div id="storebox">
+<div class="storeboxbshd" style=""><span style="color:#f9ff0d;">300+ Restaurant</span> <span style="color:#8b0000;">Pan India</span></div>
+<img src="/assets/mp_desktop.png" class="storeboxbs">
+</div>
+<div id="storeboxm">
+<img src="/assets/onebite-map.png" class="storeboxbsm">
+</div>
+<div id="mainbox">
+	<div class="mainboxcol1">
+		<div class="mainboxfn">Franchise Enquiry</div>
+		<div class="mainboxpn"><a onclick="return gtag_report_conversion('tel:9311771842');" href="tel:9311771842"> 9311771842</a></div>
+	</div>
+	<div class="mainboxcol2"></div>
+</div>
+
+<div class="franchiseprodboxhedingfour">
+<span class="Presence">OUR STATES FRANCHISE</span>
+</div>
+
+<div id="ourperson">
+<% @states.each do |state| %>
+    <span class="statelist">
+      <a href="<%= state_path(state) %>" style="color: white;"><%= state.title %></a>
+    </span>
+  <% end %> 
+</div>
+</span>
+</div> 
+<br>
+<br>
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>MAST BANARASI PAAN</span> <span><%=@state.title%></span>
+</div>
+</center>
 
 <div class="container-fluid">
      <div class="new_content_area"> 
@@ -414,12 +411,9 @@ html {
         <p class="h_data"><%=@state.content2%></p>
       
        <h2><%=@state.heading3%></h2>
-        <p class="h_data"><%@state.content3%></p> 
+        <p class="h_data"><%=@state.content3%></p> 
        </div> 
     </div>
-<%# <div class="franchiseprodboxhedingtwo">
-<h1 style="color:#8b0000;">MAST BANARASI PAAN</span><span style="color:#ffff;"></span> <span style="color:#ffff;"> Food Franchise in India</h1>
-</div> %>
 <center>
 <div class="franchiseprodboxhedingthree">
    <span>MAST BANARASI PAAN</span> <span>Food Franchise in India</span>
@@ -475,6 +469,7 @@ html {
     </div>
 </bodynew>
 <%= render FooterComponent.new() %>
+<%= render MobHeaderComponent.new() %>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
 <script type="text/javascript">
       // Helper function to delay opening a URL until a gtag event is sent.

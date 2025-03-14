@@ -292,10 +292,10 @@ html {
     }
 }
 
-
-
-
 </style>
+<% title @outlate.title || @outlate.seo_title%>
+<% description @outlate.seo_description %>
+<% keywords @outlate.seo_keywords %>
  <div id="toponebite">
 	<%= render HeaderComponent.new() %>
 	
@@ -308,13 +308,13 @@ html {
 	</div>
 </div>
 <div id="storebox">
-    <% if @outlate.image.attached? %>
+<% if @outlate.image.attached? %>
 <%= image_tag @outlate.image, loading: "lazy", class: "storeboxbs detail_outlate" %>
 <%end%>
 <%# <img src="/assets/takway.jpeg" class="storeboxbs"> %>
 </div>
 <div id="storeboxm">
-    <% if @outlate.image.attached? %>
+<% if @outlate.image.attached? %>
 <%= image_tag @outlate.image, loading: "lazy", class: "storeboxbsm" %>
 <%end%>
 </div>
@@ -325,9 +325,6 @@ html {
 	</div>
 	<div class="mainboxcol2"></div>
 </div>
-<%# <div class="franchiseprodboxhedingone">
-<span style="color:#8b0000;"><%=@outlate&.title%> </span> <span style="color:#ffff;">MODEL</span>
-</div> %>
 <center>
 <div class="franchiseprodboxhedingthree">
    <span><%=@outlate&.title%> </span> <span>  &nbsp;&nbsp;&nbsp; MODEL</span>
@@ -344,12 +341,9 @@ html {
         <p class="h_data"><%=@outlate.content2%></p>
       
        <h2><%=@outlate.heading3%></h2>
-        <p class="h_data"><%@outlate.content3%></p> 
+        <p class="h_data"><%=@outlate.content3%></p> 
        </div> 
     </div>
-<%# <div class="franchiseprodboxhedingtwo">
-<h1 style="color:#8b0000;">MAST BANARASI PAAN</span><span style="color:#ffff;"></span> <span style="color:#ffff;"> Food Franchise in India</h1>
-</div> %>
 <center>
 <div class="franchiseprodboxhedingthree">
    <span>MAST BANARASI PAAN</span> <span>  &nbsp;&nbsp;&nbsp; Food Franchise in India</span>
@@ -405,6 +399,7 @@ html {
     </div>
 </bodynew>
 <%= render FooterComponent.new() %>
+<%= render MobHeaderComponent.new() %>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
 <script type="text/javascript">
   // Helper function to delay opening a URL until a gtag event is sent.

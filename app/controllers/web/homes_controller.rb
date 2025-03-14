@@ -5,14 +5,14 @@ class Web::HomesController < ApplicationController
         @pan_outlates = PanOutlate.all
         @franchise_benefits = FranchiseBenefit.all
         @youtubs = Youtube.all
-        @faqs = Faq.all
+        @faqs = Faq.where(faq_type: :home)
 	end
 
 	def about
 	end
 
 	def state_detail
-		@faqs = Faq.all
+		@faqs = Faq.where(faq_type: :state)
 		@states = State.all
 		@pan_outlates = PanOutlate.all
 		# @state = State.find_by_id(params[:id])
@@ -32,7 +32,7 @@ class Web::HomesController < ApplicationController
 	end 
         
         def product_detail
-        @faqs = Faq.all
+        @faqs = Faq.where(faq_type: :product)
 		@states = State.all
 		@products = Product.all
 		@pan_outlates = PanOutlate.all
@@ -71,7 +71,7 @@ class Web::HomesController < ApplicationController
 	end
 
 	def outlate_detail
-		 @faqs = Faq.all
+		@faqs = Faq.where(faq_type: :outlate)
 		@states = State.all
 		@pan_outlates = PanOutlate.all
 		@outlate = PanOutlate.friendly.find(params[:slug])
