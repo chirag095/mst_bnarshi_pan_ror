@@ -300,6 +300,11 @@ html {
     .franchiseprodboxhedingthree span:last-child {
         font-size: 5vw; /* Larger text for small screens */
     }
+.mobdetail_blog{
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}    
 }
 </style> 
 <% title @blog.title || @blog.seo_title%>
@@ -318,10 +323,14 @@ html {
 	
 </div>
 <div id="storebox">
+<% if @blog.image.attached? %>    
 <%= image_tag @blog.image, loading: "lazy", class: "storeboxbs detail_blog" %>
+<%end%>
 </div>
 <div id="storeboxm">
-<%= image_tag @blog.image, loading: "lazy", class: "storeboxbsm" %>
+<% if @blog.image.attached? %>
+<%= image_tag @blog.image, loading: "lazy", class: "storeboxbsm mobdetail_blog" %>
+<%end%>
 </div>
 <div id="mainbox">
 	<div class="mainboxcol1">
@@ -372,7 +381,9 @@ html {
             <%@blogs.each do |blog|%>
                 <div class="col-md-4 blog-post">
                     <div class="blog-card">
+                        <% if blog.image.attached? %>
                         <%= image_tag blog.image, loading: "lazy",alt: "Blog Image 1", class: "img-fluid" %>
+                        <%end%>
                         <h5><%=blog.title%></h5>
                         <p><%=blog.description%></p>
                         <a href="<%=blog_path(blog)%>" class="read-more">Read More</a>

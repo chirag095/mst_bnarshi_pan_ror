@@ -5,7 +5,7 @@
    .bg {background-color:transparent; height:0vh; border-top:0vh solid orange; border-bottom:.0vh solid orange; position:fixed;left:0vw;right:0vw;top:0vw; z-index:11;} 
    #ob-sub-header{margin-top:16vw;} 
    .para-b {font-size:250%!important;}  
-   .para {font-size: 52%!important;}
+   .para {font-size: 100%!important;}
    .about-image {width: 100%!important;}    
    .para a, a:hover {color: #000;font-size: 100%!important;}    
    #fixed-logo{left: 38%!important;}    
@@ -33,13 +33,12 @@
    font-size: 28px;
    font-weight: bold;
    text-transform: uppercase;
-   text-shadow: 3px 3px 0px #444, 
-   6px 6px 0px #222, 
-   9px 9px 0px #000;
+  
+   
    }
    /* Content Styling */
    .para {
-   font-size: 18px;
+   font-size: 40px;
    font-family: Arial, sans-serif;
    color: #333;
    line-height: 1.5;
@@ -80,7 +79,7 @@
    .oneheadermenustylecontactboxtwogif{background: url(/assets/1751.webp); height:10vw; border-top-left-radius: 10vw; border-top-right-radius: 10vw; border-bottom-right-radius: 10vw; border-bottom-left-radius: 10vw; padding:1vw 0vw; width:100%; background-repeat: no-repeat;
    background-size: 150% auto; background-position: center;}
    }
-   #mainbox .mainboxcol2{background-image: url(img/1751.webp);}
+   #mainbox .mainboxcol2{background-image: url(/assets/1751.webp);}
   @media screen and (max-width:600px){
    #toponebite{
    display:none;
@@ -304,13 +303,13 @@
               </div>
                <p class="para">
                   <b class="para-b">VISION:</b><br />
-                  Great things in business are never done by one person; they're done by a team of people. Our franchisees are the same team of people who support us and count on us in 
+                  Our vision is to be the premier destination for paan lovers worldwide. We aim to preserve and promote the rich cultural heritage of Banaras through our exquisite paans, making them accessible to everyone.
                   <a href="#">MAST BANARASI PAAN expansion for PAN INDIA</a>.
                </p>
                <div class="flex padding-top-para"></div>
                <p class="para">
                   <b class="para-b"style="font-family:library-3; color:#8b0000">MISSION:</b><br />
-                  Being a new venture in Industry Success wouldn't be possible without our Franchisees's Alliance, Their contribution means a lot to us. We believe in that "Most good Associations are built on Mutual Trust & Respect" So give an opportunity to One Bite for becoming the successful Franchisee with Low Investment & Huge Returns.
+                  Our mission is to deliver the finest and most authentic paan experience to our customers. We are committed to using premium ingredients, traditional recipes, and innovative techniques to craft our paans. As a family-oriented cafe, we provide a warm and welcoming atmosphere where everyone can enjoy the rich taste of Banarasi paan.
                </p>
                <div class="flex padding-top-para"></div>
                <div class="flex">               
@@ -324,3 +323,34 @@
 </style>
 <%= render FooterComponent.new() %>
 <%= render MobHeaderComponent.new() %>
+
+
+
+<style>
+/* Style for the paragraph */
+.para {
+    font-size: 20px; /* Larger text */
+    line-height: 1.6; /* Better readability */
+    color: #333; /* Dark gray for readability */
+    max-width: 800px; /* Keeps text in a readable width */
+    margin: 5px auto; /* Centers the paragraph */
+    text-align: center; /* Center text */
+}
+
+/* Style for the bold heading */
+
+
+/* Link styles */
+.para a {
+    color: #007bff; /* Blue link */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+}
+
+.para a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Mobile-friendly adjustments */
+
+</style>

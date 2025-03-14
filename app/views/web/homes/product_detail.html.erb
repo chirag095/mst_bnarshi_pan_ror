@@ -360,8 +360,14 @@ html {
 </div>
 </center>
 <br>
-
-   <div class="row">
+<section class="item-category-area section-gap" id="menu">
+   <div class="container">
+      <div class="row d-flex justify-content-center">
+         <div class="col-md-12 pb-80 header-text text-center">
+            </br>
+         </div>
+      </div>
+      <div class="row">
          <%@products.each do |pro|%>
          <div class="col-lg-3 col-md-6">
             <div class="single-cat-item">
@@ -370,8 +376,8 @@ html {
                     <a href="<%=product_path(pro)%>"><%= image_tag pro.image, loading: "lazy", class: "img-fluid" %></a>
                  <%end%> 
                </div>
-               <a href="<%=product_path(pro)%>"style="color:#ffffff;">
-                  <h4><%=pro.title%></h4>
+               <a href="<%= product_path(pro)%>"style="color:#ffffff;">
+                 <h2><%=pro.title%></h2>
                </a>
                <p style="color:#ffffff;">
                   Mouth-watering paans with delicious fillings and exotic toppings. Have a bite of the once favourite paans of the royals.
@@ -379,7 +385,9 @@ html {
             </div>
          </div>
          <%end%>
-      </div>  
+      </div>
+   </div>
+</section> 
 <div id="franchiescontactform">
 	<div class="franchiescontactformcon">
 	<div class="obhdbox-3" style=""><span style="color:#1298d5;">Scan QR code </span> <span style="color:#cd5906;">to Connect </span></div>
