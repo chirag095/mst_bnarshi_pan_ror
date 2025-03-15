@@ -260,10 +260,10 @@ bodynew {
     padding: 20px;
     text-align: center;
 }
-h2 {
+/*h2 {
     font-size: 32px;
     color: #1298d5;
-}
+}*/
 
 .event-list {
     display: flex;
@@ -414,6 +414,20 @@ h2 {
   .faq-question.active::after {
       content: '-';
   }
+.three-d-heading {
+    font-size: 2.5rem; /* Large text */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ff6600; /* Main text color */
+    text-shadow: 3px 3px 0px #333, 
+                 6px 6px 0px rgba(0, 0, 0, 0.2), 
+                 9px 9px 0px rgba(0, 0, 0, 0.1); /* Creates the 3D effect */
+    letter-spacing: 2px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .three-d-heading {
@@ -488,21 +502,18 @@ h2 {
    <span><%=@event.title%></span> <span>EVENT</span>
 </div>
 </center>
-
 <div class="container-fluid">
      <div class="new_content_area"> 
-     
-       <h2><%=@event.heading1%></h2>
-        
-        <p class="h_data"><%=@event.content1%></p>
-       
-       <h2><%=@event.heading2%></h2>
-        <p class="h_data"><%=@event.content2%></p>
-      
-       <h2><%=@event.heading3%></h2>
-        <p class="h_data"><%=@event.content3%></p> 
-       </div> 
-    </div>
+    <h2 class="three-d-heading"><%=@event.heading1 %></h2>
+    <p class="h_data"><%=@event.content1 %></p>
+
+    <h2 class="three-d-heading"><%=@event.heading2 %></h2>
+    <p class="h_data"><%=@event.content2 %></p>
+
+    <h2 class="three-d-heading"><%=@event.heading3 %></h2>
+    <p class="h_data"><%=@event.content3 %></p> 
+</div> 
+</div>    
 <center>
 <div class="franchiseprodboxhedingthree">
    <span>MAST BANARASI PAAN </span> <span>EVENT</span>

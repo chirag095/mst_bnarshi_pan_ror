@@ -61,7 +61,17 @@ padding:1vw 0vw;
 .franchiseprodboxhedingfoursub{text-align:center; font-size:1vw; padding-bottom:1vw; background:#000; color:#fff;}
 
 	#silderonebite{display:none;}
-	#storeboxm{display:none;}
+	/* #storeboxm{display:none;} */
+	#storeboxm {
+    display: none; /* Hidden by default */
+}
+
+/* Mobile View: Show storeboxm */
+@media (max-width: 768px) {
+    #storeboxm {
+        display: block;
+    }
+}
 	#storebox{display:block;}
 	.one{font-size:2vw; color:#ffffff;}
 	.bite{font-size:2vw; color:#ffffff;}

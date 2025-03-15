@@ -407,7 +407,9 @@ html {
 <img src="/assets/mp_desktop.png" class="storeboxbs">
 </div>
 <div id="storeboxm">
-<img src="/assets/onebite-map.png" class="storeboxbsm">
+<img src="/assets/onebite-map.png" class="storeboxbsm" style="
+    margin-top: 109px;
+">
 </div>
 <div id="mainbox">
 	<div class="mainboxcol1">
@@ -440,17 +442,16 @@ html {
 
 <div class="container-fluid">
      <div class="new_content_area"> 
-    <h2 class="three-d-heading"><%= @state.heading1 %></h2>
-    <p class="h_data"><%= @state.content1 %></p>
+        <h2 class="three-d-heading"><%= @state.heading1 %></h2>
+        <p class="h_data"><%= @state.content1 %></p>
 
-    <h2 class="three-d-heading"><%= @state.heading2 %></h2>
-    <p class="h_data"><%= @state.content2 %></p>
+        <h2 class="three-d-heading"><%= @state.heading2 %></h2>
+        <p class="h_data"><%= @state.content2 %></p>
 
-    <h2 class="three-d-heading"><%= @state.heading3 %></h2>
-    <p class="h_data"><%= @state.content3 %></p> 
-</div> 
-
-    </div>
+        <h2 class="three-d-heading"><%= @state.heading3 %></h2>
+        <p class="h_data"><%= @state.content3 %></p> 
+    </div> 
+</div>
 <center>
 <div class="franchiseprodboxhedingthree">
    <span>MAST BANARASI PAAN</span> <span>Food Franchise in India</span>
@@ -460,14 +461,16 @@ html {
 
 
 <div id="franchisemodelbox">
-   <%@pan_outlates.each do |outlate|%>
+<%@pan_outlates.each do |outlate|%>
    <div class="franchisemodelboxcolone">
-      <div class="franchisemodelboxcolhd"><%=outlate.title%> </div>
-      <img src="/assets/600x485image.png" class="franchisemodelboxcolrs">
+      <div class="franchisemodelboxcolhd"><%=outlate.title%></div>
+      <% if outlate.image.attached? %>
+       <a href="<%=model_path(outlate )%>"> <%= image_tag outlate.image, loading: "lazy", class: "franchisemodelboxcolrs" %></a>
+      <%end%>  
       <span class="sizebox">Space Required</span> 
       <div class="franchisemodelboxcolhdp"><%= outlate.space%></div>
    </div>
-   <%end%>   
+   <%end%>    
 </div>
 <div id="franchiescontactform">
 	<div class="franchiescontactformcon">
