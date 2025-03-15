@@ -202,13 +202,72 @@
 
 .galler_box_columnitem {
   width: 400px;
-  height: 400px;
 }
 
 .galler_box_columnitemrps {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensures images maintain aspect ratio */
+}
+.galleryImage{
+  width: 100%;
+  height: 500px;
+  object-fit: cover; 
+}
+/* Gallery Container - Full-Width Grid */
+.gallery_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+/* Individual Gallery Items */
+.galler_box_columnitem {
+    flex: 1 1 25%; /* 4 images per row */
+    max-width: 25%;
+    text-align: center;
+   
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 5px; /* Ensures spacing inside border */
+}
+
+/* Image with Border */
+.galler_box_columnitemrps {
+    width: 100%; /* Full width */
+    height: 250px; /* Fixed height */
+    object-fit: cover;
+    border: 5px solid #ddd; /* Border directly on image */
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.galler_box_columnitemrps:hover {
+    transform: scale(1.05);
+}
+
+/* 🔹 Tablet: 2 Images per Row */
+@media (max-width: 1024px) {
+    .galler_box_columnitem {
+        flex: 1 1 50%;
+        max-width: 50%;
+    }
+}
+
+/* 🔹 Mobile: 1 Image per Row */
+@media (max-width: 768px) {
+    .galler_box_columnitem {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .galler_box_columnitemrps {
+        height: 200px; /* Smaller height for mobile */
+    }
 }
 
 </style>
@@ -231,7 +290,9 @@
    </div>
 </div>
 <div id="silderonebite">
-   <img src="/assets/Untitled-design-2-1-1.png" style="width:100%">
+<% if @banner_gallery_img.image.attached? %>
+   <%= image_tag @banner_gallery_img.image, loading: "lazy", style: "width:100%" %>
+ <%end%>
 </div>
 <div id="mainbox" class="mobimage">
    <div class="mainboxcol1">
@@ -241,7 +302,9 @@
    <div class="mainboxcol2"></div>
 </div>
 <div id="silderbox">
-   <img src="/assets/Untitled-design-2-1-1.png" class="silderboxbs">
+   <% if @banner_gallery_img.image.attached? %>
+   <%= image_tag @banner_gallery_img.image, loading: "lazy", class: "galleryImage" %>
+ <%end%>
 </div>
 <div id="ob-content-section">
    <div class="flex">

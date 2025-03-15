@@ -28,7 +28,7 @@
    height: 100vh;
    background: rgba(0, 0, 0, 0.95);
    text-align: center;
-   padding-top: 60px;
+   padding-top: 37px;
    z-index: 999;
    }
    /* Menu Links */
@@ -69,13 +69,13 @@
    <br>
    <br>
    <br>
-   <div class="obdpmenutseven"><a href="index.html"><img src="/assets/slider2.webp " class="sevenmenutwors"></a></div>
+   <div class="obdpmenutseven"><a href="<%= root_path%>"><img src="/assets/slider2.webp " class="sevenmenutwors"></a></div>
 </div>
 <div id="obdpmenusix" class="menusix">
    <div class="obdpmenusix">
       <div class="menusixglnavbar">
-         <a href="<%= root_path%>">Home</a>
-         <a href="<%= about_path%>">About us</a>
+          <a href="<%= root_path%>">Home</a>
+          <a href="<%= root_path%>">Home</a>
          <div class="dropdown">
             <a href="<%= events_path %>">Events</a>
             <div class="dropdown-menu">
@@ -94,7 +94,8 @@
             </div>
          </div>
             <a href="<%= award_path%>">Franchise Awards</a>
-            <a href="<%=contact_us_path%>">Contact Us</a>       
+             <a href="<%= about_path%>">About us</a>
+            <!--<a href="<%#=contact_us_path%>">Contact Us</a>  -->     
             <a href="#">Franchise Enquiry</a>
             <a href="<%= blogs_path%>">News / Blogs</a>
       </div>

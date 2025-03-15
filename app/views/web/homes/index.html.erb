@@ -365,7 +365,10 @@
    </div>
 </div>
 <div id="silderonebite">
-   <img src="/assets/Untitled-design-2-1-1.png" style="width:100%">
+     <% if @banner_home_img.image.attached? %>
+       <%= image_tag @banner_home_img.image, loading: "lazy", style: "width:100%" %>
+     <%end%> 
+   <!--<img src="/assets/Untitled-design-2-1-1.png" style="width:100%">-->
 </div>
 <div id="mainbox" class="mobimage">
    <div class="mainboxcol1">
@@ -375,7 +378,10 @@
    <div class="mainboxcol2"></div>
 </div>
 <div id="silderbox">
-   <img src="/assets/Untitled-design-2-1-1.png" class="silderboxbs">
+     <% if @banner_home_img.image.attached? %>
+       <%= image_tag @banner_home_img.image, loading: "lazy", class: "silderboxbs" %>
+     <%end%> 
+   <!--<img src="/assets/Untitled-design-2-1-1.png" class="silderboxbs">-->
 </div>
 <div class="franchiseprodboxhedingfour">
    <span class="Presence">Our Presence</span>

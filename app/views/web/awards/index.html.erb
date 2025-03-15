@@ -210,6 +210,51 @@
   height: 100%;
   object-fit: cover; /* Ensures images maintain aspect ratio */
 }
+/* Ensure the gallery container is flexible */
+.gallery_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between images */
+    justify-content: center; /* Center align images */
+    padding: 10px;
+}
+
+/* Style individual gallery items */
+.galler_box_columnitem {
+    flex: 1 1 calc(33.333% - 20px); /* 3 columns on larger screens */
+    max-width: calc(33.333% - 20px);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Make images responsive */
+.galler_box_columnitemrps {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Optional rounded corners */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.galler_box_columnitemrps:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .galler_box_columnitem {
+        flex: 1 1 calc(50% - 20px); /* 2 columns on medium screens */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .galler_box_columnitem {
+        flex: 1 1 100%; /* Full width on small screens */
+        max-width: 100%;
+    }
+}
 
 </style>
 <div id="toponebite">
@@ -231,7 +276,9 @@
    </div>
 </div>
 <div id="silderonebite">
-   <img src="/assets/Untitled-design-2-1-1.png" style="width:100%">
+<% if @banner_award_img.image.attached? %>    
+   <%= image_tag @banner_award_img.image, loading: "lazy", style: "width:100%" %>
+<%end%>
 </div>
 <div id="mainbox" class="mobimage">
    <div class="mainboxcol1">
@@ -242,6 +289,9 @@
 </div>
 <div id="silderbox">
    <img src="/assets/Untitled-design-2-1-1.png" class="silderboxbs">
+<% if @banner_award_img.image.attached? %>    
+   <%= image_tag @banner_award_img.image, loading: "lazy", class: "silderboxbs" %>
+<%end%>
 </div>
 <div id="ob-content-section">
    <div class="flex">

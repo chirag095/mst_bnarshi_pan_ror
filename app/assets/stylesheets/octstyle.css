@@ -111,8 +111,7 @@ padding:1vw 0vw;
 	
 	#franchisefeaturebox { display: grid; grid-template-columns: auto auto auto; justify-content: center; background: #2c4d00; padding:1vw 0vw 3vw 0vw;}
 	
-	#storeboxm{display:block; background:#000; text-align:center; padding:38vw 3vw; border:.5vh solid #870505;}
-	#storebox{display:none;}
+	
 	.storeboxbs{width:0%;}
 	.storeboxbsm{width:100%;}
 	.franchisefeatureboxcol { margin: 2vw; width: 29vw; border-radius: 5vw; border: .1vh solid #870505; background: #000;}

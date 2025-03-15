@@ -243,7 +243,7 @@ html {
 }
 .detail_blog {
   width: 100%;
-  height: 500px;
+  height: 457px;
   object-fit: cover; /* This ensures the image scales properly */
 }
 
@@ -306,17 +306,53 @@ html {
   object-fit: cover;
 }    
 }
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .three-d-heading {
+        font-size: 2rem; /* Adjusted for mobile */
+        text-shadow: 2px 2px 0px #333, 
+                     4px 4px 0px rgba(0, 0, 0, 0.2), 
+                     6px 6px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+.h_data {
+    text-align: justify;
+   
+    line-height: 1.6; /* Improves spacing between lines */
+    
+    margin-bottom: 15px; /* Adds spacing between paragraphs */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .h_data {
+       
+        text-align: justify;
+    }
+}
 </style> 
 <% title @blog.title || @blog.seo_title%>
 <% description @blog.seo_description %>
 <% keywords @blog.seo_keywords %>  
 <div id="toponebite">
 	<%= render HeaderComponent.new() %>
-	
+	<div class="toponebitegifleft">
+        <span class="calltext">Franchise Enquiry</span>
+        <span class="calltextphone">
+            <a href="tel:9311771842" class="phone-link">8800893218</a>
+        </span>
+    </div>
+    <div id="toponebitegif">
+      <div class="toponebitegifleft">
+         <span class="calltext">Franchise Enquiry</span>
+         <span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">8800893218</a></span>
+      </div>
+      <div class="toponebitegifrigt"></div>
+   </div>
 	<div id="toponebitegif">
 		<div class="toponebitegifleft">
 			<span class="calltext">Franchise Enquiry</span>
-			<span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">xxxxxxxx</a></span>
+			<span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">8800893218</a></span>
 		</div>
 		<div class="toponebitegifrigt"></div>
 	</div>

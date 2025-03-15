@@ -6,13 +6,16 @@ class Web::HomesController < ApplicationController
         @franchise_benefits = FranchiseBenefit.all
         @youtubs = Youtube.all
         @faqs = Faq.where(faq_type: :home)
+        @banner_home_img = Banner.find_by_banner_img_type(:home)
 	end
 
 	def about
+		@banner_about_img =  Banner.find_by_banner_img_type(:about)
 	end
 
 	def state_detail
 		@faqs = Faq.where(faq_type: :state)
+		@banner_state_img = Banner.find_by_banner_img_type(:state)
 		@states = State.all
 		@pan_outlates = PanOutlate.all
 		# @state = State.find_by_id(params[:id])
@@ -29,10 +32,12 @@ class Web::HomesController < ApplicationController
         def contact_us
         	@states = State.all
 		@pan_outlates = PanOutlate.all
+		@banner_contact_us_img =  Banner.find_by_banner_img_type(:contact_us)
 	end 
         
         def product_detail
         @faqs = Faq.where(faq_type: :product)
+        @banner_product_img = Banner.find_by_banner_img_type(:product)
 		@states = State.all
 		@products = Product.all
 		@pan_outlates = PanOutlate.all

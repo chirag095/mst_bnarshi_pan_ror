@@ -259,37 +259,6 @@ h2 {
 .register-btn:hover {
     background: #0e7ab5;
 }
-.event_page {
-  width: 100%;
-  height: 500px;
-  object-fit: cover; /* This ensures the image scales properly */
-}
-</style>
- <div id="toponebite">
-	<%= render HeaderComponent.new() %>
-	
-	<div id="toponebitegif">
-		<div class="toponebitegifleft">
-			<span class="calltext">Franchise Enquiry</span>
-			<span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">xxxxxxxx</a></span>
-		</div>
-		<div class="toponebitegifrigt"></div>
-	</div>
-</div>
-<div id="storebox">
-<img src="/assets/Image1.webp" class="storeboxbs event_page">
-</div>
-<div id="storeboxm">
-<img src="/assets/onebite-map.png" class="storeboxbsm">
-</div>
-<div id="mainbox">
-	<div class="mainboxcol1">
-		<div class="mainboxfn">Franchise Enquiry</div>
-		<div class="mainboxpn"><a onclick="return gtag_report_conversion('tel:9311771842');" href="tel:9311771842"> 9311771842</a></div>
-	</div>
-	<div class="mainboxcol2"></div>
-</div>
-<style>
 
 .franchiseprodboxhedingthree {
     display: flex;
@@ -346,10 +315,71 @@ h2 {
     }
 }
 
+.event_page {
+  width: 100%;
+  height: 500px;
+  object-fit: cover; /* This ensures the image scales properly */
+}
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .three-d-heading {
+        font-size: 2rem; /* Adjusted for mobile */
+        text-shadow: 2px 2px 0px #333, 
+                     4px 4px 0px rgba(0, 0, 0, 0.2), 
+                     6px 6px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+.h_data {
+    text-align: justify;
+   
+    line-height: 1.6; /* Improves spacing between lines */
+    
+    margin-bottom: 15px; /* Adds spacing between paragraphs */
+}
 
-
-
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .h_data {
+       
+        text-align: justify;
+    }
+}
 </style>
+<div id="toponebite">
+   <%= render HeaderComponent.new() %>
+   
+   <!-- Franchise Enquiry Section (Only for Mobile) -->
+<div class="toponebitegifleft">
+    <span class="calltext">Franchise Enquiry</span>
+    <span class="calltextphone">
+        <a href="tel:9311771842" class="phone-link">8800893218</a>
+    </span>
+</div>
+<div id="toponebitegif">
+      <div class="toponebitegifleft">
+         <span class="calltext">Franchise Enquiry</span>
+         <span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">8800893218</a></span>
+      </div>
+      <div class="toponebitegifrigt"></div>
+   </div>
+</div>
+<div id="silderonebite">
+   <% if @banner_event_img.image.attached? %>
+       <%= image_tag @banner_event_img.image, loading: "lazy", style: "width:100%" %>   
+    <%end%> 
+</div>
+<div id="mainbox" class="mobimage">
+   <div class="mainboxcol1">
+      <div class="mainboxfn">Franchise Enquiry</div>
+      <div class="mainboxpn"><a onclick="return gtag_report_conversion('tel:9311771842');" href="tel:9311771842"> 9311771842</a></div>
+   </div>
+   <div class="mainboxcol2"></div>
+</div>
+<div id="silderbox">
+     <% if @banner_event_img.image.attached? %>
+       <%= image_tag @banner_event_img.image, loading: "lazy", class: "silderboxbs" %>
+     <%end%>
+</div>
 <br>
 <br>
 <center>

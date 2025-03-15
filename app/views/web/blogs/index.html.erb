@@ -253,6 +253,30 @@ html {
   height: 600px;
   object-fit: cover; /* This ensures the image scales properly */
 }
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .three-d-heading {
+        font-size: 2rem; /* Adjusted for mobile */
+        text-shadow: 2px 2px 0px #333, 
+                     4px 4px 0px rgba(0, 0, 0, 0.2), 
+                     6px 6px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+.h_data {
+    text-align: justify;
+   
+    line-height: 1.6; /* Improves spacing between lines */
+    
+    margin-bottom: 15px; /* Adds spacing between paragraphs */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .h_data {
+       
+        text-align: justify;
+    }
+}
 </style>
 <div id="toponebite">
 	<%= render HeaderComponent.new() %>
@@ -266,11 +290,14 @@ html {
 	</div>
 </div>
 <div id="storebox">
-
-<img src="/assets/newmap.jpg" class="storeboxbs index_blog">
+<% if @banner_blog_img.image.attached? %>
+       <%= image_tag @banner_blog_img.image, loading: "lazy", class: "storeboxbs index_blog" %>
+     <%end%> 
 </div>
 <div id="storeboxm">
-<img src="/assets/onebite-map.png" class="storeboxbsm">
+<% if @banner_blog_img.image.attached? %>
+   <%= image_tag @banner_blog_img.image, loading: "lazy", class: "storeboxbsm" %>
+ <%end%> 
 </div>
 <div id="mainbox">
 	<div class="mainboxcol1">
