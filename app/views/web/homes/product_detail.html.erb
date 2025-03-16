@@ -340,15 +340,15 @@ html {
 <div class="container-fluid">
      <div class="new_content_area"> 
      
-       <h2><%=@product&.heading1%></h2>
+       <h2><%=@product&.heading1.&.html_safe%></h2>
         
-        <p class="h_data"><%=@product&.content1%></p>
+        <p class="h_data"><%=@product&.content1&.html_safe%></p>
        
-       <h2><%=@product&.heading2%></h2>
-        <p class="h_data"><%=@product&.content2%></p>
+       <h2><%=@product&.heading2&.html_safe%></h2>
+        <p class="h_data"><%=@product&.content2&.html_safe%></p>
       
-       <h2><%=@product&.heading3%></h2>
-        <p class="h_data"><%=@product&.content3%></p>
+       <h2><%=@product&.heading3&.html_safe%></h2>
+        <p class="h_data"><%=@product&.content3&.html_safe%></p>
        </div> 
     </div>
 

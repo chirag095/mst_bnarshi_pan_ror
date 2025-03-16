@@ -384,7 +384,7 @@ button#submit:hover {
 
 .form-control {
     width: 100%;
-    padding: 12px;
+    padding: 6px;
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -455,7 +455,7 @@ button#submit:hover {
     .form-box,
     .info {
         width: 100%;
-        padding: 20px;
+        padding: 10px;
     }
 
     .form-control {
@@ -479,6 +479,84 @@ button#submit:hover {
         justify-content: center;
     }
 }
+/* 🔹 General Contact Info Styling */
+.contact-info {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+}
+
+/* 🔹 Contact Title */
+.contact-title {
+    text-align: center;
+    font-size: 26px;
+    color: #0073e6;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Contact Box */
+.contact-box {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-box:hover {
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* 🔹 Contact Icons */
+.contact-box i {
+    color: #0073e6;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* 🔹 Contact Links */
+.contact-box a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-box a:hover {
+    color: #0073e6;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 2px;
+    }
+
+    .contact-title {
+        font-size: 22px;
+    }
+
+    .contact-box {
+        padding: 6px;
+    }
+
+    .contact-box i {
+        font-size: 18px;
+    }
+}
+
 
 </style>
 <div id="toponebite">
@@ -558,37 +636,30 @@ button#submit:hover {
                     </div>
                     <!-- End Form -->
 
-                    <!-- Contact Information -->
-                    <div class="col-md-6 col-md-offset-1 info">
-                        
-                          <div class="contact-info">
-        <h2>OUR OFFICE ADDRESS</h2>
-        
+                    <!-- Contact Information Section -->
+<div class="col-md-6 col-md-offset-1 info">
+    <div class="contact-info">
+        <h2 class="contact-title">OUR OFFICE ADDRESS</h2>
 
-       <p>
-  <i class="fa fa-map-marker"></i>
-  <strong>Building Name:-</strong> BSI Business Park
-</p>
+        <div class="contact-box">
+            <p><i class="fas fa-building"></i> <strong>Building Name: BSI Business Park</p>
+        </div>
 
-<p>
-  <i class="fa fa-map-marker"></i>
-  <strong>Address:-</strong> H Block, 140, Sector 63, Noida, Uttar Pradesh 201301
-</p>
- 
-        
-        
-        <p><i class="fas fa-phone-alt"></i> <strong>Call Us On:</strong>  
-        <a href="tel:+919311771842">+91-9311771842</a></p>
-        
-        <p><i class="fas fa-envelope"></i> <strong>Mail On:</strong>  
-        <a href="mailto:contact@mastbanarasipaan.com">contact@mastbanarasipaan.com</a></p>
+        <div class="contact-box">
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Address: H Block, 140, Sector 63, Noida, Uttar Pradesh 201301</p>
+        </div>
+
+        <div class="contact-box">
+            <p><i class="fas fa-phone-alt"></i> <strong>Call Us On:</strong>  
+            <a href="tel:+919311771842">+91-9311771842</a></p>
+        </div>
+
+        <div class="contact-box">
+            <p><i class="fas fa-envelope"></i> <strong>Mail:<a href="mailto:contact@mastbanarasipaan.com">contact@mastbanarasipaan.com</a></p>
+        </div>
     </div>
+</div>
 
-                        
-                                <!-- Phone -->
-                               
-                               
-                            </div>
                         </div>
                     </div>
                     <!-- End Contact Information -->

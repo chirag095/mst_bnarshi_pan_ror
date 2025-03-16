@@ -345,15 +345,15 @@ html {
 <div class="container-fluid">
      <div class="new_content_area"> 
      
-       <h2><%=@outlate.heading1%></h2>
+       <h2><%=@outlate.heading1&.html_safe%></h2>
         
-        <p class="h_data"><%=@outlate.content1%></p>
+        <p class="h_data"><%=@outlate.content1&.html_safe%></p>
        
-       <h2><%=@outlate.heading2%></h2>
-        <p class="h_data"><%=@outlate.content2%></p>
+       <h2><%=@outlate.heading2&.html_safe%></h2>
+        <p class="h_data"><%=@outlate.content2&.html_safe%></p>
       
-       <h2><%=@outlate.heading3%></h2>
-        <p class="h_data"><%=@outlate.content3%></p> 
+       <h2><%=@outlate.heading3&.html_safe%></h2>
+        <p class="h_data"><%=@outlate.content3&.html_safe%></p> 
        </div> 
     </div>
 <center>
