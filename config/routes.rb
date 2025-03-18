@@ -24,6 +24,7 @@ Rails.application.routes.draw do
  get "/event/:slug", to: "web/events#show", as: "event"
  get "/contact_us", to: "web/homes#contact_us", as: "contact_us"
  get "/product/:slug", to: "web/homes#product_detail", as: "product"
+ get "thankyou", to: "web/homes#thankyou", as: "thankyou" 
   # namespace :web do
   #   namespace :homes do
       # resources :states, only: [:show], param: :slug

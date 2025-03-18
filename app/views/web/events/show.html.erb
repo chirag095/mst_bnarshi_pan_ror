@@ -461,13 +461,13 @@ bodynew {
 	<div class="toponebitegifleft">
         <span class="calltext">Franchise Enquiry</span>
         <span class="calltextphone">
-            <a href="tel:9311771842" class="phone-link">8800893218</a>
+            <a href="tel:9311771842" class="phone-link"></a>
         </span>
     </div>
     <div id="toponebitegif">
       <div class="toponebitegifleft">
          <span class="calltext">Franchise Enquiry</span>
-         <span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">8800893218</a></span>
+         <span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">9311771842</a></span>
       </div>
       <div class="toponebitegifrigt"></div>
    </div>
@@ -548,15 +548,15 @@ bodynew {
 	</div>
 	<div class="franchiescontactformcon">
 		<div class="obhdbox-4" style=""><span style="color:#1298d5;">Fill up your Details to </span> <span style="color:#cd5906;"> Connect with us..!</span></div>
-		<%= form_with url: franchies_contact_path(action_form: "event_show"), method: :post, id: "franchiesformcontact" do %>
-	      <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol" %>
-	      <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol" %>
-	      <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol" %>
-	      <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), class: "inputcol" %>
-	      <%= select_tag :state, options_from_collection_for_select(@states, :id, :title, prompt: "Select State"), class: "inputcol" %>
-	      <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;" %>
-	      <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()" %>
-	      <% end %>
+		<%= form_with url: franchies_contact_path(), method: :post, id: "franchiesformcontact" do %>
+          <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol", required: true %>
+          <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol", required: true %>
+          <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol", required: true %>
+          <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { class: "inputcol", required: true } %>
+          <%= select_tag :state, options_from_collection_for_select(@states, :id, :title, prompt: "Select State"), { class: "inputcol", required: true } %>
+          <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;", required: true %>
+          <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()" %>
+        <% end %>
 	</div>	
 </div>
 <bodynew>
