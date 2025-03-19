@@ -7,6 +7,7 @@ class Web::HomesController < ApplicationController
         @youtubs = Youtube.all
         @faqs = Faq.where(faq_type: :home)
         @banner_home_img = Banner.find_by_banner_img_type(:home)
+        @upcomings = Upcoming.all
 	end
 
 	def about
