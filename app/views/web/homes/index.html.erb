@@ -535,7 +535,7 @@ img {
           <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { class: "inputcol", required: true } %>
           <%= select_tag :state, options_from_collection_for_select(@states, :id, :title, prompt: "Select State"), { class: "inputcol", required: true } %>
           <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;", required: true %>
-          <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()", style: "margin-top: 15px;" %>
+          <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()", style: "margin-top: 15px; font-size: medium; " %>
         <% end %>
    </div>
 </div>

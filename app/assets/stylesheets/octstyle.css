@@ -88,8 +88,8 @@ padding:1vw 0vw;
 	
 	#franchiescontactform{display:flex; flex-direction:column; justify-content:space-around; background:#000;}
    .franchiescontactformcon{width:100%; border-left: .1vw solid #1298d5;}
-   .inputcol{width:90%; padding: 1vw; border: .1vw solid #ccc; border-radius:.2vw; resize: vertical; margin:1.5vw;  background-color:#000; color:#fff;}
-   .inputsubmitcol{ width:20%; background-color:#04AA6D; color:#fff; padding:1vw 2vw; margin:.3vw; border: none; border-radius:.4vw; cursor: pointer;}
+   .inputcol{width:90%; padding: 3vw; border: .1vw solid #ccc; border-radius:.2vw; resize: vertical; margin:1.5vw;  background-color:#000; color:#fff;}
+   .inputsubmitcol{ width:30%; background-color:#04AA6D; color:#fff; padding:2vw 2vw; margin:.3vw; border: none; border-radius:1.4vw; cursor: pointer;}
    .obhdbox-3{font-family: library-3; border-bottom:.1vw solid #1298d5; font-size: 3vw; padding:4vw 0vw 3vw 0vw; text-align: center; margin: 2vw 0vw; background: #000; width:60%; margin:0vw auto}
    .obhdbox-4{font-family: library-3; border-bottom:.1vw solid #1298d5; font-size: 3vw; padding:4vw 0vw 3vw 0vw; text-align: center; margin: 2vw 0vw; background: #000; width:80%; margin:0vw auto}   
    
