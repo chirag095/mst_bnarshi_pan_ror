@@ -21,10 +21,11 @@ Rails.application.routes.draw do
   get "/model/:slug", to: "web/homes#outlate_detail", as: "model"
   get "/blog/:slug", to: "web/blogs#detail", as: "blog"
   get "/award", to: "web/awards#index", as: "award"
- get "/event/:slug", to: "web/events#show", as: "event"
- get "/contact_us", to: "web/homes#contact_us", as: "contact_us"
- get "/product/:slug", to: "web/homes#product_detail", as: "product"
- get "thankyou", to: "web/homes#thankyou", as: "thankyou" 
+  get "/event/:slug", to: "web/events#show", as: "event"
+  get "/contact_us", to: "web/homes#contact_us", as: "contact_us"
+  get "/product/:slug", to: "web/homes#product_detail", as: "product"
+  get "thankyou", to: "web/homes#thankyou", as: "thankyou" 
+  #match "*unmatched", to: "application#render_404", via: :all
   # namespace :web do
   #   namespace :homes do
       # resources :states, only: [:show], param: :slug
