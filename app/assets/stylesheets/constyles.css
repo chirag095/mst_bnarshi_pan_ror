@@ -43,10 +43,10 @@ body{padding:0vw; margin:0vw;}
 .new_content_area {
     padding: 0px 65px;
     margin-bottom: 50px;
-    height: 400px;
-    overflow-y: scroll;
+    height: 1150px;
+/*    overflow-y: scroll;*/
     box-shadow: 0px 0px 8px 2px #ffffff85;
-/*    background: #ffb014;*/
+  background: #896b30;
     margin-top: 30px;
 }
 .new_content_area h2{ font-family: library-3; color: #ff0000;; font-size: 22px;}

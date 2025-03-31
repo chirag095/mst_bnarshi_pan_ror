@@ -8,6 +8,16 @@ class Web::HomesController < ApplicationController
         @faqs = Faq.where(faq_type: :home)
         @banner_home_img = Banner.find_by_banner_img_type(:home)
         @upcomings = Upcoming.all
+
+	end
+
+	def master_franchise
+	 @faqs = Faq.where(faq_type: :state)
+		@banner_state_img = Banner.find_by_banner_img_type(:state)
+		@states = State.all
+		@pan_outlates = PanOutlate.all
+
+		
 	end
 
 	def about

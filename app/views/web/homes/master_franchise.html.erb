@@ -649,10 +649,21 @@ html {
         font-size: 18px;
     }
 }
+
+.new_content_areagg {
+    padding: 0px 65px;
+    margin-bottom: 50px;
+    
+    overflow-y: scroll; 
+    box-shadow: 0px 0px 8px 2px #ffffff85;
+    background: #896b30;
+    margin-top: 30px;
+}
+
 </style>  
-<% title @state.seo_title || @state.title %>
-<% description @state.seo_description %>
-<% keywords @state.seo_keywords %>
+
+
+
 <div id="toponebite">
 	<%= render HeaderComponent.new() %>
 	
@@ -667,16 +678,12 @@ html {
 </div>
 <div id="storebox">
 <div class="storeboxbshd" style=""><span style="color:#f9ff0d;">400+ OUTLETS</span> <span style="color:#8b0000;">Pan India</span></div>
-<% if @state.image.attached? %>
 
-<%= image_tag @state.image, loading: "lazy", class: "storeboxbs detail_outlate" %>
-<%end%>
+
+<img src="/assets/banner.jpg" style="width:100%">
 </div>
 <div id="storeboxm">
-<% if @state.image.attached? %>
-<%= image_tag @state.image, loading: "lazy", class: "storeboxbsm" %>
-<%end%>
-">
+<img src="/assets/banner.jpg" style="width:100%">
 </div>
 
 
@@ -705,22 +712,25 @@ html {
 <br>
 <center>
 <div class="franchiseprodboxhedingthree">
-   <span>Mast Banarasi Paan Franchise </span> <span>&nbsp;&nbsp;&nbsp; <%=@state.title%></span>
+   <span>Master Franchise </span> <span>&nbsp;&nbsp;&nbsp; </span>
 </div>
 </center>
-
 <div class="container-fluid">
-     <div class="new_content_area"> 
-        <h2 class="three-d-heading"><%= @state.heading1&.html_safe %></h2>
-        <p class="h_data"><%= @state.content1&.html_safe %></p>
+     <div class="new_content_areagg"> 
+        <h2 class="three-d-heading"> Mast Banarasi Paan Master Franchise</h2>
+        <p class="h_data">MAST BANARASI PAAN is India's Liquid Gold! It is available at every nook and corner of the country, on every street, state and region. That's why, when you choose to become the Master Franchisee of Delhi MAST BANARASI PAAN , you are opening yourself to a pan-India market, free from geographical, or demographical boundaries. If you want all the perks, benefits and exclusive rights to Delhi Paan growing popularity then you need to become our Master Franchisee.
 
-        <h2 class="three-d-heading"><%= @state.heading2&.html_safe %></h2>
-        <p class="h_data"><%= @state.content2&.html_safe %></p>
+If you are an experienced business person or have significant understanding of the food industry, then becoming a Master Franchisee will grant you master rights of the brand in one particular geographical region. A Master franchisee will also get a certain percentage of Franchise Fee, and royalty percentage from Unit Franchisee. Any inquiries of that geographical region received by Delhi MAST BANARASI PAAN will also be sent to the Master Franchisee.</p>
 
-        <h2 class="three-d-heading"><%= @state.heading3&.html_safe %></h2>
-        <p class="h_data"><%= @state.content3&.html_safe %></p> 
+        
+       <img src="/assets/master-franchise.webp" style="max-width: 100%; height: 356px; display: block; margin: 0 auto;">
+
+        
+<br>
+        
     </div> 
 </div>
+
 <center>
 <div class="franchiseprodboxhedingthree">
    <span>MAST BANARASI PAAN</span> <span>Food Franchise in India</span>

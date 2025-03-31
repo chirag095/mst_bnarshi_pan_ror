@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   get "/contact_us", to: "web/homes#contact_us", as: "contact_us"
   get "/product/:slug", to: "web/homes#product_detail", as: "product"
   get "thankyou", to: "web/homes#thankyou", as: "thankyou" 
-  #match "*unmatched", to: "application#render_404", via: :all
+  get "master/franchise", to: "web/homes#master_franchise", as: "master_franchise"
+    #match "*unmatched", to: "application#render_404", via: :all
   # namespace :web do
   #   namespace :homes do
       # resources :states, only: [:show], param: :slug
