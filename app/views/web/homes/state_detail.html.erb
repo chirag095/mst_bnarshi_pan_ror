@@ -649,6 +649,8 @@ html {
         font-size: 18px;
     }
 }
+
+
 </style>  
 <% title @state.seo_title || @state.title %>
 <% description @state.seo_description %>
@@ -672,12 +674,7 @@ html {
 <%= image_tag @state.image, loading: "lazy", class: "storeboxbs detail_outlate" %>
 <%end%>
 </div>
-<div id="storeboxm">
-<% if @state.image.attached? %>
-<%= image_tag @state.image, loading: "lazy", class: "storeboxbsm" %>
-<%end%>
-">
-</div>
+
 
 
 <div id="mainbox">
