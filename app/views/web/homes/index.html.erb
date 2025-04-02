@@ -1,6 +1,6 @@
 <style>
     #mainbox .mainboxcol2 {
-   background-image: url('/assets/300.webp');
+   background-image: url('/assets/300.webp.png');
    }
    @media screen and (max-width:600px){
    #toponebite{
@@ -77,7 +77,7 @@
    height:5vw;
    position:absolute;
    top:8vw; right:10vw;
-   background-image: url("/assets/300.webp");
+   background-image: url("/assets/300.webp.png");
    background-repeat: no-repeat;
    background-size: 100%;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -506,7 +506,7 @@ img {
    <%end%>
 </div>
 <div id="storebox">
-   <div class="storeboxbshd" style=""><span style="color:#f9ff0d;">300+ </br>Outlets....</span> <span style="color:#8b0000;">Pan India</span></div>
+   <div class="storeboxbshd" style=""><span style="color:#f9ff0d;">400+ </br>Outlets....</span> <span style="color:#8b0000;">Pan India</span></div>
    <img src="/assets/mp_desktop.png" class="storeboxbs">
 </div>
 <div id="storeboxm">
@@ -564,7 +564,7 @@ img {
 
 <center>
 <div class="franchiseprodboxhedingthree">
-   <span>FAQ’s of Food</span> <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Franchise in India Model</span>
+   <span>FAQ’s of MAST BANARASI PAAN</span> <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Franchise in India Model</span>
 </div>
 </center>
 
@@ -579,6 +579,7 @@ img {
 </bodynew>
 <!----------------------------------->
 <%= render FooterComponent.new() %>
+ <%= render PopupComponent.new() %>
 <!--------------------------Footer Section End------------------------->
 <%= render MobHeaderComponent.new() %>
 
@@ -586,28 +587,9 @@ img {
 <%# <div class="whatjulyboxright"><a onclick="return gtag_report_conversion('https://api.whatsapp.com/send?phone=919311771842')" href="https://api.whatsapp.com/send?phone=919311771842"><i class="julywhatright fab fa-whatsapp"></i></a></div> %>
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
 <script type="text/javascript">
-   const d = new Date();
-   let year = d.getFullYear();
-   document.getElementById("onebiteyears").innerHTML = year;
-   
-   let sfootertwohdleft = "Contact for Franchise";
-   document.getElementsByClassName("sfootertwohdleft").innerHTML = sfootertwohdleft;
    
    // Helper function to delay opening a URL until a gtag event is sent.
    // Call it in response to an action that should navigate to a URL.
-   function gtagSendEvent(url) {
-     var callback = function () {
-       if (typeof url === 'string') {
-         window.location = url;
-       }
-     };
-     gtag('event', 'Franchise_Enquire_Contact', {
-       'event_callback': callback,
-       'event_timeout': 2000,
-       // <event_parameters>
-     });
-     return false;
-   }
 
    document.querySelectorAll('.faq-question').forEach(item => {
       item.addEventListener('click', () => {
