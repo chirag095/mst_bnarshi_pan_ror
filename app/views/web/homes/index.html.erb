@@ -67,7 +67,7 @@
    width:20%;
    height:5vw;
    position:absolute;
-   top:8vw; left:10vw;
+   top:8vw; left:1vw;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
    }
    .toponebitegifrigt{
@@ -76,7 +76,7 @@
    width:20%;
    height:5vw;
    position:absolute;
-   top:8vw; right:10vw;
+   top:8vw; right:1vw;
    background-image: url("/assets/300.webp.png");
    background-repeat: no-repeat;
    background-size: 100%;
@@ -131,7 +131,7 @@
    line-height: 1.5;
    color: #212529;
    text-align: left;
-   background-color: #333c26;
+   background-color: #799752;
    }
    html {
    font-family: sans-serif;
@@ -294,7 +294,7 @@
     align-items: center;
     text-align: center;
     padding: 10px 20px;
-    background: #212529;
+    background: #2c4d00;
     border: 3px solid #ef0000;
     
     white-space: nowrap; /* Prevents text from wrapping */
@@ -303,9 +303,9 @@
 
 /* 3D Effect for Red Text */
 .franchiseprodboxhedingthree span:first-child {
-    font-size: 2vw; /* Responsive font size */
+    font-size: 3vw; /* Responsive font size */
     font-weight: bold;
-    color: #ef0000;
+    color: #fff;
 }
 
 /* 3D Effect for White Text */
@@ -536,7 +536,7 @@ img {
           <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol", required: true %>
           <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol", required: true %>
           <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol", required: true %>
-          <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { prompt: "Select Outlate", class: "inputcol", required: true } %>
+          <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { prompt: "Select Model", class: "inputcol", required: true } %>
           <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), { prompt: "Select State", class: "inputcol", required: true } %>
           <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;", required: true %>
           <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()", style: "margin-top: 15px; font-size: medium; " %>
@@ -544,7 +544,7 @@ img {
    </div>
 </div>
 
-<div class="galler_box_columnheading" style="font-family:library-3; border:.5vw solid #8b0000; font-size: 3vw; padding: 2vw; text-align: center; margin: 2vw;"><span style="color:#ef0000;">MAST BANARASI PAAN Blog </span> <span style="color:#ffff;">and News Centre</span></div>
+<div class="galler_box_columnheading" style="font-family:Inter; border:.5vw solid #8b0000; font-size: 3vw; padding: 2vw; text-align: center; margin: 2vw;"><span style="color:#fff;">MAST BANARASI PAAN Blog </span> <span style="color:#ffff;">and News Centre</span></div>
 
 
 

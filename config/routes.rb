@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get "/product/:slug", to: "web/homes#product_detail", as: "product"
   get "thankyou", to: "web/homes#thankyou", as: "thankyou" 
   get "master/franchise", to: "web/homes#master_franchise", as: "master_franchise"
+  get "foco/model", to: "web/homes#foco_model", as: "foco_model"
     #match "*unmatched", to: "application#render_404", via: :all
   # namespace :web do
   #   namespace :homes do

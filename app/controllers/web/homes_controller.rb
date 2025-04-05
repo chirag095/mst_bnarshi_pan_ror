@@ -20,6 +20,9 @@ class Web::HomesController < ApplicationController
 		
 	end
 
+	def foco_model
+	end
+
 	def about
 		@banner_about_img =  Banner.find_by_banner_img_type(:about)
 	end
