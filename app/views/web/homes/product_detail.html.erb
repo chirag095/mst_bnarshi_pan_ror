@@ -399,8 +399,8 @@ html {
 	      <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol", required: true %>
 	      <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol", required: true %>
 	      <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol", required: true %>
-          <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { class: "inputcol", required: true } %>
-          <%= select_tag :state, options_from_collection_for_select(@states, :id, :title, prompt: "Select State"), { class: "inputcol", required: true } %>
+          <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { prompt: "Select Outlate",class: "inputcol", required: true } %>
+          <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), {prompt: "Select State", class: "inputcol", required: true } %>
 	      <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;", required: true %>
 	      <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()" %>
 	      <% end %>

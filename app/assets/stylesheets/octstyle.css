@@ -4,7 +4,7 @@ body{margin:0px; padding:0px;}
   display: grid;
   justify-content:space-around;
   grid-template-columns: auto auto auto auto auto auto auto auto auto;	
-background:#000; color:white;
+background:#cdcdcd; color:white;
 padding:1vw 0vw; 
 }
 .statelist{font-size:1vw; padding:1vw; border:.1vh solid #db0606; margin:0vw; text-align:center; border-radius:1vw; }
@@ -14,9 +14,9 @@ padding:1vw 0vw;
 .franchisemodelboxcoltwo{width:30%; background:#000; border:2vh solid #ff00004f;}
 .franchisemodelboxcolthree{width:30%; background:#000; border:2vh solid #ff00004f;}
 .franchisemodelboxcolrs{width:100%; border-bottom:.1vh solid #ff0d0d;}
-.franchisemodelboxcolhd{text-align:center;  font-size:2vw; padding:1vw; background:fff; color:#db0101; font-family: library-3; border-bottom:.1vh solid #db0101}
-.franchisemodelboxcolhdp{text-align:center; font-size:2vw; padding-bottom:.5vw;  color:#ff0d0d; font-family: library-3; }
-.sizebox{font-size:1vw; text-align:center; color:#ff0d0d; display:block; padding-top:1vw;}
+.franchisemodelboxcolhd{text-align:center;  font-size:2vw; padding:1vw; background:fff; color:#fff; font-family: Inter; border-bottom:.1vh solid #db0101}
+.franchisemodelboxcolhdp{text-align:center; font-size:2vw; padding-bottom:.5vw;  color:#fff; font-family: Inter; }
+.sizebox{font-size:1vw; text-align:center; color:#fff; display:block; padding-top:1vw;}
 
 #franchiseprodbox{  display: grid; justify-content:space-evenly; grid-template-columns: auto auto auto auto auto auto auto auto auto auto; background:#ffe641; color:white; padding:1vw 0vw; }
 .franchiseprodboxcol{margin:.5vw;}
@@ -28,8 +28,8 @@ padding:1vw 0vw;
 #franchisefeaturebox{display:grid; grid-template-columns: auto auto auto; justify-content:center; background:#2c4d00;}
 .franchisefeatureboxcol{margin:2vw; width:25vw; border-radius:5vw; border:.1vh solid #000; background:#000;}
 .franchisefeatureboxcolrs{width:100%;}
-.franchisefeatureboxcolhd{text-align:center; border-bottom:.1vh solid #ff0d0d; font-size:1.5vw; padding:1vw;  color:#ed0404; font-family: library-3;}
-.franchisefeatureboxcolhdp{text-align:center; font-size:1.2vw; padding:1vw; color:#ed0404; background:#000/* #4aafa7 */;}
+.franchisefeatureboxcolhd{text-align:center; border-bottom:.1vh solid #ff0d0d; font-size:1.5vw; padding:1vw;  color:#fff; font-family: Inter;}
+.franchisefeatureboxcolhdp{text-align:center; font-size:1.2vw; padding:1vw; color:#fff; background:#000/* #4aafa7 */;}
 
 
 #silderbox{display:flex; flex-direction:row; justify-content:space-between; background:#000;}
@@ -42,7 +42,7 @@ padding:1vw 0vw;
 #franchiescontactform{display:flex; flex-direction:row; justify-content:space-around; background:#000;}
 .franchiescontactformcon{width:50%; border-left: .1vw solid #1298d5;}
 #franchiesformcontact{display:flex; flex-direction:column; width:95%; padding:1vw; align-items:center;}
-.inputcol{width:90%; padding: 1vw; border: .1vw solid #ccc; border-radius:.2vw; resize: vertical; margin:.8vw;  background-color:#000; color:#fff;}
+.inputcol{width:90%; padding: 1vw; border: .1vw solid #ccc; border-radius:.2vw; resize: vertical; margin:.8vw;  background-color:#fff; color:#000;}
 .inputsubmitcol{ width:20%; background-color:#04AA6D; color:#fff; padding:1vw 2vw; margin:.3vw; border: none; border-radius:.4vw; cursor: pointer;}
 .inputsubmitcol:hover{ background-color: #45a049;}
 
@@ -53,11 +53,11 @@ padding:1vw 0vw;
 .obhdbox-3{font-family: library-3; border-bottom:.1vw solid #1298d5; font-size: 1.2vw; padding:2vw 0vw 1vw 0vw; text-align: center; margin: 2vw 0vw; background: #000; width:40%; margin:0vw auto}
 .obhdbox-4{font-family: library-3; border-bottom:.1vw solid #1298d5; font-size: 1.2vw; padding:2vw 0vw 1vw 0vw; text-align: center; margin: 2vw 0vw; background: #000; width:80%; margin:0vw auto}
 
-.franchiseprodboxhedingone{text-align:center; font-size:2vw; padding:2vw 1vw; background:#2c4d00; color:#a42401; font-family: library-3;}
-.franchiseprodboxhedingtwo{text-align:center; font-size:2vw; padding:2vw 1vw; background:#2c4d00; color:#f6f9f4; font-family: library-3;}
-.franchiseprodboxhedingthree{text-align:center; font-size:2vw; padding:2vw 1vw; background:#2c4d00; color:#f6f9f4; font-family: library-3;}
-.franchiseprodboxhedingfour{text-align:center; font-size:2vw; padding:2vw 1vw 1vw 1vw; background:#2c4d00; color:#fff; font-family: library-3;}
-.franchiseprodboxhedingfive{text-align:center; font-size:2vw; padding:2vw 1vw 1vw 1vw; background:#000; color:#fff; font-family: library-3;}
+.franchiseprodboxhedingone{text-align:center; font-size:3vw; padding:2vw 1vw; background:#2c4d00; color:#a42401; font-family: Inter;}
+.franchiseprodboxhedingtwo{text-align:center; font-size:3vw; padding:2vw 1vw; background:#2c4d00; color:#f6f9f4; font-family: Inter;}
+.franchiseprodboxhedingthree{text-align:center; font-size:3vw; padding:2vw 1vw; background:#2c4d00; color:#f6f9f4; font-family: Inter;}
+.franchiseprodboxhedingfour{text-align:center; font-size:3vw; padding:2vw 1vw 1vw 1vw; background:#2c4d00; color:#fff; font-family: Inter;}
+.franchiseprodboxhedingfive{text-align:center; font-size:3vw; padding:2vw 1vw 1vw 1vw; background:#000; color:#fff; font-family: Inter;}
 .franchiseprodboxhedingfoursub{text-align:center; font-size:1vw; padding-bottom:1vw; background:#000; color:#fff;}
 
 	#silderonebite{display:none;}
@@ -76,7 +76,7 @@ padding:1vw 0vw;
 	.one{font-size:2vw; color:#ffffff;}
 	.bite{font-size:2vw; color:#ffffff;}
 	.franchise{font-size:2vw; color:#ffffff;}
-	.Presence{font-size:2vw; color:#ffffff;}
+	.Presence{font-size:3vw; color:#ffffff;}
 	.our{font-size:2vw; color:yellow;}
 
 @media screen and (max-width:600px){
@@ -90,33 +90,33 @@ padding:1vw 0vw;
    .franchiescontactformcon{width:100%; border-left: .1vw solid #1298d5;}
    .inputcol{width:90%; padding: 3vw; border: .1vw solid #ccc; border-radius:.2vw; resize: vertical; margin:1.5vw;  background-color:#000; color:#fff;}
    .inputsubmitcol{ width:30%; background-color:#04AA6D; color:#fff; padding:2vw 2vw; margin:.3vw; border: none; border-radius:1.4vw; cursor: pointer;}
-   .obhdbox-3{font-family: library-3; border-bottom:.1vw solid #1298d5; font-size: 3vw; padding:4vw 0vw 3vw 0vw; text-align: center; margin: 2vw 0vw; background: #000; width:60%; margin:0vw auto}
-   .obhdbox-4{font-family: library-3; border-bottom:.1vw solid #1298d5; font-size: 3vw; padding:4vw 0vw 3vw 0vw; text-align: center; margin: 2vw 0vw; background: #000; width:80%; margin:0vw auto}   
+   .obhdbox-3{font-family: Inter; border-bottom:.1vw solid #1298d5; font-size: 3vw; padding:4vw 0vw 3vw 0vw; text-align: center; margin: 2vw 0vw; background: #000; width:60%; margin:0vw auto}
+   .obhdbox-4{font-family: Inter; border-bottom:.1vw solid #1298d5; font-size: 3vw; padding:4vw 0vw 3vw 0vw; text-align: center; margin: 2vw 0vw; background: #000; width:80%; margin:0vw auto}   
    
-	.franchiseprodboxhedingone{text-align:center; font-size:3.5vw; padding:2vw 1vw; background:#2c4d00; color:#2c4d00; font-family: library-3;}
-	.franchiseprodboxhedingtwo{text-align:center; font-size:3.5vw; padding:3vw 2vw 0vw 1vw; background:#2c4d00; color:#fff; font-family: library-3;}
-	.franchiseprodboxhedingthree{text-align:center; font-size:3.5vw; padding:4vw 2vw 0vw 1vw; background:#2c4d00; color:#fff; font-family: library-3;}
-	.franchiseprodboxhedingfour{text-align:center; font-size:3.5vw; padding:3vw 2vw 0vw 1vw; background:#000; color:#fff; font-family: library-3;}
-	.franchiseprodboxhedingfive{text-align:center; font-size:3.5vw; padding:2vw 1vw 1vw 1vw; background:#000; color:#fff; font-family: library-3;}
+	.franchiseprodboxhedingone{text-align:center; font-size:3.5vw; padding:2vw 1vw; background:#2c4d00; color:#2c4d00; font-family: Inter;}
+	.franchiseprodboxhedingtwo{text-align:center; font-size:3.5vw; padding:3vw 2vw 0vw 1vw; background:#2c4d00; color:#fff; font-family: Inter;}
+	.franchiseprodboxhedingthree{text-align:center; font-size:3.5vw; padding:4vw 2vw 0vw 1vw; background:#2c4d00; color:#fff; font-family: Inter;}
+	.franchiseprodboxhedingfour{text-align:center; font-size:3.5vw; padding:3vw 2vw 0vw 1vw; background:#000; color:#fff; font-family: Inter;}
+	.franchiseprodboxhedingfive{text-align:center; font-size:3.5vw; padding:2vw 1vw 1vw 1vw; background:#000; color:#fff; font-family: Inter;}
 	
 	#franchiseprodbox{  display: grid; justify-content:space-evenly; grid-template-columns:auto auto auto auto auto; background:#ffe641; color:white; padding:1vw 0vw 3vw 0vw; }
 	.franchiseprodboxcol{margin:.5vw;}
 	.franchiseprodboxcolrs{width:15vw;}
-	.franchiseprodboxcolhd{text-align:center; font-size:1.5vw; padding:1vw; background:#000; color:#f9ff0d; font-family: library-3;}
-	.franchiseprodboxcolhdp{text-align:center; font-size:1.5vw; padding:1vw; background:#000; color:#f9ff0d; font-family: library-3;}
+	.franchiseprodboxcolhd{text-align:center; font-size:1.5vw; padding:1vw; background:#000; color:#f9ff0d; font-family: Inter;}
+	.franchiseprodboxcolhdp{text-align:center; font-size:1.5vw; padding:1vw; background:#000; color:#f9ff0d; font-family: Inter;}
 	
 	#silderbox{display:none;}
 	#silderonebite{display:block; padding-top:31vw}
 	.statelist{font-size:2vw; border:.1vh solid #db0606;}
 	
 	
-	.franchisefeatureboxcolhd{text-align:center; border-bottom:.1vh solid #ff0d0d; font-size:3vw; padding:1vw;  color:#ff0d0d; font-family: library-3;}
+	.franchisefeatureboxcolhd{text-align:center; border-bottom:.1vh solid #ff0d0d; font-size:3vw; padding:1vw;  color:#ff0d0d; font-family: Inter;}
 	#franchisemodelbox{display:flex; flex-direction:column; justify-content:center!important; background:#2c4d00; padding-bottom:4vw;}
 	.franchisemodelboxcolone{width:93%; background:#000; border:2vh solid #ff0d0d; margin:3vw 0vw 3vw 3vw;}
 	.franchisemodelboxcoltwo{width:93%; background:#000; border:2vh solid #ff0d0d; margin:0vw 0vw 3vw 3vw;}
 	.franchisemodelboxcolthree{width:93%; background:#000; border:2vh solid #ff0d0d; margin:0vw 0vw 0vw 3vw;}
-	.franchisemodelboxcolhd{text-align:center;  font-size:4vw; padding:1vw; background:fff; color:#ff0000; font-family: library-3; border-bottom:.1vh solid #ff0000;}
-	.franchisemodelboxcolhdp{text-align:center; font-size:4vw; padding-bottom:.5vw;  color:#ff0000; font-family: library-3; }
+	.franchisemodelboxcolhd{text-align:center;  font-size:4vw; padding:1vw; background:fff; color:#ff0000; font-family: Inter; border-bottom:.1vh solid #ff0000;}
+	.franchisemodelboxcolhdp{text-align:center; font-size:4vw; padding-bottom:.5vw;  color:#ff0000; font-family: Inter; }
 	.sizebox{font-size:2vw; text-align:center; color:#ffff; display:block; padding-top:1vw;}
 	
 	#franchisefeaturebox { display: grid; grid-template-columns: auto auto auto; justify-content: center; background: #2c4d00; padding:1vw 0vw 3vw 0vw;}

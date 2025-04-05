@@ -41,10 +41,10 @@ bodygood {
 /* Modal Content - 3D Effect */
 .modal-content {
     background-color: white;
-    width: 90%;
+    width: 80%;
     max-width: 700px;
     margin: 23vh auto;
-    padding: 20px;
+    padding: 1px;
     border-radius: 8px;
     position: relative;
     transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
@@ -60,8 +60,8 @@ bodygood {
 /* Close Button */
 .close {
     position: absolute;
-    top: -4px;
-    right: 2px;
+    top: -1px;
+    right: 18px;
     font-size: 46px;
     cursor: pointer;
     transition: transform 0.2s;
@@ -77,7 +77,7 @@ bodygood {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
 }
 
 /* Image Section */
@@ -89,7 +89,7 @@ bodygood {
 }
 
 .modal-image img {
-    width: 100%;
+    width: 95%;
     height: 100%;
     max-height: 400px;
     object-fit: cover;
@@ -104,7 +104,7 @@ bodygood {
 /* Form Section */
 .modal-form {
     flex: 1;
-    padding: 20px;
+    padding: 1px;
     text-align: left;
 }
 
@@ -166,7 +166,7 @@ bodygood {
     }
 
     .modal-image {
-        max-width: 100%;
+        max-width: 77%;
     }
 
     .modal-image img {
@@ -194,7 +194,7 @@ bodygood {
             <div class="modal-body">
                 <!-- Left Side Image -->
                 <div class="modal-image">
-                    <img src="/assets/why_choose_img.png" alt="Side Image" width="300" height="200">
+                    <img src="/assets/poup.jpeg" alt="Side Image" width="300" height="200">
                 </div>
 
                 <!-- Right Side Form -->
@@ -219,7 +219,7 @@ bodygood {
 
   <div class="form-group">  
     <label for="outlate">Outlet</label>
-    <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { class: "form-control" } %>
+    <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { prompt: "Select Outlate", class: "form-control" } %>
   </div>
 
   <div class="form-group">  
