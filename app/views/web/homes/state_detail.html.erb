@@ -652,7 +652,16 @@ html {
         font-size: 18px;
     }
 }
+@media (max-width: 768px) {
+  .contact-us-area .form-content {
+    padding: 20px;
+  }
 
+  .contact-us-area h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+}
 
 </style>  
 <% title @state.seo_title || @state.title %>
@@ -671,7 +680,7 @@ html {
 
 </div>
 <div id="storebox">
-<div class="storeboxbshd" style=""><span style="color:#fff;">Premium </span> <span style="color:#fff;">Franchise Model</span></div>
+
 <% if @state.image.attached? %>
 
 <%= image_tag @state.image, loading: "lazy", class: "storeboxbs detail_outlate" %>
@@ -741,58 +750,62 @@ html {
    </div>
    <%end%>    
 </div>
-<div class="contact-us-area default-padding">
-  <div class="container">
-    <div class="row">
-      <div class="contact-box">
-        <div class="row">
-          
-          <!-- Contact Form -->
-          <div class="col-md-5 form-box">
-            <div class="form-content">
-              <div class="heading">
-                <h3>Get in Touch</h3>
+
+
+
+<div class="contact-us-area default-padding" style="padding: 60px 0;">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+      
+      <!-- Joint Wrapper with border -->
+      <div class="d-flex flex-wrap justify-content-between" 
+           style="width: 100%; max-width: 1200px; margin: auto; border: 4px solid #ccc; border-radius: 100px; overflow: hidden; box-shadow: 0 10px 25px rgba ; background: #fff;">
+        
+        <!-- Contact Form -->
+        <div class="col-lg-6 col-md-12 p-4" style="background: #fff;">
+          <div class="form-content">
+            <div class="heading mb-3">
+              <h3>Get in Touch</h3>
+            </div>
+            <%= form_with url: franchies_contact_path(), method: :post, class: "contact-form" do %>
+              <div class="form-group">
+                <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "form-control", required: true %>
               </div>
-              <%= form_with url: franchies_contact_path(), method: :post, class: "contact-form" do %>
-                <div class="form-group">
-                  <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "form-control", required: true %>
-                </div>
-                <div class="form-group">
-                  <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "form-control", required: true %>
-                </div>  
-                <div class="form-group">
-                  <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "form-control", required: true %>
-                </div>
-                <div class="form-group">  
-                  <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
-                </div>
-                <div class="form-group">  
-                  <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), prompt: "Select State", class: "form-control" %>
-                </div> 
-                <div class="form-group comments">
-                  <%= text_area_tag :description, nil, placeholder: "Write something..", class: "form-control", required: true %>
-                </div>
-                <div>
-                  <%= submit_tag 'Send Message', class: 'btn btn-primary' %>
-                </div>
-              <% end %>
-            </div>
+              <div class="form-group">
+                <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "form-control", required: true %>
+              </div>  
+              <div class="form-group">
+                <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "form-control", required: true %>
+              </div>
+              <div class="form-group">  
+                <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
+              </div>
+              <div class="form-group">  
+                <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), prompt: "Select State", class: "form-control" %>
+              </div> 
+              <div class="form-group comments">
+                <%= text_area_tag :description, nil, placeholder: "Write something..", class: "form-control", required: true, rows: 4 %>
+              </div>
+              <div>
+                <%= submit_tag 'Send Message', class: 'btn btn-primary w-100' %>
+              </div>
+            <% end %>
           </div>
-          <!-- End Form -->
-
-          <!-- Side Image -->
-          <div class="col-md-6 col-md-offset-1 info">
-            <div class="contact-image">
-              <img src="/assets/poup.jpeg" alt="Contact Side Image" style="max-width:100%; height:475px; border-radius: 10px;">
-            </div>
-          </div>
-          <!-- End Image -->
-
         </div>
+        <!-- End Form -->
+
+        <!-- Side Image -->
+        <div class="col-lg-6 col-md-12 p-0">
+          <img src="/assets/600x485image2.png" alt="Contact Side Image" 
+               style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <!-- End Image -->
+
       </div>
     </div>
   </div>
 </div>
+
 
 <bodynew>
 

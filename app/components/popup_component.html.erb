@@ -1,271 +1,180 @@
 <style>
 /* General Styles */
-bodygood {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-/* Button to open the modal */
-#openModalBtn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-#openModalBtn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Modal Styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Modal Content - 3D Effect */
 .modal-content {
-    background-color: white;
-    width: 80%;
-    max-width: 700px;
-    margin: 23vh auto;
-    padding: 1px;
-    border-radius: 8px;
-    position: relative;
-    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.5s ease-out;
-    animation: fadeIn 0.5s;
-}
-
-.modal-content:hover {
-    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.02);
-}
-
-/* Close Button */
-.close {
-    position: absolute;
-    top: -1px;
-    right: 18px;
-    font-size: 46px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.close:hover {
-    color: red;
-    transform: scale(1.2);
-}
-
-/* Modal Body (Flexbox for Layout) */
-.modal-body {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  width: 95%;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Image Section */
 .modal-image {
-    flex: 1;
-    max-width: 50%;
-    transform: perspective(1000px) rotateY(-5deg);
-    transition: transform 0.3s;
+  flex: 1 1 50%;
+  max-height: 100%;
 }
 
 .modal-image img {
-    width: 95%;
-    height: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px 0 0 8px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.modal-image:hover {
-    transform: perspective(1000px) rotateY(0deg) scale(1.05);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Form Section */
 .modal-form {
-    flex: 1;
-    padding: 1px;
-    text-align: left;
+  flex: 1 1 50%;
+  padding: 2rem;
+  background: #fff;
+  position: relative;
 }
 
-.modal-form h2 {
-    margin-bottom: 15px;
-    font-size: 20px;
+/* Close Button */
+.modal-form .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 36px;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+  z-index: 10;
 }
 
-/* 3D Form Fields */
-.modal-form input,
-.modal-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s;
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.modal-form input:focus,
-.modal-form textarea:focus {
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
-    transform: scale(1.02);
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+  }
+
+  .modal-image {
+    display: none; /* Hides image on phones */
+  }
+
+  .modal-form {
+    flex: 1 1 100%;
+    padding: 1.5rem 1rem;
+    border: 2px solid #ccc; /* Form border for mobile */
+    border-radius: 10px;
+    margin: 1rem;
+  }
+
+  .modal-form .close {
+    font-size: 32px;
+    top: 5px;
+    right: 5px;
+  }
 }
-
-/* 3D Submit Button */
-.modal-form button {
-    width: 100%;
-    padding: 12px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.modal-form button:hover {
-    background-color: #218838;
-    transform: scale(1.05);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .modal-content {
-        width: 92%;
-    }
-
-    .modal-body {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .modal-image {
-        max-width: 77%;
-    }
-
-    .modal-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px 8px 0 0;
-    }
-
-    .modal-content {
-        transform: perspective(500px) rotateX(3deg);
-    }
-}
-
-
 </style>
+
+
 <bodygood>
 
-    <!-- Button to Open Modal -->
-   
+  <div id="modal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+  background-color: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
 
-    <!-- Popup Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-body">
-                <!-- Left Side Image -->
-                <div class="modal-image">
-                    <img src="/assets/poup.jpeg" alt="Side Image" width="300" height="200">
-                </div>
+  <div class="modal-content" style="position: relative; max-width: 900px; background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+    
+    <!-- Form + Image Flex Wrapper -->
+    <div class="modal-body d-flex flex-wrap">
+      
+      <!-- Image Section -->
+      <div class="modal-image" style="flex: 1 1 300px;">
+        <img src="/assets/poup.jpeg" alt="Side Image" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
 
-                <!-- Right Side Form -->
-                <div class="modal-form">
-                    <h3>Get in Touch</h3>
+      <!-- Form Section -->
+      <div class="modal-form p-4 position-relative" style="flex: 1 1 300px; background: #fff; position: relative;">
 
-<%= form_with url: franchies_contact_path, method: :post, class: "contact-form" do %>
-  <div class="form-group">
-    <label for="full_name">Name</label>
-    <%= text_field_tag :full_name, nil, placeholder: "Enter your name", class: "form-control", required: true %>
-  </div>
+        <!-- Right Side Close Button (Red) -->
+        <span class="close" style="position: absolute; top: 10px; right: 10px; font-size: 42px; font-weight: bold; color: red; cursor: pointer;">&times;</span>
 
-  <div class="form-group">
-    <label for="email">Email</label>
-    <%= email_field_tag :email, nil, placeholder: "Enter your email", class: "form-control", required: true %>
-  </div>  
+        <h3 class="mb-4">Get in Touch</h3>
 
-  <div class="form-group">
-    <label for="contact">Phone</label>
-    <%= number_field_tag :contact, nil, placeholder: "Enter your phone number", class: "form-control", required: true %>
-  </div>
+        <%= form_with url: franchies_contact_path, method: :post, class: "contact-form" do %>
+          <div class="form-group mb-3">
+            <label for="full_name">Name</label>
+            <%= text_field_tag :full_name, nil, placeholder: "Enter your name", class: "form-control", required: true %>
+          </div>
 
-  <div class="form-group">  
-    <label for="outlate">Outlet</label>
-    <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { prompt: "Select Outlate", class: "form-control" } %>
-  </div>
+          <div class="form-group mb-3">
+            <label for="email">Email</label>
+            <%= email_field_tag :email, nil, placeholder: "Enter your email", class: "form-control", required: true %>
+          </div>  
 
-  <div class="form-group">  
-    <label for="state">State</label>
-    <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), prompt: "Select State", class: "form-control" %>
-  </div> 
+          <div class="form-group mb-3">
+            <label for="contact">Phone</label>
+            <%= number_field_tag :contact, nil, placeholder: "Enter your phone number", class: "form-control", required: true %>
+          </div>
 
-<%#   <div class="form-group">
-    <label for="message">Message</label>
-    <%= text_area_tag :description, nil, placeholder: "Enter your message", class: "form-control", required: true %>
- 
+          <div class="form-group mb-3">
+            <label for="outlate">Outlet</label>
+            <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Modle", class: "form-control" %>
+          </div>
 
-  <div>
-    <%= submit_tag 'Send Message', class: 'btn btn-primary' %>
-  </div>
-<% end %>
+          <div class="form-group mb-3">
+            <label for="state">State</label>
+            <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), prompt: "Select State", class: "form-control" %>
+          </div>
 
-                </div>
-            </div>
-        </div>
+          
+
+          <div>
+            <%= submit_tag 'Send Message', class: 'btn btn-primary w-100' %>
+          </div>
+        <% end %>
+      </div>
     </div>
+  </div>
+</div>
+
+
+
+
 
     <script src="script.js"></script>
 </bodygood>
 
+
 <script>
-	// Get modal elements
-const modal = document.getElementById("modal");
-const closeBtnModal = document.querySelector(".close");
+  // Auto-open modal after 5 seconds
+  window.addEventListener('load', function () {
+    setTimeout(() => {
+      const modal = document.getElementById('modal');
+      if (modal) modal.style.display = 'flex';
+    }, 5000);
+  });
 
-// Open modal after 5 seconds
-setTimeout(function () {
-    modal.style.display = "block";
-}, 5000); // 5000ms = 5 seconds
+  // Close modal on click of close button
+  document.addEventListener('DOMContentLoaded', function () {
+    const closeBtn = document.querySelector('.modal .close');
+    const modal = document.getElementById('modal');
 
-// Close modal on 'X' click
-closeBtnModal.onclick = function () {
-    modal.style.display = "none";
-};
-
-// Close modal when clicking outside the content
-window.onclick = function (event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+      });
     }
-};
-
+  });
 </script>
-
