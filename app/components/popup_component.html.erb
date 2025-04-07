@@ -129,8 +129,8 @@
           </div>
 
           <div class="form-group mb-3">
-            <label for="outlate">Outlet</label>
-            <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Modle", class: "form-control" %>
+            <label for="outlate">Franchise Model</label>
+            <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
           </div>
 
           <div class="form-group mb-3">
@@ -158,20 +158,17 @@
 
 
 <script>
-  // Auto-open modal after 5 seconds
-  window.addEventListener('load', function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('modal');
+    const closeBtn = modal?.querySelector('.close');
+
+    // Auto-open modal after 5 seconds
     setTimeout(() => {
-      const modal = document.getElementById('modal');
       if (modal) modal.style.display = 'flex';
     }, 5000);
-  });
 
-  // Close modal on click of close button
-  document.addEventListener('DOMContentLoaded', function () {
-    const closeBtn = document.querySelector('.modal .close');
-    const modal = document.getElementById('modal');
-
-    if (closeBtn && modal) {
+    // Close modal on click of close button
+    if (closeBtn) {
       closeBtn.addEventListener('click', function () {
         modal.style.display = 'none';
       });

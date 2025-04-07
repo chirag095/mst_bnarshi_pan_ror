@@ -75,8 +75,7 @@
    <div class="obdpmenusix">
       <div class="menusixglnavbar">
           <a href="<%= root_path%>">Home</a>
-          <a href="<%= root_path%>">Home</a>
-         <div class="dropdown">
+           <div class="dropdown">
             <a href="<%= events_path %>">Events</a>
             <div class="dropdown-menu">
                <% @events.each do |event|%>
@@ -84,6 +83,10 @@
                <%end%>
             </div>
          </div>
+         
+          <a href="<%= root_path%>">Home</a>
+           <a href="<%= about_path%>">About us</a>
+        
          <a href="<%=gallery_path %>">Gallery</a>
          <div class="dropdown">
             <a href="#">Franchise Model</a>
@@ -93,8 +96,8 @@
                <%end%>
             </div>
          </div>
-            <a href="<%= award_path%>">Franchise Awards</a>
-             <a href="<%= about_path%>">About us</a>
+            <a href="<#%= award_path%>">Foco Model</a>
+             
             <a href="<%#=contact_us_path%>">Master Franchise</a>     
             <a href="<%=contact_us_path%>">Contact Us</a>
             <a href="<%= blogs_path%>">News / Blogs</a>

@@ -1,6 +1,6 @@
 <style>
 #mainbox .mainboxcol2 {
-    background-image: url(/assets/300.webp);
+    background-image: url(/assets/300.webp.png);
 }	
 @media screen and (max-width:600px){
 #toponebite{
@@ -243,9 +243,9 @@ html {
     align-items: center;
     text-align: center;
     padding: 10px 20px;
-    background: black;
-    border: 3px solid #ef0000;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background: #2c4d00;
+    border: 3px solid #fff;
+   
     white-space: nowrap; /* Prevents text from wrapping */
     max-width: 100%; /* Prevents overflow */
 }
@@ -254,7 +254,7 @@ html {
 .franchiseprodboxhedingthree span:first-child {
     font-size: 2vw; /* Responsive font size */
     font-weight: bold;
-    color: #ef0000;
+    color: #fff;
 }
 
 /* 3D Effect for White Text */
@@ -262,7 +262,7 @@ html {
     font-size: 1.8vw;
     font-weight: bold;
     color: #ffffff;
-    text-shadow: 2px 2px 0px gray, 4px 4px 0px darkgray, 6px 6px 5px rgba(0, 0, 0, 0.5);
+    
 }
 
 /* 🔹 Responsive Adjustments */
@@ -325,11 +325,7 @@ html {
 <%end%>
 <%# <img src="/assets/takway.jpeg" class="storeboxbs"> %>
 </div>
-<div id="storeboxm">
-<% if @outlate.image.attached? %>
-<%= image_tag @outlate.image, loading: "lazy", class: "storeboxbsm" %>
-<%end%>
-</div>
+
 <div id="mainbox">
 	<div class="mainboxcol1">
 		<div class="mainboxfn">Franchise Enquiry</div>
@@ -376,11 +372,11 @@ html {
 </div>
 <div id="franchiescontactform">
 	<div class="franchiescontactformcon">
-	<div class="obhdbox-3" style=""><span style="color:#1298d5;">Scan QR code </span> <span style="color:#cd5906;">to Connect </span></div>
+	<div class="obhdbox-3" style=""><span style="color:#fff;">Scan QR code </span> <span style="color:#fff;">to Connect </span></div>
 		<div class="frobqrcodebutton"><img src="/assets/Untitled_design-removebg-preview.png" class="scantocnntersp"></div>
 	</div>
 	<div class="franchiescontactformcon">
-		<div class="obhdbox-4" style=""><span style="color:#1298d5;">Fill up your Details to </span> <span style="color:#cd5906;"> Connect with us..!</span></div>
+		<div class="obhdbox-4" style=""><span style="color:#ffff;">Fill up your Details to </span> <span style="color:#ffff;"> Connect with us..!</span></div>
 		<%= form_with url: franchies_contact_path(), method: :post, id: "franchiesformcontact" do %>
           <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol", required: true %>
           <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol", required: true %>
