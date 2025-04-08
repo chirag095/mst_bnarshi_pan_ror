@@ -295,7 +295,7 @@
     text-align: center;
     padding: 10px 20px;
     background: #2c4d00;
-    border: 3px solid #ef0000;
+    border: 3px solid #2c4d00
     
     white-space: nowrap; /* Prevents text from wrapping */
     max-width: 100%; /* Prevents overflow */
@@ -535,15 +535,7 @@ img {
      <div class="obhdbox-4">
   <span style="color:#fff; font-size: 24px;">FILL UP YOUR DETAILS TO CONNECT WITH US..!</span>
 </div>
-      <%= form_with url: franchies_contact_path(), method: :post, id: "franchiesformcontact" do %>
-          <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol", required: true %>
-          <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol", required: true %>
-          <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol", required: true %>
-          <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { prompt: "Select Model", class: "inputcol", required: true } %>
-          <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), { prompt: "Select State", class: "inputcol", required: true } %>
-          <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;", required: true %>
-          <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()", style: "margin-top: 15px; font-size: medium; " %>
-        <% end %>
+      <%= render FormComponent.new() %>
    </div>
 </div>
 

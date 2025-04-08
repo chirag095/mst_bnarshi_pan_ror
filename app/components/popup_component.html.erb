@@ -110,7 +110,7 @@
         <!-- Right Side Close Button (Red) -->
         <span class="close" style="position: absolute; top: 10px; right: 10px; font-size: 42px; font-weight: bold; color: red; cursor: pointer;">&times;</span>
 
-        <h3 class="mb-4">Get in Touch</h3>
+       <center> <h2 class="mb-4">Get in Touch</h3><h2></center>
 
         <%= form_with url: franchies_contact_path, method: :post, class: "contact-form" do %>
           <div class="form-group mb-3">
@@ -130,7 +130,8 @@
 
           <div class="form-group mb-3">
             <label for="outlate">Franchise Model</label>
-            <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
+            <%#= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
+            <%= select_tag :enquiry_form, options_for_select(User::OUTLATE_TITLE), prompt: "Select franchies model", class: "form-control", required: true %>
           </div>
 
           <div class="form-group mb-3">

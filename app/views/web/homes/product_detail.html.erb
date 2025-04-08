@@ -76,7 +76,7 @@ border-radius:20vw;
 width:20%;
 height:5vw;
 position:absolute;
-top:8vw; left:10vw;
+top:7vw; left:0vw;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .toponebitegifrigt{
@@ -85,7 +85,7 @@ border-radius:20vw;
 width:20%;
 height:5vw;
 position:absolute;
-top:8vw; right:10vw;
+top:7vw; right:0vw;
  background-image: url("img/300.webp");
  background-repeat: no-repeat;
  background-size: 100%;
@@ -244,7 +244,7 @@ html {
     text-align: center;
     padding: 10px 20px;
     background: #2c4d00;
-    border: 3px solid #ef0000;
+    border: 3px solid #2c4d00;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     white-space: nowrap; /* Prevents text from wrapping */
     max-width: 100%; /* Prevents overflow */
@@ -406,15 +406,7 @@ html {
 	</div>
 	<div class="franchiescontactformcon">
 		<div class="obhdbox-4" style=""><span style="color:#fff;">Fill up your Details to </span> <span style="color:#fff;"> Connect with us..!</span></div>
-		<%= form_with url: franchies_contact_path(), method: :post, id: "franchiesformcontact" do %>
-	      <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol", required: true %>
-	      <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol", required: true %>
-	      <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol", required: true %>
-          <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { prompt: "Select Model",class: "inputcol", required: true } %>
-          <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), {prompt: "Select State", class: "inputcol", required: true } %>
-	      <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;", required: true %>
-	      <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()" %>
-	      <% end %>
+		<%= render FormComponent.new() %>
 	</div>	
 </div>
 <bodynew>
