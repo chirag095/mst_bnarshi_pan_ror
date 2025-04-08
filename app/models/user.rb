@@ -18,5 +18,5 @@ class User < ApplicationRecord
     "Foco Model Franchise",
     "Cafe Model Franchise",
     "Master Franchise"
-  ]
+    ]
 end
