@@ -795,7 +795,7 @@ Looking for a zero-hassle business model with steady returns? Join hands with Ma
               </div>
               <div class="form-group">  
                 <%#= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
-                <%= select_tag :enquiry_form, options_for_select(User::OUTLATE_TITLE), prompt: "Select Model", class: "form-control", required: true %>
+                <%= select_tag :enquiry_form, options_for_select(User::OUTLATE_TITLE), prompt: "Select franchies model", class: "form-control", required: true %>
               </div>
               <div class="form-group">  
                 <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), prompt: "Select State", class: "form-control" %>
