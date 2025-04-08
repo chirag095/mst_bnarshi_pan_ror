@@ -67,7 +67,7 @@
    width:20%;
    height:5vw;
    position:absolute;
-   top:8vw; left:10vw;
+   top:7vw; left:0vw;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
    }
    .toponebitegifrigt{
@@ -76,7 +76,7 @@
    width:20%;
    height:5vw;
    position:absolute;
-   top:8vw; right:10vw;
+   top:7vw; right:0vw;
    background-image: url("/assets/300.webp.png");
    background-repeat: no-repeat;
    background-size: 100%;
@@ -529,7 +529,7 @@ button#submit:hover {
 /* 🔹 Contact Links */
 .contact-box a {
     text-decoration: none;
-    color: #799752;
+    color: #000;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
@@ -597,80 +597,60 @@ button#submit:hover {
        <%= image_tag @banner_contact_us_img.image, loading: "lazy", class: "silderboxbs" %>
      <%end%>
 </div>
-<div class="contact-us-area default-padding">
-    <div class="container">
-        <div class="row">
-            <div class="contact-box">
-                
-                <div class="row">
-                    <!-- Start Form -->
-                    <div class="col-md-5 form-box">
-                        <div class="form-content">
-                            <div class="heading">
-                                <h3>Get in Touch</h3>
-                            </div>
-                           <%= form_with url: franchies_contact_path(), method: :post, class: "contact-form" do %>
-                      <div class="form-group">
-                        <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "form-control", required: true %>
-                      </div>
-                      <div class="form-group">
-                        <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "form-control", required: true %>
-                      </div>  
-                      <div class="form-group">
-                        <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "form-control", required: true %>
-                      </div>
-                      <div class="form-group">  
-                        <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Outlate", class: "form-control" %>
-                      </div>
-                      <div class="form-group">  
-                        <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), { prompt: "Select State", class: "form-control" } %>
-
-                      </div> 
-                      <div class="form-group comments">
-                        <%= text_area_tag :description, nil, placeholder: "Write something..", class: "form-control", required: true %>
-                      </div>
-                      <div>
-                        <%= submit_tag 'Send Message', class: 'btn btn-primary' %>
-                      </div>
-                        <% end %>
-
-                        </div>
-                    </div>
-                    <!-- End Form -->
-
-                    <!-- Contact Information Section -->
-<div class="col-md-6 col-md-offset-1 info">
-    <div class="contact-info">
-        <h2 class="contact-title">OUR OFFICE ADDRESS</h2>
-
-        <div class="contact-box">
-            <p><i class="fas fa-building"></i> <strong>Building Name: BSI Business Park</p>
-        </div>
-
-        <div class="contact-box">
-            <p><i class="fas fa-map-marker-alt"></i> <strong>Address: H Block, 140, Sector 63, Noida, Uttar Pradesh 201301</p>
-        </div>
-
-        <div class="contact-box">
-            <p><i class="fas fa-phone-alt"></i> <strong>Call Us On:</strong>  
-            <a href="tel:+919311771842">+91-9311771842</a></p>
-        </div>
-
-        <div class="contact-box">
-            <p><i class="fas fa-envelope"></i> <strong>Mail:<a href="mailto:contact@mastbanarasipaan.com">contact@mastbanarasipaan.com</a></p>
-        </div>
-    </div>
-</div>
-
-                        </div>
-                    </div>
-                    <!-- End Contact Information -->
-                </div>
-
+<div class="contact-us-area default-padding" style="padding: 60px 0;">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+      
+      <!-- Joint Wrapper with border -->
+      <div class="d-flex flex-wrap justify-content-between" 
+           style="width: 100%; max-width: 1200px; margin: auto; border: 4px solid #ccc; border-radius: 100px; overflow: hidden; box-shadow: 0 10px 25px rgba ; background: #fff;">
+        
+        <!-- Contact Form -->
+        <div class="col-lg-6 col-md-12 p-4" style="background: #fff;">
+          <div class="form-content">
+            <div class="heading mb-3">
+              <h3>Get in Touch</h3>
             </div>
+            <%= form_with url: franchies_contact_path(), method: :post, class: "contact-form" do %>
+              <div class="form-group">
+                <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "form-control", required: true %>
+              </div>
+              <div class="form-group">
+                <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "form-control", required: true %>
+              </div>  
+              <div class="form-group">
+                <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "form-control", required: true %>
+              </div>
+              <div class="form-group">  
+                <%#= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
+                  <%= select_tag :enquiry_form, options_for_select(User::OUTLATE_TITLE), prompt: "Select franchies model", class: "form-control", required: true %>
+              </div>
+              <div class="form-group">  
+                <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), prompt: "Select State", class: "form-control" %>
+              </div> 
+              <div class="form-group comments">
+                <%= text_area_tag :description, nil, placeholder: "Write something..", class: "form-control", required: true, rows: 4 %>
+              </div>
+              <div>
+                <%= submit_tag 'Send Message', class: 'btn btn-primary w-100' %>
+              </div>
+            <% end %>
+          </div>
         </div>
+        <!-- End Form -->
+
+        <!-- Side Image -->
+        <div class="col-lg-6 col-md-12 p-0">
+          <img src="/assets/newformimage.jpeg" alt="Contact Side Image" 
+               style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <!-- End Image -->
+
+      </div>
     </div>
+  </div>
 </div>
+
    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3502.1264690914963!2d77.37653107550057!3d28.6259714756683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM3JzMzLjUiTiA3N8KwMjInNDQuOCJF!5e0!3m2!1sen!2sin!4v1744013572726!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
    <div class="whatjulyboxleft"><a href="https://api.whatsapp.com/send?phone=919311771842"><i class="julywhatleft fab fa-whatsapp"></i></a></div>
 <%= render FooterComponent.new() %>  

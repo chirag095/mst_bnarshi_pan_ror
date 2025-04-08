@@ -1,1 +1,887 @@
-foco_model.html.erb
+<style>
+#mainbox .mainboxcol2 {
+    background-image: url(/assets/300.webp);
+}
+</style>
+<style>
+@media screen and (max-width:600px){
+#toponebite{
+	display:none;
+}
+}
+
+html{margin:0px; padding:0px;}
+body{margin:0px; padding:0px;}
+#toponebite{
+  background-image: url("/assets/Untitled-design-59-1-1.png");
+  background-color: #cccccc;
+   background-repeat: no-repeat;
+   background-size: 100%;
+width:100%;
+height:5vw;
+position:relative;
+top:0px; left:0px;
+}
+#toponebitelogo{ 
+position:absolute;
+top:-1vw; left:0vw;
+width:100%;
+height:7vw;  
+background-color: #000;
+}
+
+#toponebitelogoul{
+position:relative;
+top:-.6vw; left:0px;
+}
+
+#onebitesmenuleft{
+position:absolute;
+display:flex; flex-direction;
+align-items: center; justify-content: center;
+top:2vw; left:6vw;
+width:40%;
+height:4vw;
+}
+#onebitesmenuleft a{display:block; text-decoration:none; color:white; font-size:1vw; font-family:Roboto-Bold; padding:1vw 1vw;}
+
+#onebitesmenuleft a:hover{display:block; text-decoration:none; color:black; font-size:1vw; font-family:Roboto-Bold; padding:1vw 1vw; background:yellow; border-radius:1vw;}
+
+#onebitesmenulright{
+position:absolute;
+top:2vw; left:56vw;
+width:40%;
+height:4vw;
+display:flex; flex-direction;
+align-items: center; justify-content: center;
+}
+#onebitesmenulright a{display:block; text-decoration:none; color:white; font-size:1vw; font-family:Roboto-Bold; padding:1vw 1vw;}
+
+#onebitesmenulright a:hover{display:block; text-decoration:none; color:black; font-size:1vw; font-family:Roboto-Bold; padding:1vw 1vw; background:yellow; border-radius:1vw;}
+
+#toponebitelogobox{
+position:absolute;
+top:2vw; left:46.5vw;
+width:9%;
+height:4vw;  
+
+}
+#toponebitegif{
+display:flex; flex-direction:row;
+position:relative;
+top:0vw; left:0px;
+
+}
+.toponebitegifleft{
+background-color: #000;
+border-radius:20vw;
+width:20%;
+height:5vw;
+position:absolute;
+top:8vw; left:10vw;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.toponebitegifrigt{
+background-color: #000;
+border-radius:20vw;
+width:20%;
+height:5vw;
+position:absolute;
+top:8vw; right:10vw;
+ background-image: url("assets/300.webp");
+ background-repeat: no-repeat;
+ background-size: 100%;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.calltext{display:block;color:#ffb014; font-size:1.4vw; text-align:center; font-weight:900; font-family:Roboto-Bold; margin-top:.5vw}
+.calltextphone{display:block;color:#fff; font-size:1.9vw; text-align:center; font-weight:900; font-family:Roboto-Bold;}
+#toponebitemenu{
+display:flex; flex-direction:row;
+align-items: center; justify-content: center;
+position:absolute;
+top:16vw; left:5vw;
+width:90%;
+height:4vw;  
+background-color: #fccc4c;
+border-radius:20vw;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+
+#toponebitemenu a{
+display:block;
+text-decoration:none;
+color:#8e1c01;
+font-size:1vw; 
+padding:.5vw;
+font-weight:900;
+font-family:Roboto-Bold; line-height:1vw;}
+
+#toponebitemenu a:hover{color:#fff; background:#a32300; padding:.5vw; border-radius:1vw;}
+
+element.style {
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+.item-category-area .single-cat-item {
+    text-align: center;
+}
+body {
+    color: #777;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.625em;
+    position: relative;
+}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: -2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0a0a0a;
+    text-align: left;
+    background-color: #799752;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+::selection {
+    background-color: #ff0000;
+    color: #fff;
+}
+.single-cat-item .thumb {
+    width: 150px; /* Adjust size as needed */
+    height: 150px;
+    border-radius: 50%; /* Makes it circular */
+    overflow: hidden; /* Ensures the image does not overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px; /* Centers the image */
+    border: 5px solid #ddd; /* Optional border for better aesthetics */
+}
+
+.single-cat-item .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the frame */
+    border-radius: 50%; /* Ensures the image itself is round */
+}
+.single-cat-item .thumb {
+    transition: transform 0.3s ease-in-out;
+}
+
+.single-cat-item .thumb.clicked {
+    transform: scale(1.2); /* Zoom effect */
+}
+
+/* Container Styling */
+#ourperson {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default: 3 buttons per row */
+    gap: 10px; /* Space between buttons */
+    padding: 10px;
+    justify-content: center;
+}
+
+/* Button Styling */
+.statelist a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(180deg, #ff5733, #c70039); /* Gradient for 3D effect */
+    border: 2px solid #900c3f;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Creates the 3D effect */
+    transition: all 0.3s ease-in-out;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* Hover Effect */
+.statelist a:hover {
+    background: linear-gradient(180deg, #c70039, #ff5733);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: translateY(2px); /* Moves the button slightly down */
+}
+
+/* Active (Click) Effect */
+.statelist a:active {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    transform: translateY(4px); /* Makes it look pressed */
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    #ourperson {
+        grid-template-columns: repeat(2, 1fr); /* 2 buttons per row on tablets */
+    }
+
+    .statelist a {
+        padding: 10px 15px; /* Reduce padding */
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #ourperson {
+        grid-template-columns: repeat(3, 1fr); /* 3 buttons per row on mobile */
+    }
+
+    .statelist a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+
+.franchiseprodboxhedingthree {
+    display: flex;
+    justify-content: center; /* Centers text */
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+    background: #2c4d00;
+    border: 3px solid #2c4d00;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* Prevents text from wrapping */
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* 3D Effect for Red Text */
+.franchiseprodboxhedingthree span:first-child {
+    font-size: 2vw; /* Responsive font size */
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 3D Effect for White Text */
+.franchiseprodboxhedingthree span:last-child {
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: #ffffff;
+   
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    .franchiseprodboxhedingthree {
+        padding: 8px 15px; /* Reduce padding */
+    }
+
+    .franchiseprodboxhedingthree span:first-child {
+        font-size: 4vw; /* Scale text dynamically */
+    }
+
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 3.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .franchiseprodboxhedingthree {
+        flex-direction: column; /* Stack text vertically */
+        padding: 6px 10px;
+    }
+
+    .franchiseprodboxhedingthree span:first-child,
+    .franchiseprodboxhedingthree span:last-child {
+        font-size: 5vw; /* Larger text for small screens */
+    }
+}
+
+ bodynew {
+      font-family: Arial, sans-serif;
+  }
+  h2 {
+      text-align: center;
+  }
+  .faq-container {
+      max-width: 700px;
+      margin: auto;
+  }
+  .faq-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+  }
+  .faq-question {
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .faq-answer {
+      display: none;
+      padding: 10px;
+      font-size: 16px;
+      color: #fff;
+  }
+  .faq-question::after {
+      content: '+';
+      font-size: 20px;
+  }
+  .faq-question.active::after {
+      content: '-';
+  }
+.three-d-heading {
+    font-size: 2.5rem; /* Large text */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff; /* Main text color */
+    text-shadow: 3px 3px 0px #333, 
+                 6px 6px 0px rgba(0, 0, 0, 0.2), 
+                 9px 9px 0px rgba(0, 0, 0, 0.1); /* Creates the 3D effect */
+    letter-spacing: 2px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .three-d-heading {
+        font-size: 2rem; /* Adjusted for mobile */
+        text-shadow: 2px 2px 0px #333, 
+                     4px 4px 0px rgba(0, 0, 0, 0.2), 
+                     6px 6px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+.h_data {
+    text-align: justify;
+   
+    line-height: 1.6; /* Improves spacing between lines */
+    
+    margin-bottom: 15px; /* Adds spacing between paragraphs */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .h_data {
+       
+        text-align: justify;
+    }
+}
+.detail_outlate {
+  width: 100%;
+  height: 500px;
+  object-fit: cover; /* This ensures the image scales properly */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contact Info */
+.info {
+    padding: 95px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.info h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.address-items .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.address-items .icon {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #1298d5;
+}
+ .contact-info {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        line-height: 1.8;
+    }
+    .contact-info i {
+        color: #007bff;
+        margin-right: 10px;
+    }
+    /* Default styles for desktop */
+.contact-us-area {
+    padding: 50px 0;
+    background: #f8f9fa;
+}
+
+.contact-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.form-box {
+    width: 45%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-content .heading h3 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 6px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+/* Contact Info Styling */
+.info {
+    width: 45%;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* ✅ Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .contact-box {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .form-box,
+    .info {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-control {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .contact-info h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .contact-info p {
+        font-size: 14px;
+        text-align: center;
+        justify-content: center;
+    }
+}
+/* 🔹 General Contact Info Styling */
+.contact-info {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+}
+
+/* 🔹 Contact Title */
+.contact-title {
+    text-align: center;
+    font-size: 26px;
+    color: #0073e6;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Contact Box */
+.contact-box {
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-box:hover {
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* 🔹 Contact Icons */
+.contact-box i {
+    color: #0073e6;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* 🔹 Contact Links */
+.contact-box a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-box a:hover {
+    color: #0073e6;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 2px;
+    }
+
+    .contact-title {
+        font-size: 22px;
+    }
+
+    .contact-box {
+        padding: 6px;
+    }
+
+    .contact-box i {
+        font-size: 18px;
+    }
+}
+
+.new_content_areagg {
+    padding: 0px 65px;
+    margin-bottom: 50px;
+    
+    overflow-y: scroll; 
+    box-shadow: 0px 0px 8px 2px #ffffff85;
+    background: #799752;
+    margin-top: 30px;
+}
+
+
+</style>  
+
+
+
+<div id="toponebite">
+	<%= render HeaderComponent.new() %>
+	
+	<div id="toponebitegif">
+		<div class="toponebitegifleft">
+			<span class="calltext">Franchise Enquiry</span>
+			<span class="calltextphone"><a href="tel:9311771842" style="text-decoration:none; color:white; font-size:2vw;">9311771842</a></span>
+		</div>
+		<div class="toponebitegifrigt"></div>
+	</div>
+
+</div>
+<div id="storebox">
+
+
+
+<img src="/assets/foco.jpeg" style="width:100%">
+</div>
+<div id="storeboxm">
+<img src="/assets/foco.jpeg" style="width:100% "style="height: 300px;">
+</div>
+
+
+<div id="mainbox">
+	<div class="mainboxcol1">
+		<div class="mainboxfn">Franchise Enquiry</div>
+		<div class="mainboxpn"><a onclick="return gtag_report_conversion('tel:9311771842');" href="tel:9311771842">9311771842</a></div>
+	</div>
+	<div class="mainboxcol2"></div>
+</div>
+
+<%# <div class="franchiseprodboxhedingfour">
+<span class="Presence">OUR STATES FRANCHISE</span>
+</div> %>
+
+<%# <div id="ourperson">
+<%# @states.each do |state| %>
+   <%#  <span class="statelist">
+      <a href="<%#= state_path(state)" style="color: white;"><%#= state.title %></a>
+    <%# </span> %> 
+  <%# end %> 
+<%# </div> %>
+</span>
+</div> 
+<br>
+<br>
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>Mast Banarasi Paan – FOCO Franchise Model</span> <span>&nbsp;&nbsp;&nbsp; </span>
+</div>
+</center>
+<div class="container-fluid">
+     <div class="new_content_areagg"> 
+        <h2 class="three-d-heading"> Invest Smart, Earn Hassle-Free!</h2>
+        <p class="h_data">Our FOCO (Franchise-Owned, Company-Operated) model is designed for investors looking for a profitable yet hands-free business opportunity. You invest in the outlet, and we handle everything from operations to management, ensuring seamless business growth.<p>
+      	
+<ul> Investment & Revenue Structure:</ul>
+<ul> Investment- 15- 20 Lakhs</ul>
+<ul> Minimum Guarantee (MG): 5% of revenue per month</ul>
+<ul> Running Expense: 50-50 on running expenses</ul>
+<ul> Outlet Launch & Setup: Entire Investment bare  by the client</ul>
+<h4>Why Choose Our FOCO Model?</h4>
+<ul> ✅ Smooth Operations with No Hassles – We take full responsibility for daily operations.</ul>
+<ul> ✅ Brand Recognition & Trust – Leverage the power of an established and loved brand.</ul>
+<ul> ✅ Transparent & Streamlined Processes – Clear financials, no hidden costs.</ul>
+<ul> ✅ 24/7 Resources & Support – Continuous assistance for uninterrupted business operations.</ul>
+<ul> ✅ Reduced Risk – We manage challenges while you enjoy assured returns.</ul>
+<ul> ✅ Consistency in Quality & Services – Maintain high standards across all outlets.</ul>
+<ul> ✅ Passive Income Potential – A stable revenue stream with minimal effort.</ul>
+<ul> ✅ Zero Involvement in Staff & Space Management – We recruit, train, and manage the team.</ul>
+<ul> ✅ Strategic Growth – Expand with us while we drive market success.</ul>
+
+<p>Your Investment, Our Expertise – A Winning Partnership!
+Looking for a zero-hassle business model with steady returns? Join hands with Mast Banarasi Paan FOCO Model today! 🚀</p>
+
+        
+       
+
+        
+<br>
+        
+    </div> 
+</div>
+
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>MAST BANARASI PAAN</span> <span> &nbsp; Franchise in India</span>
+</div>
+</center>
+<br>
+
+
+<div id="franchisemodelbox">
+<%@pan_outlates.each do |outlate|%>
+   <div class="franchisemodelboxcolone">
+      <div class="franchisemodelboxcolhd"><%=outlate.title%></div>
+      <% if outlate.image.attached? %>
+       <a href="<%=model_path(outlate )%>"> <%= image_tag outlate.image, loading: "lazy", class: "franchisemodelboxcolrs" %></a>
+      <%end%>  
+      <span class="sizebox">Space Required</span> 
+      <div class="franchisemodelboxcolhdp"><%= outlate.space%></div>
+   </div>
+   <%end%>    
+</div>
+<div class="contact-us-area default-padding" style="padding: 60px 0;">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+      
+      <!-- Joint Wrapper with border -->
+      <div class="d-flex flex-wrap justify-content-between" 
+           style="width: 100%; max-width: 1200px; margin: auto; border: 4px solid #ccc; border-radius: 100px; overflow: hidden; box-shadow: 0 10px 25px rgba ; background: #fff;">
+        
+        <!-- Contact Form -->
+        <div class="col-lg-6 col-md-12 p-4" style="background: #fff;">
+          <div class="form-content">
+            <div class="heading mb-3">
+              <h3>Get in Touch</h3>
+            </div>
+            <%= form_with url: franchies_contact_path(), method: :post, class: "contact-form" do %>
+              <div class="form-group">
+                <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "form-control", required: true %>
+              </div>
+              <div class="form-group">
+                <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "form-control", required: true %>
+              </div>  
+              <div class="form-group">
+                <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "form-control", required: true %>
+              </div>
+              <div class="form-group">  
+                <%#= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
+                <%= select_tag :enquiry_form, options_for_select(User::OUTLATE_TITLE), prompt: "Select Model", class: "form-control", required: true %>
+              </div>
+              <div class="form-group">  
+                <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), prompt: "Select State", class: "form-control" %>
+              </div> 
+              <div class="form-group comments">
+                <%= text_area_tag :description, nil, placeholder: "Write something..", class: "form-control", required: true, rows: 4 %>
+              </div>
+              <div>
+                <%= submit_tag 'Send Message', class: 'btn btn-primary w-100' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <!-- End Form -->
+
+        <!-- Side Image -->
+        <div class="col-lg-6 col-md-12 p-0">
+          <img src="/assets/newformimage.jpeg" alt="Contact Side Image" 
+               style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <!-- End Image -->
+
+      </div>
+    </div>
+  </div>
+</div>
+<bodynew>
+
+
+<center>
+<div class="franchiseprodboxhedingthree">
+   <span>FAQ’s of MAST BANARASI PAAN</span> <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Franchise in India Model</span>
+</div>
+</center>
+
+   <div class="franchiseprodboxhedingtwo">
+       <%@faqs.each do |faq|%>
+           <div class="faq-item">
+               <div class="faq-question"><%=faq.question%></div>
+               <div class="faq-answer"><%=faq.answer%></div>
+           </div>
+      <%end%>  
+    </div>
+</bodynew>
+<div class="whatjulyboxleft"><a href="https://api.whatsapp.com/send?phone=919311771842"><i class="julywhatleft fab fa-whatsapp"></i></a></div>
+<%= render FooterComponent.new() %>
+<%= render PopupComponent.new() %>
+<%= render MobHeaderComponent.new() %>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'sg2plzcpnl504244'},{'dcenter':'sg2'},{'cp_id':'9996600'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
+<script type="text/javascript">
+      // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'Franchise_Enquire_Contact', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
+  
+  function sendToWhatsapp(){
+    let number ="918076631024";
+    let name = document.getElementById('fullname').value;
+    let email = document.getElementById('emailid').value;
+    let phone = document.getElementById('phone').value;
+    let message = document.getElementById('message').value;
+    
+    var url = "https://wa.me/" + number + "?text=" + "name: " +name+ "%0a" + "email: " +email+ "%0a"+ "phone: " +phone+ "%0a" + "message: " +message+ "%0a%0a";
+    window.open(url,'_blank').focus();
+}
+document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+          item.classList.toggle('active');
+          let answer = item.nextElementSibling;
+          if (answer.style.display === "block") {
+              answer.style.display = "none";
+          } else {
+              answer.style.display = "block";
+          }
+      });
+  });
+</script>
+

@@ -21,6 +21,10 @@ class Web::HomesController < ApplicationController
 	end
 
 	def foco_model
+		@faqs = Faq.where(faq_type: :state)
+		@banner_state_img = Banner.find_by_banner_img_type(:state)
+		@states = State.all
+		@pan_outlates = PanOutlate.all
 	end
 
 	def about
@@ -76,7 +80,7 @@ class Web::HomesController < ApplicationController
 	private
 
 	def user_params
-	    params.permit(:full_name, :email, :contact, :description)
+	    params.permit(:full_name, :email, :contact, :description, :enquiry_form)
 	          .merge(pan_outlate_id: params[:outlate], state_id: params[:state])
 	end
 end

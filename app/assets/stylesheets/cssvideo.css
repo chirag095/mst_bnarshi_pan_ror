@@ -1,151 +1,58 @@
-#videoGallery{display:flex; flex-direction:row; background:#000; justify-content:center;}
-.video-card{width:33%; justify-self:center; position:relative;}
-.video-card1{width:49%; justify-self:center; position:relative;}
-.video-card2{width:100%; justify-self:center; position:relative;}
-.thumbnail{margin:1vw; text-align:center; background-color:transparent; border: 0px solid #ddd;}
-.thumbnail1{margin:1vw; text-align:left;}
-.thumbnail2{margin:1vw; text-align:right;}
-.thumbnail3{margin:1vw; text-align:center;}
-.thumbnailres{width:100%; }
-.thumbnailres1{width:100%;}
-.thumbnailres3{width:100%;}
-.youtbe{font-size:8vw; color:#ffb014;position:absolute; top:28%; left:35%; z-index:-1;}
-.video-card1:hover .youtbe{color:#ffb014; z-index:0;}
-.video-card:hover .youtbe{color:#ffb014; z-index:0;}
-.video{position:absolute; top:8vw;width:50%; left:24%; display:none;}
-.videoPlayer{width:100%;}
-.close-btn{position:absolute; background:#ffb014; top:-2vw;width:auto; padding:1vw; font-size:1.5vw; border-radius:55%; right:-2vw;}
-.active{display:block; z-index:1;}
-#videohdhading{font-size:2vw; font-family:'Rubik', sans-serif; text-align:center; text-transform:uppercase;font-weight:900; color:black; padding:2vw 1vw;background:radial-gradient(#ec9b01, #ffb014);}
-
-
-#youtubesection{display:flex; flex-direction:row; padding:1vw;}
-#youtubesection iframe { height: 18vw; }
-.youtubesectioncol{width:40vw; height:18vw; margin:1vw;}
-.ytp-large-play-button{ position: absolute; left: 50%; top: 50%; width:25vw; height:50vw; margin-left: -34px; margin-top: -24px;
-    -webkit-transition: opacity .25s cubic-bezier(0,0,.2,1);
-    transition: opacity .25s cubic-bezier(0,0,.2,1); z-index: 63;}
-    
-/*#newsection{display:flex; flex-direction:row; padding:1vw;}*/
-
-#newsection{display: grid; grid-template-columns: auto auto auto auto auto;}
-
-#newsectioncol a{display: block; width:25vw; height:25vw; }
-.newsectioncol{width:auto; height:auto; margin:1vw;}
-.newsectionres{width:100%;}
-
-#videoyoutube{display: grid; grid-template-columns: auto auto auto }
-#videoyoutube iframe { height:20vw; }
-.videoyoutubecol{width:auto; height:auto; margin:1vw;}
-
-
-/* Silder Home Page  */
-.videoyoutubesildercol{width:auto; height:auto; margin:.5vw;}
-.videoyoutubesildercol iframe { width:100%; height:100%; border:2vw solid black; }
-
-
-#newsectionsilderbox{
-	display:grid;
-	place-item:center;
-	background:#000;
-}
-#newsectionsilderbox-silder{
-	height:auto;
-	margin:auto;
-	position:relative;
-	width:100%;
-	display:grid;
-	grid-template-columns: 80px 200px auto 30px;
-    gap: 10px;
-	place-item:center;
-	overflow:hidden;
-}
-#newsectionsilder-track{ 
-	display:flex;
-	width:calc(250px * 19);
-    animation: scrolls 15s linear 1s infinite;
-}
-#newsectionsilder-track:hover{
-	
-animation-play-state:paused !important;
-	
-}
-@keyframes scrolls{
-
-	0%{
-		transform:translateX(0);
-	}
-	100%{
-		transform:translateX(calc(-350px * 4));	
-	}
-	
+#newsectionsilderbox-silder {
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
 }
 
-#newsectionsilderbox-silder-silde{
-	height:25vw;
-	width:40vw;
-	padding:0vw;
+#newsectionsilder-track {
+  display: flex;
+  gap: 20px;
 }
 
-.newsectionsilderbox-silder-silde img{
-	width:100%;
-	transition:transform 0%;
+#newsectionsilderbox-silder-silde {
+  flex: 0 0 auto;
+  width: 320px; /* Fixed width */
+  scroll-snap-align: start;
 }
 
-#newsectionsilderbox-silder::before,#newsectionsilderbox-silder::after{
-background-linear-gradient(to right, rbga(255,255,255,1) 0%, rbga(255,255,255,0) 100%,);
-content:'';
-height:100%;
-position:absolute;
-width:15%;
-z-index:1;
+/* Responsive video wrapper */
+.videoyoutubesildercol {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-#newsectionsilderbox-silder::before{
-left:0;
-top:0;}
-#newsectionsilderbox-silder::after{
-left:0;
-top:0;
-transform:rotateZ(180deg);
-}
-/* Silder Home Page  */
-
-@media only screen and (max-width: 600px) {
-#videoyoutube{display: grid; grid-template-columns: auto auto auto}
-#videoyoutube iframe { height:20vw; }
-.videoyoutubecol{width:auto; height:auto; margin:1vw;}    
-#youtubesection{display:flex; flex-direction:row; padding:1vw;}
-#youtubesection iframe { height: 18vw; }    
-.youtubesectioncol{width:40vw; height:18vw; margin:1vw;}
-.video{position:absolute; top:34vw;width:100%; left:0%; background:#000;}	
-.close-btn{position:absolute; background:#ffb014; color:white; text-align:center; top:2vw;width:10vw; padding:1vw; font-size:5vw; border:0vh solid black;border-radius:5%; right:2vw;}
-.ytp-large-play-button{ position: absolute; left: 50%; top: 50%; width:25vw; height:50vw; margin-left: -34px; margin-top: -24px;
-    -webkit-transition: opacity .25s cubic-bezier(0,0,.2,1);
-    transition: opacity .25s cubic-bezier(0,0,.2,1); z-index: 63;}
-    
-#videohdhading{font-size:4vw; font-family:'Rubik', sans-serif; text-align:center; text-transform:uppercase;font-weight:900; color:black; padding:2vw 1vw;background:radial-gradient(#ec9b01, #ffb014);}
-
-#newsectionsilder-track{ 
-	display:flex;
-	width:calc(250px * 25);
-    animation: scrolls 13s linear infinite;
-}
-#newsectionsilderbox-silder-silde{
-	height:60vw;
-	width:100vw;
-	padding:0vw;
+.videoyoutubesildercol iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 10px;
 }
 
-@keyframes scrolls{
-
-	0%{
-		transform:translateX(0);
-	}
-	100%{
-		transform:translateX(calc(-450px * 7));	
-	}
-	
+/* Optional: Add some hover effect */
+.videoyoutubesildercol iframe:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
+/* Scrollbar styling (optional) */
+#newsectionsilderbox-silder::-webkit-scrollbar {
+  height: 8px;
+}
+
+#newsectionsilderbox-silder::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#newsectionsilderbox-silder::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

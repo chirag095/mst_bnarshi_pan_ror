@@ -778,7 +778,8 @@ html {
                 <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "form-control", required: true %>
               </div>
               <div class="form-group">  
-                <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
+                <%#= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
+                <%= select_tag :enquiry_form, options_for_select(User::OUTLATE_TITLE), prompt: "Select franchies model", class: "form-control", required: true %>
               </div>
               <div class="form-group">  
                 <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), prompt: "Select State", class: "form-control" %>
@@ -796,7 +797,7 @@ html {
 
         <!-- Side Image -->
         <div class="col-lg-6 col-md-12 p-0">
-          <img src="/assets/600x485image2.png" alt="Contact Side Image" 
+          <img src="/assets/newformimage.jpeg" alt="Contact Side Image" 
                style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <!-- End Image -->

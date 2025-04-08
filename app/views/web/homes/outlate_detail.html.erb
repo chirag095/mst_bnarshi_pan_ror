@@ -292,6 +292,68 @@ html {
     }
 }
 
+.storeboxbs {
+  width: 100%;
+  height: 457px;
+  display: block;
+  object-fit: cover;
+}
+
+#storebox {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Responsive overlay text */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 5vw; /* Responsive font size */
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  z-index: 2;
+  padding: 0 1rem;
+  word-break: break-word;
+}
+#storebox:hover .storeboxbs {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+}
+.overlay-text {
+  position: absolute;
+  top: 58%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: left;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.overlay-text h2 {
+  
+  margin-bottom: 1rem;
+}
+
+.overlay-text ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.overlay-text li {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
 </style>
 <% title @outlate.seo_title || @outlate.title%>
 <% description @outlate.seo_description %>
@@ -320,10 +382,23 @@ html {
 	</div>
 </div>
 <div id="storebox">
-<% if @outlate.image.attached? %>
-<%= image_tag @outlate.image, loading: "lazy", class: "storeboxbs detail_outlate" %>
-<%end%>
-<%# <img src="/assets/takway.jpeg" class="storeboxbs"> %>
+  <% if @outlate.image.attached? %>
+    <%= image_tag @outlate.image, loading: "lazy", class: "storeboxbs detail_outlate" %>
+  <% end %>
+
+  <div class="overlay-text">
+  <h2>Total Investment: ₹11–12 Lakhs + 18% GST</h2>
+  <ul>
+    <li>Permanent Staff</li>
+    <li>Full Business Starter Kit</li>
+    <li>Menu Customization</li>
+    <li>Dedicated Support Team</li>
+    <li>Online & Offline Promotion</li>
+    <li>Complete Interior Setup</li>
+    <li>Training & Setup Support</li>
+  </ul>
+</div>
+
 </div>
 
 <div id="mainbox">
@@ -377,15 +452,7 @@ html {
 	</div>
 	<div class="franchiescontactformcon">
 		<div class="obhdbox-4" style=""><span style="color:#ffff;">Fill up your Details to </span> <span style="color:#ffff;"> Connect with us..!</span></div>
-		<%= form_with url: franchies_contact_path(), method: :post, id: "franchiesformcontact" do %>
-          <%= text_field_tag :full_name, nil, placeholder: "Enter Name", class: "inputcol", required: true %>
-          <%= email_field_tag :email, nil, placeholder: "Enter Email", class: "inputcol", required: true %>
-          <%= number_field_tag :contact, nil, placeholder: "Enter Phone", class: "inputcol", required: true %>
-          <%= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), { prompt: "Select Outlate",class: "inputcol", required: true } %>
-          <%= select_tag :state, options_from_collection_for_select(@states, :id, :title), {prompt: "Select State", class: "inputcol", required: true } %>
-          <%= text_area_tag :description, nil, placeholder: "Write something..", class: "inputcol", style: "height:10vw;", required: true %>
-          <%= submit_tag "Submit", class: "inputsubmitcol", onclick: "sendToWhatsapp()" %>
-        <% end %>
+		<%= render FormComponent.new() %>
 	</div>	
 </div>
 <bodynew>
