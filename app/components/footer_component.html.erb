@@ -179,6 +179,29 @@
   font-size: 14px;
   color: #878787;
 }
+.footer-social-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-social-icon span {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  .footer-social-icon a i {
+    font-size: 18px;
+    color: white;
+    padding: 2px;
+    border-radius: 50%;
+  }
+
+  .facebook-bg { background-color: #3b5998; }
+  .instagram-bg { background-color: #e4405f; }
+  .youtube-bg { background-color: #ff0000; }
+  .linkedin-bg { background-color: #0077b5; }
+
 </style>
 <footer class="footer-section">
         <div class="container">
@@ -243,13 +266,12 @@ Address: H Block, 140, Sector 63, Noida, Uttar Pradesh 201301</span>
     <i class="fab fa-youtube youtube-bg"></i>
   </a>
 
-  <!-- Twitter -->
-  <a href="#" target="_blank">
-    <i class="fab fa-twitter twitter-bg"></i>
+<!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/mastbanarasipaan/" target="_blank">
+    <i class="fab fa-linkedin-in linkedin-bg"></i>
   </a>
-
-
 </div>
+
 
                         </div>
                     </div>
@@ -260,13 +282,15 @@ Address: H Block, 140, Sector 63, Noida, Uttar Pradesh 201301</span>
                             </div>
                             <ul>
                                 <li><a href="<%= root_path%>">Home</a></li>
-                                <li><a href="<%= about_path%>">About Us</a></li>
+                                 <li><a href="<%=gallery_path %>">Gallery</a></li>
                                 <li><a href="<%= events_path %>">Events</a></li>
-                                <li><a href="<%=gallery_path %>">Gallery</a></li>
-                                <li><a href="<%= award_path%>">Franchise Awards</a></li>
-                               
-                                <li><a href="#">Our Services</a></li>
+                                <li><a href="<%= about_path%>">About Us</a></li>
                                 <li><a href="<%=master_franchise_path%>">Master Franchise</a></li>
+                                
+                                <li><a href="<%=foco_model_path%>">Foco Model</a></li>
+                               
+                                
+                               
                                 <li><a href="<%=contact_us_path%>">Contact us</a></li>
                                 <li><a href="<%= blogs_path%>">Latest News|Blogs</a></li>
                             </ul>
