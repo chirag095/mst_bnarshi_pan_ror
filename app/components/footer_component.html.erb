@@ -202,6 +202,51 @@
   .youtube-bg { background-color: #ff0000; }
   .linkedin-bg { background-color: #0077b5; }
 
+
+/* WhatsApp Icon Style */
+.whatjulyboxleft {
+  position: fixed;
+  bottom: 100px;
+  right: 20px; /* push to right side */
+  z-index: 1000;
+}
+
+.julywhatleft {
+  font-size: 30px;
+  color: white;
+  background-color: #25D366; /* WhatsApp green */
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.julywhatleft:hover {
+  transform: scale(1.1);
+}
+
+/* Call Icon Style */
+.call-icon-box {
+  position: fixed;
+  bottom: 30px; /* a bit lower than WhatsApp */
+  right: 20px;
+  z-index: 1000;
+}
+
+.call-icon {
+  font-size: 30px;
+  color: white;
+  background-color: #28a745; /* Call green */
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.call-icon:hover {
+  transform: scale(1.1);
+}
+
 </style>
 <footer class="footer-section">
         <div class="container">
@@ -337,4 +382,10 @@ Address: H Block, 140, Sector 63, Noida, Uttar Pradesh 201301</span>
                 </div>
             </div>
         </div>
+        <div class="whatjulyboxleft"><a href="https://api.whatsapp.com/send?phone=919311771842"><i class="julywhatleft fab fa-whatsapp"></i></a></div>
+<div class="call-icon-box">
+  <a href="tel:+919311771842">
+    <i class="fas fa-phone call-icon"></i>
+  </a>
+</div>
     </footer>
