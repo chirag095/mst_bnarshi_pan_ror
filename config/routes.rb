@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post "/franchies_contact", to: "web/homes#create", as: "franchies_contact"
   get "/states/:slug", to: "web/homes#state_detail", as: "state"
   get "/gallery", to: "web/galleries#index", as: "gallery"
+  get "/privacy/policy", to: "web/galleries#privacy_policy", as: "privacy_policy"
   get "/blogs", to: "web/blogs#index", as: "blogs"
   get "/events", to: "web/events#index", as: "events"
   get "/model/:slug", to: "web/homes#outlate_detail", as: "model"
