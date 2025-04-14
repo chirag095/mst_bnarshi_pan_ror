@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get "thankyou", to: "web/homes#thankyou", as: "thankyou" 
   get "master/franchise", to: "web/homes#master_franchise", as: "master_franchise"
   get "foco/model", to: "web/homes#foco_model", as: "foco_model"
+   get "/privacy/policy", to: "web/galleries#privacy_policy", as: "privacy_policy"
     #match "*unmatched", to: "application#render_404", via: :all
   # namespace :web do
   #   namespace :homes do
