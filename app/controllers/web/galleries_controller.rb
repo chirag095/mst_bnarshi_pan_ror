@@ -5,4 +5,7 @@ class Web::GalleriesController < ApplicationController
 	end
 	def privacy_policy
 	end
+	def terms_conditions
+		
+	end
 end
