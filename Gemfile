@@ -18,7 +18,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
- gem 'rails_admin', '~> 3.0', github: "railsadminteam/rails_admin", branch: "master"
+ gem 'rails_admin', '~> 3.3', github: "railsadminteam/rails_admin", branch: "master"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 gem "sassc-rails"
