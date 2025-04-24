@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   post "/franchies_contact", to: "web/homes#create", as: "franchies_contact"
   get "/states/:slug", to: "web/homes#state_detail", as: "state"
   get "/gallery", to: "web/galleries#index", as: "gallery"
-  get "/privacy/policy", to: "web/galleries#privacy_policy", as: "privacy_policy"
+
   get "/blogs", to: "web/blogs#index", as: "blogs"
   get "/events", to: "web/events#index", as: "events"
   get "/model/:slug", to: "web/homes#outlate_detail", as: "model"
@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   get "thankyou", to: "web/homes#thankyou", as: "thankyou" 
   get "master/franchise", to: "web/homes#master_franchise", as: "master_franchise"
   get "foco/model", to: "web/homes#foco_model", as: "foco_model"
+   get "/privacy/policy", to: "web/galleries#privacy_policy", as: "privacy_policy"
+   get "/terms/conditions", to: "web/galleries#terms_conditions", as: "terms_conditions"
     #match "*unmatched", to: "application#render_404", via: :all
   # namespace :web do
   #   namespace :homes do

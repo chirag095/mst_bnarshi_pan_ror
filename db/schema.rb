@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_19_181039) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_08_170523) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -69,12 +69,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_19_181039) do
     t.text "seo_keywords"
     t.text "seo_title"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
-  end
-
-  create_table "cities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "events", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -185,13 +179,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_19_181039) do
     t.index ["slug"], name: "index_states_on_slug", unique: true
   end
 
-  create_table "titles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "image"
-    t.text "discription"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "upcomings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -202,10 +189,11 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_19_181039) do
     t.string "email"
     t.text "description"
     t.string "contact"
-    t.bigint "pan_outlate_id", null: false
+    t.bigint "pan_outlate_id"
     t.bigint "state_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "enquiry_form"
     t.index ["pan_outlate_id"], name: "index_users_on_pan_outlate_id"
     t.index ["state_id"], name: "index_users_on_state_id"
   end

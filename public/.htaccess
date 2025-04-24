@@ -1,0 +1,15 @@
+# .htaccess file for Rails application
+# public/.htaccess
+
+# Enable RewriteEngine
+RewriteEngine On
+
+# Block URLs with query parameters like ?m=anything
+RewriteCond %{QUERY_STRING} m=
+RewriteRule ^.*$ /404.html [L]
+
+# Redirect all invalid URLs to 404.html (if not handled by Rails)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /404.html [L]
+
