@@ -198,8 +198,8 @@ html {
     transform: scale(1.2); /* Zoom effect */
 }
 .detail_outlate {
-  width: 100%;
-  height: 500px;
+  width: 107%;
+  height: 540px;
   object-fit: cover; /* This ensures the image scales properly */
 }
  bodynew {
@@ -292,67 +292,11 @@ html {
     }
 }
 
-.storeboxbs {
-  width: 100%;
-  height: 457px;
-  display: block;
-  object-fit: cover;
-}
 
-#storebox {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
 
-/* Responsive overlay text */
-.overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 5vw; /* Responsive font size */
-  text-align: center;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
-  z-index: 2;
-  padding: 0 1rem;
-  word-break: break-word;
-}
-#storebox:hover .storeboxbs {
-  transform: scale(1.05);
-  transition: transform 0.4s ease;
-}
-.overlay-text {
-  position: absolute;
-  top: 58%;
-  left: 52%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  text-align: left;
-  font-size: 1.4rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
 
-.overlay-text h2 {
-  
-  margin-bottom: 1rem;
-}
 
-.overlay-text ul {
-  padding-left: 1.2rem;
-  list-style-type: disc;
-}
 
-.overlay-text li {
-  margin-bottom: 0.5rem;
-  font-size: 1.4rem;
-}
 
 </style>
 <% title @outlate.seo_title || @outlate.title%>
@@ -382,13 +326,45 @@ html {
 	</div>
 </div>
 <div id="storebox">
-  <% if @outlate.image.attached? %>
-    <%= image_tag @outlate.image, loading: "lazy", class: "storeboxbs detail_outlate" %>
-  <% end %>
+
 
  
 
 </div>
+
+<div id="storebox" class="mobile-only">
+    <br>
+</br>
+
+  <% if @outlate.image.attached? %>
+    <%= image_tag @outlate.image, loading: "lazy", class: "storeboxbs detail_outlate mobile-responsive-image" %>
+  <% end %>
+</div>
+
+<style>
+  /* Hide by default */
+  .mobile-only {
+    display: none;
+  }
+
+  /* Show only on screens <= 768px (mobile) */
+  @media (max-width: 768px) {
+    .mobile-only {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .mobile-responsive-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+  }
+</style>
+
 
 <div id="mainbox">
 	<div class="mainboxcol1">

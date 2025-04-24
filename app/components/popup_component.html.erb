@@ -130,7 +130,6 @@
 
           <div class="form-group mb-3">
             <label for="outlate">Franchise Model</label>
-            <%#= select_tag :outlate, options_from_collection_for_select(@pan_outlates, :id, :title), prompt: "Select Model", class: "form-control" %>
             <%= select_tag :enquiry_form, options_for_select(User::OUTLATE_TITLE), prompt: "Select franchies model", class: "form-control", required: true %>
           </div>
 

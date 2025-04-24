@@ -47,7 +47,7 @@ class Web::HomesController < ApplicationController
 		@banner_contact_us_img =  Banner.find_by_banner_img_type(:contact_us)
 	end 
         
-        def product_detail
+    def product_detail
         @faqs = Faq.where(faq_type: :product)
         @banner_product_img = Banner.find_by_banner_img_type(:product)
 		@states = State.all
@@ -55,6 +55,7 @@ class Web::HomesController < ApplicationController
 		@pan_outlates = PanOutlate.all
 		@product = Product.friendly.find(params[:slug])
 	end
+
 	def create
 	    @user = User.new(user_params)
 
@@ -63,7 +64,7 @@ class Web::HomesController < ApplicationController
 	        redirect_to thankyou_path 
 	    else
 	      flash[:alert] = "There was an error submitting the form."
-	      render :new
+	      redirect_to root_path 
 	    end
 	end
 
