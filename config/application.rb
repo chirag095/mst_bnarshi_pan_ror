@@ -21,7 +21,7 @@ module MstBnarshiPanRor
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    config.hosts << "5ca5-152-58-119-31.ngrok-free.app"
+    config.hosts << "www.mastbanarasipaan.com"
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
